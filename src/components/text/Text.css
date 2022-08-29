@@ -1,0 +1,20 @@
+.wrap {
+	width: 99%;
+	overflow: hidden;
+}
+
+#box {
+	width: 80000%;
+}
+
+#box div {
+	float: left;
+}
+
+#marquee-box {
+	margin: 0 16px 0 0;
+}
+
+#marquee-box div {
+	float: left;
+}

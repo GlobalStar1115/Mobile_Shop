@@ -1,0 +1,384 @@
+import styles from './Home.module.scss'
+import { IonCol, IonContent, IonCard, IonImg, IonGrid, IonPage, IonRow, useIonRouter } from '@ionic/react'
+import { useTranslation } from 'react-i18next'
+import HomeSlider1 from '../../components/home-slider/HomeSlider1'
+import Slogan from '../../components/slogan/Slogan'
+import DialogNotice from '../../components/dialog-notice/DialogNotice'
+import Text from '../../components/text/Text'
+import CssRoll from '../../components/css-roll/CssRoll'
+import { useEffect, useState } from 'react'
+import { InfoApi, LinksImageApi, HomeIntroduceApi, NoticeApi, LevelApi } from '../../request/api'
+
+const Introduce = props => {
+	return (
+		<div
+			style={{ backgroundImage: `url(${props.bgUrl})`, backgroundSize: 'cover', borderRadius: '5px', height: '180px' }}
+		>
+			<img style={{ width: '110px', height: '110px', marginTop: '20px' }} src={props.iconUrl}></img>
+			<div style={{ color: '#000', fontSize: '14px', fontWeight: '600' }}>{props.graphicTitle}</div>
+		</div>
+	)
+}
+
+const Introduce_2 = props => {
+	return (
+		<div
+			style={{ backgroundImage: `url(${props.bgUrl})`, backgroundSize: 'cover', borderRadius: '5px', height: '114px' }}
+		>
+			<img
+				style={{ width: '75px', height: '75px', marginTop: '20px', transform: 'translateY(-6px)' }}
+				src={props.iconUrl}
+			></img>
+			<div style={{ color: '#000', fontSize: '14px', fontWeight: '600', transform: 'translateY(-10px)' }}>
+				{props.graphicTitle}
+			</div>
+		</div>
+	)
+}
+
+const Home = () => {
+	const { t, i18n } = useTranslation('lang')
+	const router = useIonRouter()
+	const [linksImage, setLinksImage] = useState([])
+	const [introduceArr, setIntroduceArr] = useState([])
+	const [homeTopText, setHomeTopText] = useState('')
+	const [homeNotice, setHomeNotice] = useState('')
+	const [assets, setAssets] = useState({})
+	const [levelArr, setLevelArr] = useState([])
+
+	const [showDialog, setShowDialog] = useState(false)
+
+	useEffect(() => {
+		InfoApi().then(res => {
+			if (res.code === 200) {
+				setAssets(res.data.assets)
+			}
+		})
+		LinksImageApi().then(res => {
+			if (res.code === 200) {
+				let list = res.data[0].imgUrls.split(',')
+				setLinksImage(list)
+			}
+		})
+		HomeIntroduceApi().then(res => {
+			if (res.code === 200) {
+				console.log(res)
+				setIntroduceArr(res.data)
+			}
+		})
+		NoticeApi().then(res => {
+			if (res.code === 200) {
+				const { data } = res
+				// console.log(data)
+				data.map(item => {
+					if (item.noticeType == 3) {
+						setHomeTopText(item.noticeContent.replace(/<[^>]+>/g, ''))
+					} else if (item.noticeType == 2) {
+						setHomeNotice(item.noticeContent.replace(/<[^>]+>/g, ''))
+						setShowDialog(true)
+					}
+				})
+			}
+		})
+		LevelApi().then(res => {
+			// console.log('level', res.data)
+			if (res.code === 200) {
+				setLevelArr(res.data)
+			}
+		})
+		// setShowDialog(!showDialog)
+	}, [])
+
+	return (
+		<IonPage className={styles.homePage}>
+			{showDialog && (
+				<DialogNotice hideDialog={() => setShowDialog(!showDialog)} hide={false}>
+					<h3>公告</h3>
+					<p>{homeNotice}</p>
+					<button
+						style={{
+							position: 'absolute',
+							width: '100px',
+							height: '40px',
+							left: '50%',
+							bottom: '10%',
+							transform: ' translate(-50%,0%)'
+						}}
+						onClick={() => setShowDialog(!showDialog)}
+					>
+						关闭
+					</button>
+				</DialogNotice>
+			)}
+			<IonContent fullscreen>
+				<IonGrid className={`ion-no-padding ${styles.homeBrandBackground}`}>
+					<IonGrid className={`ion-padding-bottom ${styles.homeBrand}`}>
+						<IonRow className="ion-justify-content-center ion-align-items-center ion-padding">
+							<h4 className="main-title ion-text-center  ion-no-margin">{t('home.title')}</h4>
+						</IonRow>
+						<IonRow style={{ marginTop: '20px' }}>
+							<HomeSlider1 />
+						</IonRow>
+						<IonRow>
+							<Slogan test={homeTopText} />
+							{/* <Text /> */}
+						</IonRow>
+						<IonCard className={`ion-padding ${styles.brandCard}`}>
+							<IonRow className="ion-justify-content-between ion-align-items-center ion-padding-start ion-padding-end">
+								<IonCol size="6">
+									<span>{t('home.mybalance')}:</span>
+									<h2 className={`main-number ${styles.balanceAmount}`}>$ {assets.availableBalance}</h2>
+								</IonCol>
+								<IonImg src="/assets/images/home/14@2x.png" />
+							</IonRow>
+						</IonCard>
+						<IonRow
+							className={`ion-justify-content-center ion-margin-top ion-padding-top ion-margin-bottom ${styles.imageText}`}
+						>
+							<div
+								className="ion-text-center"
+								onClick={() => {
+									router.push('/app/support')
+								}}
+							>
+								<IonImg src="/assets/images/home/11.png" />
+								<span>{t('home.coincharge')}</span>
+							</div>
+							<div
+								onClick={() => {
+									router.push('/withdraw')
+								}}
+							>
+								<IonImg src="/assets/images/home/12.png" />
+								<span>{t('home.cashwithdraw')}</span>
+							</div>
+							<div>
+								<IonImg src="/assets/images/home/13.png" />
+								<span>{t('home.promotion')}</span>
+							</div>
+							<div
+								onClick={() => {
+									router.push('/invite')
+								}}
+							>
+								<IonImg src="/assets/images/home/14.png" />
+								<span>{t('home.invite')}</span>
+							</div>
+						</IonRow>
+					</IonGrid>
+				</IonGrid>
+				<IonRow
+					className={`main-padding ion-margin-top ion-margin-bottom ${styles.homeCardGroup}`}
+					style={{ display: 'flex', justifyContent: 'space-around' }}
+				>
+					<div style={{ width: '45%' }}>
+						<IonCard className="ion-text-center ion-padding ion-no-margin">
+							<span>{t('home.commisiontoday')}</span>
+							<h5 className="main-number">$ {assets.investmentBalance}</h5>
+						</IonCard>
+					</div>
+					<div style={{ width: '45%' }}>
+						<IonCard class="ion-text-center ion-padding ion-no-margin">
+							<span>{t('home.totalrevenue')}</span>
+							<h5 className="main-number">$ {assets.totalIncomeAmount}</h5>
+						</IonCard>
+					</div>
+				</IonRow>
+				<IonGrid className={`main-padding ${styles.membershipLevelSection}`}>
+					<IonRow class={`ion-align-items-center ${styles.sectionTitle}`}>
+						<div></div>
+						<span className="main-padding">{t('home.membership-level.title')}</span>
+					</IonRow>
+					<IonGrid>
+						<IonCard
+							className={`ion-padding ion-no-margin ${styles.membershipCard}`}
+							style={{ backgroundImage: `url(${levelArr[0]?.bgUrl})` }}
+						>
+							<IonRow className="ion-justify-content-between ion-align-items-start">
+								<IonCol size="9">
+									<IonRow className="ion-align-items-center">
+										<IonImg src={levelArr[0]?.iconUrl ? levelArr[0].iconUrl : '/assets/images/home/01@2x.png'} />
+										<div>
+											<h4>{t('home.membership-level.ordinary-member')}</h4>
+											<p>{t('home.membership-level.min-balance')} $ 200.00</p>
+											<p>
+												{t('home.membership-level.commission')} 0.4 | {levelArr[0]?.maxOrderNumber}
+												{t('home.membership-level.orders')}
+											</p>
+										</div>
+									</IonRow>
+								</IonCol>
+								<span>{t('home.membership-level.current-level')}</span>
+							</IonRow>
+						</IonCard>
+
+						<IonCard className={`ion-padding ion-no-margin ${styles.membershipCard}`}>
+							<IonRow className="ion-justify-content-between ion-align-items-start">
+								<IonCol size="9">
+									<IonRow className="ion-align-items-center">
+										<IonImg src="/assets/images/home/03@2x.png" />
+										<div>
+											<h4>{t('home.membership-level.gold-member')}</h4>
+											<p>{t('home.membership-level.min-balance')} $ 200.00</p>
+											<p>
+												{t('home.membership-level.commission')} 0.4 | 60 {t('home.membership-level.orders')}
+											</p>
+										</div>
+									</IonRow>
+								</IonCol>
+								<span>{t('home.membership-level.join')}</span>
+							</IonRow>
+						</IonCard>
+						<IonCard className={`ion-padding ion-no-margin ${styles.membershipCard}`}>
+							<IonRow className="ion-justify-content-between ion-align-items-start">
+								<IonCol size="9">
+									<IonRow className="ion-align-items-center">
+										<IonImg src="/assets/images/home/04@2x.png" />
+										<div>
+											<h4>{t('home.membership-level.crown-member')}</h4>
+											<p>{t('home.membership-level.min-balance')} $ 200.00</p>
+											<p>
+												{t('home.membership-level.commission')} 0.4 | 60 {t('home.membership-level.orders')}
+											</p>
+										</div>
+									</IonRow>
+								</IonCol>
+								<span>{t('home.membership-level.join')}</span>
+							</IonRow>
+						</IonCard>
+					</IonGrid>
+				</IonGrid>
+				<IonGrid className={`main-padding ${styles.membershipIncommeSection}`}>
+					<IonRow class={`ion-align-items-center ${styles.sectionTitle}`}>
+						<div></div>
+						<span className="main-padding">{t('home.membership-income.title')}</span>
+					</IonRow>
+					<IonGrid>
+						<CssRoll />
+					</IonGrid>
+				</IonGrid>
+				<IonGrid className={`ion-no-padding ion-margin-top ${styles.homeBottomBackground}`}>
+					<IonGrid className={`ion-padding-top ion-padding-bottom ${styles.homeIntroduction}`}>
+						<IonGrid className={styles.accordionBox}>
+							<IonRow class={`ion-align-items-center ${styles.sectionTitle}`}>
+								<div></div>
+								<span className="main-padding">{t('home.introduction.title')}</span>
+							</IonRow>
+							{introduceArr.length === 4 ? (
+								<div className={`${styles.imgSection_1}`}>
+									<div className={`${styles.outImg_1}`}>
+										<Introduce
+											bgUrl={introduceArr[0].bgUrl}
+											graphicTitle={introduceArr[0].graphicTitle}
+											iconUrl={introduceArr[0].iconUrl}
+										></Introduce>
+										<div style={{ marginTop: '20px' }}>
+											<Introduce
+												bgUrl={introduceArr[1].bgUrl}
+												graphicTitle={introduceArr[1].graphicTitle}
+												iconUrl={introduceArr[1].iconUrl}
+											></Introduce>
+										</div>
+									</div>
+									<div className={`${styles.outImg_2}`}>
+										<Introduce
+											bgUrl={introduceArr[2].bgUrl}
+											graphicTitle={introduceArr[2].graphicTitle}
+											iconUrl={introduceArr[2].iconUrl}
+										></Introduce>
+										<div style={{ marginTop: '20px' }}>
+											<Introduce
+												bgUrl={introduceArr[3].bgUrl}
+												graphicTitle={introduceArr[3].graphicTitle}
+												iconUrl={introduceArr[3].iconUrl}
+											></Introduce>
+										</div>
+									</div>
+								</div>
+							) : introduceArr.length === 5 ? (
+								<div className={`${styles.imgSection_2}`}>
+									<div className={`${styles.outImg_1}`}>
+										<Introduce
+											bgUrl={introduceArr[0].bgUrl}
+											graphicTitle={introduceArr[0].graphicTitle}
+											iconUrl={introduceArr[0].iconUrl}
+										></Introduce>
+										<div style={{ marginTop: '20px' }}>
+											<Introduce
+												bgUrl={introduceArr[1].bgUrl}
+												graphicTitle={introduceArr[1].graphicTitle}
+												iconUrl={introduceArr[1].iconUrl}
+											></Introduce>
+										</div>
+									</div>
+									<div className={`${styles.outImg_2}`}>
+										<Introduce_2
+											bgUrl={introduceArr[2].bgUrl}
+											graphicTitle={introduceArr[2].graphicTitle}
+											iconUrl={introduceArr[2].iconUrl}
+										></Introduce_2>
+										<div style={{ marginTop: '19px' }}>
+											<Introduce_2
+												bgUrl={introduceArr[3].bgUrl}
+												graphicTitle={introduceArr[3].graphicTitle}
+												iconUrl={introduceArr[3].iconUrl}
+											></Introduce_2>
+										</div>
+										<div style={{ marginTop: '19px' }}>
+											<Introduce_2
+												bgUrl={introduceArr[4].bgUrl}
+												graphicTitle={introduceArr[4].graphicTitle}
+												iconUrl={introduceArr[4].iconUrl}
+											></Introduce_2>
+										</div>
+									</div>
+								</div>
+							) : null}
+						</IonGrid>
+					</IonGrid>
+				</IonGrid>
+				<IonGrid className={`ion-no-padding ion-margin-top ${styles.homeBottomBackground2}`}>
+					<IonGrid className={`ion-padding-top ion-padding-bottom ${styles.homeIntroduction}`}>
+						<IonGrid className={styles.homePatners}>
+							<IonRow class={`ion-align-items-center ${styles.sectionTitle}`}>
+								<div></div>
+								<span className="main-padding">{t('home.partner')}</span>
+							</IonRow>
+							<IonRow className="ion-align-items-center">
+								<IonCol size="4">
+									<IonImg src={linksImage[0]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+								</IonCol>
+								<IonCol size="4">
+									<IonImg src={linksImage[1]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+								</IonCol>
+								<IonCol size="4">
+									<IonImg src={linksImage[2]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+								</IonCol>
+								<IonCol size="4">
+									<IonImg src={linksImage[3]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+								</IonCol>
+								<IonCol size="4">
+									<IonImg src={linksImage[4]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+								</IonCol>
+								<IonCol size="4">
+									<IonImg src={linksImage[5]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+								</IonCol>
+								<IonCol size="4">
+									<IonImg src={linksImage[6]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+								</IonCol>
+								<IonCol size="4">
+									<IonImg src={linksImage[7]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+								</IonCol>
+								<IonCol size="4">
+									<IonImg src={linksImage[8]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+								</IonCol>
+							</IonRow>
+						</IonGrid>
+					</IonGrid>
+				</IonGrid>
+			</IonContent>
+		</IonPage>
+	)
+}
+
+export default Home

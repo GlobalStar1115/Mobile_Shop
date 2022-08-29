@@ -1,0 +1,19 @@
+.slider-body {
+	width: 100vw;
+	margin-top: 20px;
+}
+.slick-slide {
+	.slider-item {
+		ion-img {
+			width: 66vw;
+			height: 33vw;
+			border-radius: 1rem;
+			overflow: hidden;
+			object-fit: unset;
+			box-shadow: 1px 1px 1px 1px rgba(20, 23, 29, 0.2);
+			img {
+				height: 200px !important;
+			}
+		}
+	}
+}

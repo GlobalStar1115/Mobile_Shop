@@ -1,0 +1,240 @@
+@font-face {
+	font-family: 'main_font';
+	src: url(./fonts/text/PingFangSCMedium.otf);
+}
+
+@font-face {
+	font-family: 'main_number';
+	src: url(./fonts/number/canalboldromain.otf);
+}
+
+@font-face {
+	font-family: 'main_title';
+	src: url(./fonts/title/Krungthep.ttf);
+}
+
+* {
+	font-family: 'main_font', 'Arial', 'Helvetica', 'sans-serif';
+	--border-width: 0 !important;
+}
+
+/* Ionic Variables and Theming. For more info, please see:
+http://ionicframework.com/docs/theming/ */
+
+/** Ionic CSS Variables **/
+
+:root {
+	--ion-background-color: white;
+	--ion-text-color: black;
+	--ion-tab-bar-background: black;
+	--ion-toolbar-background: black;
+	--ion-toolbar-color: white;
+}
+
+.custom-button {
+	--border-radius: 30px;
+	--background: #0099fe;
+	--background-activated: #77a2d8;
+	--background-focused: #77a2d8;
+	--padding-bottom: 1.5rem;
+	--padding-top: 1.5rem;
+	--color: white;
+	font-size: 1.2rem;
+}
+
+.ion-page {
+	max-width: 560px;
+	margin: 0 auto;
+}
+
+ion-content {
+	--background: transparent;
+}
+
+ion-toolbar {
+	--background: transparent;
+}
+
+ion-footer {
+	--background: transparent;
+}
+
+.custom-back {
+	font-size: 0.8rem;
+	background-color: transparent !important;
+	color: black;
+}
+
+ion-tab-button {
+	background-color: white;
+	position: relative;
+	--ripple-color: transparent;
+}
+
+ion-tab-bar {
+	height: 70px;
+	position: relative;
+	border: none;
+	box-shadow: 0px -1px 10px rgb(0 0 0 / 15%) !important;
+}
+
+ion-tab-bar::after {
+	content: '';
+	width: 150px;
+	/* border: 2px solid black; */
+	border-radius: 10px;
+	position: absolute;
+	bottom: 10px;
+	z-index: 1000000;
+}
+
+.main-title {
+	font-family: 'main_title';
+}
+
+.main-number {
+	font-family: 'main_number';
+}
+
+.main-padding {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.footer-md::before {
+	background-image: none;
+}
+
+.header-md::after {
+	background-image: none;
+}
+
+.tab-selected {
+	color: #49c1fb;
+}
+
+.custom-link {
+	color: rgb(236, 149, 35);
+}
+
+.text-white {
+	color: white;
+}
+
+.main-radius {
+	border-radius: 1rem;
+}
+
+q .d-flex {
+	display: flex;
+}
+
+ion-title {
+	color: black;
+}
+
+ion-tab-bar ion-img.home-icon {
+	width: 75px;
+	padding-bottom: 40px;
+}
+
+ion-tab-bar {
+	contain: none;
+}
+
+ion-tab-button::part(native) {
+	overflow: visible;
+}
+
+.slick-slide {
+	transform: scale(0.75);
+	transition: all 0.25s ease-out;
+}
+
+.slick-slide.slick-active.slick-center.slick-current {
+	transform: scale(1.1);
+}
+
+.slick-dots {
+	display: none !important;
+	bottom: 0px !important;
+}
+
+.slick-slider {
+	padding-bottom: 30px;
+}
+
+.slick-dots li button:before {
+	font-size: 10px !important;
+	color: #e6eaec;
+}
+
+.slick-dots li.slick-active button:before {
+	content: '';
+	width: 15px;
+	background: black;
+	height: 8px;
+	top: 5px;
+	border-radius: 10px;
+}
+
+.slick-list {
+	overflow: visible !important;
+}
+
+.alert-title {
+	color: #000 !important;
+}
+
+.alert-message {
+	color: #000 !important;
+}
+
+.d-flex.ion-justify-content-between.ion-align-items-center {
+	font-size: 14px;
+}
+
+.PhoneInput {
+	padding: 0 15px;
+	height: 51px;
+	background: #f1f2f2;
+	border-radius: 30px;
+	display: flex !important;
+	color: #000;
+}
+
+.PhoneInputCountry {
+	padding-left: 40px;
+}
+
+.PhoneInputCountry::before {
+	content: '';
+	background-image: url('../components/assets/2@2x.png');
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	left: 30px;
+	top: 25px;
+	transform: translate(-28px, -50%);
+}
+
+.PhoneInputCountryIcon {
+	width: 30px !important;
+	height: 20px !important;
+}
+
+.PhoneInputInput {
+	border: none;
+	background: #f1f2f2;
+}
+
+.PhoneInputInput:focus-visible {
+	border: none !important;
+}
+
+.item-inner {
+	/* border: none !important; */
+}

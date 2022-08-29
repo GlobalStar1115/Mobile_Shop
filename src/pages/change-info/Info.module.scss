@@ -1,0 +1,96 @@
+.withdrawPage {
+	background: white;
+
+	ion-header {
+		.custom-back {
+			color: black !important;
+		}
+
+		ion-toolbar {
+			--padding-start: 1rem;
+			--padding-end: 1rem;
+
+			h4 {
+				color: black;
+			}
+		}
+		margin-bottom: 20px;
+	}
+
+	ion-content {
+		h2 {
+			margin-top: 1rem;
+		}
+
+		ion-input {
+			margin-bottom: -1rem !important;
+		}
+	}
+	.out-avatar {
+		margin-top: 20px;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #f6f8f9;
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		.avatar {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			// z-index: 10;
+		}
+		ion-img {
+			border-radius: 50%;
+			overflow: hidden;
+			width: 80px;
+			height: 80px;
+			object-fit: cover !important;
+		}
+		input {
+			// display: none;
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			padding-top: 200px;
+			z-index: 9;
+		}
+	}
+
+	.list1 {
+		margin: 30px 20px 20px 20px;
+		padding: 20px;
+		border-radius: 10px;
+		background-color: #f6f8f9;
+		font-size: 14px;
+		div {
+			width: 110px;
+			color: #000000;
+		}
+		input {
+			color: #989898;
+		}
+	}
+
+	.list2 {
+		margin: 0px 20px 20px 20px;
+		padding: 20px;
+		border-radius: 10px;
+		background-color: #f6f8f9;
+		font-size: 14px;
+		div {
+			width: 110px;
+			color: #000000;
+		}
+		input {
+			color: #0078ff;
+		}
+	}
+
+	ion-button {
+		font-size: 20px;
+		width: 80vw;
+	}
+}

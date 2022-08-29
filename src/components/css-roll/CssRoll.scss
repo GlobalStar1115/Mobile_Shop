@@ -1,0 +1,67 @@
+@keyframes rowup {
+	0% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		-webkit-transform: translate3d(0, -220px, 0);
+		transform: translate3d(0, -220px, 0);
+		display: none;
+	}
+}
+.list {
+	width: 340px;
+	margin: 20px auto;
+	position: relative;
+	height: 240px;
+	overflow: hidden;
+}
+
+.list .rowup {
+	-webkit-animation: 10s rowup linear infinite normal;
+	animation: 10s rowup linear infinite normal;
+	position: relative;
+	.item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 10px;
+		border: none !important;
+		background-color: #e7eaed;
+		border-radius: 10px;
+		height: 35px;
+		.itemLeft {
+			display: flex;
+			align-items: center;
+			img {
+				width: 22px;
+				height: 22px;
+				border-radius: 50%;
+				// border: 1px solid grey;
+				margin: 0 10px 0 20px;
+			}
+			span {
+				font-size: 13px;
+				font-family: PingFang SC;
+				font-weight: 600;
+				color: #353535;
+			}
+		}
+		.itemRight {
+			width: 140px;
+			display: flex;
+			align-items: center;
+			span:first-child {
+				margin-right: 5px;
+				font-size: 12px;
+				font-family: PingFang SC;
+			}
+			.amount {
+				transform: translateY(2px);
+				font-size: 12px;
+				font-family: 'main_number';
+				color: rgba(0, 153, 254, 1);
+			}
+		}
+	}
+}

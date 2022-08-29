@@ -1,0 +1,17 @@
+.container {
+	width: 92%;
+	height: 35px;
+	line-height: 35px;
+	margin: 0 auto;
+	padding: 0 10px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	background: #5d6b77;
+	color: white;
+}
+
+.slogan {
+	position: relative;
+	display: inline-block;
+}

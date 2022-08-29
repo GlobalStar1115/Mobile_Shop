@@ -1,0 +1,93 @@
+.signupPage {
+	background: url(./siginup1.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	ion-header {
+		ion-toolbar {
+			--padding-start: 1rem;
+			--padding-end: 1rem;
+
+			ion-button {
+				font-size: 20px;
+
+				ion-icon {
+					color: #0099fe;
+				}
+			}
+		}
+	}
+
+	ion-content {
+		ion-img {
+			width: 100px;
+			height: 100px;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		p {
+			font-size: 1.2rem;
+			color: black;
+		}
+	}
+	.PhoneInput {
+		display: flex;
+	}
+
+	ion-footer {
+		--background: transparent;
+
+		.footerLine {
+			width: 40%;
+			border: 3px solid black;
+			border-radius: 10px;
+		}
+	}
+}
+
+.PhoneInput {
+	display: flex;
+	position: relative;
+	margin-bottom: 16px;
+	button {
+		transform: translateX(-14px);
+		background-image: url('./clear.png') !important;
+		background-size: 20px 20px !important;
+	}
+	&:before {
+		content: '';
+		background-image: url('../../components/assets/2@2x.png');
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: 20px 25px;
+		display: inline-block;
+		width: 20px;
+		height: 25px;
+		left: 30px;
+		top: 25px;
+		transform: translate(-50%, -50%);
+	}
+	input::placeholder {
+		font-size: 14px;
+	}
+	input {
+		margin-left: 10px;
+	}
+	.PhoneInput_ {
+		transform: translateX(40px);
+		width: 40px;
+		background: #f1f2f2;
+		border: none;
+		margin-left: 20px;
+	}
+	.native-input {
+		transform: translateX(-40px) !important;
+	}
+	img {
+		width: 30px;
+		height: 20px;
+		transform: translateX(50px);
+	}
+}
