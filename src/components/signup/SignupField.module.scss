@@ -33,9 +33,11 @@
 				top: 25px;
 				transform: translate(-50%, -50%);
 			}
+
 			input::placeholder {
 				font-size: 14px;
 			}
+
 			input {
 				margin-left: 20px;
 			}
@@ -57,9 +59,11 @@
 				top: 25px;
 				transform: translate(-50%, -50%);
 			}
+
 			input::placeholder {
 				font-size: 14px;
 			}
+
 			input {
 				margin-left: 20px;
 			}
@@ -81,9 +85,11 @@
 				top: 25px;
 				transform: translate(-50%, -50%);
 			}
+
 			input::placeholder {
 				font-size: 14px;
 			}
+
 			input {
 				margin-left: 20px;
 			}
@@ -105,9 +111,11 @@
 				top: 25px;
 				transform: translate(-50%, -50%);
 			}
+
 			input::placeholder {
 				font-size: 14px;
 			}
+
 			input {
 				margin-left: 20px;
 			}
@@ -129,9 +137,11 @@
 				top: 25px;
 				transform: translate(-50%, -50%);
 			}
+
 			input::placeholder {
 				font-size: 14px;
 			}
+
 			input {
 				margin-left: 20px;
 			}
@@ -140,12 +150,12 @@
 }
 
 .customInput {
-	--background: #f1f2f2;
+	--background: #424f5c;
 	--padding-bottom: 1rem;
 	--padding-top: 1rem;
 	--padding-start: 2rem;
 	--padding-end: 1rem;
-	--color: black;
+	--color: white;
 	border-radius: 30px;
 	margin-top: 0.25rem;
 	transition: all 0.2s linear;

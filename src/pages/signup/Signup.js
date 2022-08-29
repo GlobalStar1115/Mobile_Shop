@@ -32,6 +32,7 @@ import { RegisterApi, BaseImageApi, AreaCodeInfoApi } from '../../request/api'
 
 import { hex_md5 } from '../../data/md5'
 import styles_ from '../../components/signup/SignupField.module.scss'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const Signup = () => {
 	const { t, i18n } = useTranslation('lang')
@@ -148,7 +149,7 @@ const Signup = () => {
 									value={codeData.areaCode}
 									disabled
 									className={styles.PhoneInput_}
-									style={{ width: '40px', background: '#f1f2f2', border: 'none' }}
+									style={{ width: '40px', background: 'transparent', border: 'none' }}
 								></input>
 							</IonInput>
 							<SignupField field={fields[1]} errors={errors} />
@@ -175,6 +176,7 @@ const Signup = () => {
 					</IonRow>
 				</IonGrid>
 			</IonContent>
+			<BottomLine />
 
 			<IonToast
 				isOpen={showToast}

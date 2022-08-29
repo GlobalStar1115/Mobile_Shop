@@ -1,8 +1,7 @@
 .container {
-	width: 92%;
 	height: 35px;
 	line-height: 35px;
-	margin: 0 auto;
+	margin: 0 10px 10px;
 	padding: 0 10px;
 	position: relative;
 	overflow: hidden;

@@ -16,7 +16,7 @@ body {
 			font-size: 20px;
 
 			ion-icon {
-				color: #0099fe;
+				color: white;
 			}
 		}
 	}
@@ -32,13 +32,13 @@ body {
 		.goToSignup {
 			p {
 				font-size: 1.2rem;
-				color: black;
+				color: white;
 			}
 		}
 
 		ion-button {
 			--border-radius: 30px;
-			--background: #47b2f8;
+			--background: #587fb3de;
 			--background-activated: #77a2d8;
 			--background-focused: #77a2d8;
 			--padding-bottom: 1.5rem;
@@ -81,7 +81,7 @@ body {
 				margin-top: -3px;
 			}
 
-			.loginFormGroup input:checked + label:after {
+			.loginFormGroup input:checked+label:after {
 				content: '';
 				display: block;
 				position: absolute;
@@ -95,13 +95,26 @@ body {
 			}
 		}
 	}
-	.service {
+
+	.service1 {
 		position: absolute;
 		bottom: 220px;
-		left: 330px;
+		left: 300px;
+
 		img {
-			width: 40px;
-			height: 40px;
+			width: 50px;
+			height: 50px;
+		}
+	}
+
+	.service2 {
+		position: absolute;
+		bottom: 160px;
+		left: 300px;
+
+		img {
+			width: 50px;
+			height: 50px;
 		}
 	}
 }
@@ -110,11 +123,13 @@ body {
 	display: flex;
 	position: relative;
 	margin-bottom: 16px;
+
 	button {
 		transform: translateX(-14px);
 		background-image: url('./clear.png') !important;
 		background-size: 20px 20px !important;
 	}
+
 	&:before {
 		content: '';
 		background-image: url('../../components/assets/2@2x.png');
@@ -128,12 +143,15 @@ body {
 		top: 25px;
 		transform: translate(-50%, -50%);
 	}
+
 	input::placeholder {
 		font-size: 14px;
 	}
+
 	input {
 		margin-left: 10px;
 	}
+
 	.PhoneInput_ {
 		position: relative;
 		transform: translateX(40px);
@@ -142,9 +160,11 @@ body {
 		border: none;
 		margin-left: 20px;
 	}
+
 	.native-input {
 		transform: translateX(-40px) !important;
 	}
+
 	img {
 		width: 30px;
 		height: 20px;

@@ -141,7 +141,7 @@ const Home = () => {
 									router.push('/app/support')
 								}}
 							>
-								<IonImg src="/assets/images/home/11.png" />
+								<IonImg src="/assets/images/home/10@2x.png" />
 								<span>{t('home.coincharge')}</span>
 							</div>
 							<div
@@ -149,11 +149,11 @@ const Home = () => {
 									router.push('/withdraw')
 								}}
 							>
-								<IonImg src="/assets/images/home/12.png" />
+								<IonImg src="/assets/images/home/11@2x.png" />
 								<span>{t('home.cashwithdraw')}</span>
 							</div>
 							<div>
-								<IonImg src="/assets/images/home/13.png" />
+								<IonImg src="/assets/images/home/13@2x.png" />
 								<span>{t('home.promotion')}</span>
 							</div>
 							<div
@@ -161,7 +161,7 @@ const Home = () => {
 									router.push('/invite')
 								}}
 							>
-								<IonImg src="/assets/images/home/14.png" />
+								<IonImg src="/assets/images/home/12@2x.png" />
 								<span>{t('home.invite')}</span>
 							</div>
 						</IonRow>

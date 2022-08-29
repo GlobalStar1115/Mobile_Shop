@@ -14,7 +14,7 @@
 				font-size: 1.5rem;
 				border-radius: 50%;
 				padding: 5px;
-				background: #0099fe;
+				background: #77a2d8;
 				font-weight: bold;
 				margin-top: 5px;
 			}
@@ -82,7 +82,7 @@
 
 				h2 {
 					margin: 10px 0;
-					color: #0099fe;
+					color: #77a2d8;
 				}
 
 				ion-card {
@@ -96,7 +96,7 @@
 
 					.recordStatus {
 						border-radius: 20px;
-						background: #0099fe;
+						background: #77a2d8;
 						padding: 2px 10px;
 						color: white;
 					}
@@ -114,8 +114,8 @@
 				}
 			}
 
-			.tabSwitch:checked + .tabLabel {
-				background: #0099fe;
+			.tabSwitch:checked+.tabLabel {
+				background: #77a2d8;
 				color: white;
 				font-weight: bold;
 				border-bottom: 0;
@@ -124,7 +124,7 @@
 				top: -0.0625rem;
 			}
 
-			.tabSwitch:checked + label + .tabContent {
+			.tabSwitch:checked+label+.tabContent {
 				z-index: 2;
 				opacity: 1;
 				transition: all 0.35s;

@@ -21,16 +21,20 @@
 			content: 'time';
 			line-height: 30px;
 		}
+
 		.tabBox2::before {
 			content: 'level';
 			line-height: 30px;
 		}
+
 		.tabBox2 {
 			margin-bottom: 20px;
 		}
+
 		.tabBox1,
 		.tabBox2 {
 			height: 30px;
+
 			span {
 				border-radius: 12px;
 				background: #f1f2f2;
@@ -44,19 +48,19 @@
 				text-align: center;
 				// &:active {
 				// 	color: white;
-				// 	background: #0099fe;
+				// 	background: #77a2d8;
 				// }
 
 				// &:hover,
 				// &:active,
 				// &:focus-visible {
-				// 	background-color: #0099fe;
+				// 	background-color: #77a2d8;
 				// 	color: white;
 				// }
 			}
 
 			.active {
-				background-color: #0099fe;
+				background-color: #77a2d8;
 				color: white;
 			}
 		}

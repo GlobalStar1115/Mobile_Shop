@@ -32,6 +32,7 @@ import { LoginApi, BaseImageApi, AreaCodeInfoApi } from '../../request/api'
 
 import { hex_md5 } from '../../data/md5'
 import styles_ from '../../components/signup/SignupField.module.scss'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const Login = () => {
 	const { t, i18n } = useTranslation('lang')
@@ -149,7 +150,7 @@ const Login = () => {
 									value={codeData.areaCode}
 									disabled
 									className={styles.PhoneInput_}
-									style={{ width: '36px', background: '#f1f2f2', border: 'none' }}
+									style={{ width: '36px', background: 'transparent', border: 'none' }}
 								></input>
 							</IonInput>
 							<LoginField className={styles.loginCustomInput} field={fields[0]} errors={errors} />
@@ -171,10 +172,13 @@ const Login = () => {
 					</IonRow>
 				</IonGrid>
 			</IonContent>
-			<IonCol className={styles.service} onClick={() => router.push('/app/support')}>
-				<img src="assets/images/service.png" alt="" />
+			<IonCol className={styles.service1} onClick={() => router.push('/app/support')}>
+				<img src="assets/images/service1.png" alt="" />
 			</IonCol>
-
+			<IonCol className={styles.service2} onClick={() => router.push('/app/support')}>
+				<img src="assets/images/service2.png" alt="" />
+			</IonCol>
+			<BottomLine />
 			<IonToast
 				isOpen={showToast}
 				onDidDismiss={() => setShowToast(false)}

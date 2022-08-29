@@ -12,7 +12,7 @@
 				background-position: center;
 
 				h4 {
-					color: black;
+					color: white;
 				}
 
 				.brandCard {
@@ -35,7 +35,7 @@
 
 					ion-img {
 						border-radius: 50%;
-						border: 2px solid #0099fe;
+						border: 2px solid #49c1fb;
 						width: 50px;
 						height: 50px;
 						background: white;
@@ -58,12 +58,12 @@
 							height: 50px;
 							border-radius: 50%;
 							padding: 10px;
-							background: #0099fe;
+							background: #53616d;
 						}
 
 						span {
 							margin-top: 5px;
-							color: black;
+							color: white;
 						}
 					}
 				}
@@ -72,16 +72,16 @@
 
 		.homeCardGroup {
 			ion-card {
-				background: #e6eaec;
+				background: #3d4a56;
 				border-radius: 1rem;
 				box-shadow: none;
 
 				span {
-					color: black;
+					color: #49c1fb;
 				}
 
 				h5 {
-					color: #0099fe;
+					color: white;
 					margin-bottom: 0;
 					margin-top: 10px;
 				}
@@ -94,12 +94,12 @@
 
 				div {
 					height: 12px;
-					border-left: 2px solid #0099fe;
+					border-left: 2px solid #49c1fb;
 					border-radius: 1rem;
 				}
 
 				span {
-					color: #0099fe;
+					color: #49c1fb;
 					font-size: 1.2rem;
 				}
 			}
@@ -200,12 +200,12 @@
 
 				div {
 					height: 12px;
-					border-left: 2px solid #0099fe;
+					border-left: 2px solid #49c1fb;
 					border-radius: 1rem;
 				}
 
 				span {
-					color: #0099fe;
+					color: #49c1fb;
 					font-size: 1.2rem;
 				}
 			}
@@ -230,7 +230,7 @@
 
 				h6 {
 					margin: 0;
-					color: #0099fe;
+					color: #49c1fb;
 				}
 
 				.incomeAmount {
@@ -246,21 +246,19 @@
 
 		.homeBottomBackground,
 		.homeBottomBackground2 {
-			background: #f1f2f2;
-			border-top-left-radius: 30px;
-			border-top-right-radius: 30px;
+			background: #303c48;
 
 			.sectionTitle {
 				padding-bottom: 16px;
 
 				div {
 					height: 12px;
-					border-left: 2px solid #0099fe;
+					border-left: 2px solid #49c1fb;
 					border-radius: 1rem;
 				}
 
 				span {
-					color: #0099fe;
+					color: #49c1fb;
 					font-size: 1.2rem;
 				}
 			}
@@ -483,8 +481,7 @@
 			.homePatners {
 				padding: 0 1rem;
 				margin-top: 10px;
-				background-color: #f1f2f2;
-				border-radius: 20px 20px 0 0;
+				background-color: #303c48;
 
 				ion-img {
 					height: auto;

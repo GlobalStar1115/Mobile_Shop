@@ -33,6 +33,7 @@
 				top: 25px;
 				transform: translate(-50%, -50%);
 			}
+
 			input::placeholder {
 				font-size: 14px;
 			}
@@ -54,6 +55,7 @@
 				top: 25px;
 				transform: translate(-50%, -50%);
 			}
+
 			input::placeholder {
 				font-size: 14px;
 			}
@@ -62,12 +64,12 @@
 }
 
 .customInput {
-	--background: #f5f5f5;
+	--background: #424f5cb4;
 	--padding-bottom: 1rem;
 	--padding-top: 1rem;
 	--padding-start: 3.5rem;
 	--padding-end: 1rem;
-	--color: black;
+	--color: white;
 	border-radius: 30px;
 	margin-top: 0.25rem;
 	transition: all 0.2s linear;

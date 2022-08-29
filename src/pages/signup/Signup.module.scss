@@ -1,5 +1,5 @@
 .signupPage {
-	background: url(./siginup1.png);
+	background: url(./siginup.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -13,7 +13,7 @@
 				font-size: 20px;
 
 				ion-icon {
-					color: #0099fe;
+					color: white;
 				}
 			}
 		}
@@ -29,9 +29,10 @@
 
 		p {
 			font-size: 1.2rem;
-			color: black;
+			color: white;
 		}
 	}
+
 	.PhoneInput {
 		display: flex;
 	}
@@ -51,11 +52,13 @@
 	display: flex;
 	position: relative;
 	margin-bottom: 16px;
+
 	button {
 		transform: translateX(-14px);
 		background-image: url('./clear.png') !important;
 		background-size: 20px 20px !important;
 	}
+
 	&:before {
 		content: '';
 		background-image: url('../../components/assets/2@2x.png');
@@ -69,12 +72,15 @@
 		top: 25px;
 		transform: translate(-50%, -50%);
 	}
+
 	input::placeholder {
 		font-size: 14px;
 	}
+
 	input {
 		margin-left: 10px;
 	}
+
 	.PhoneInput_ {
 		transform: translateX(40px);
 		width: 40px;
@@ -82,9 +88,11 @@
 		border: none;
 		margin-left: 20px;
 	}
+
 	.native-input {
 		transform: translateX(-40px) !important;
 	}
+
 	img {
 		width: 30px;
 		height: 20px;
