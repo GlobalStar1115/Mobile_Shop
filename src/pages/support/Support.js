@@ -22,9 +22,8 @@ import { ServiceApi } from '../../request/api'
 const Support = () => {
 	const { t, i18n } = useTranslation('lang')
 	const current = new Date()
-	const date = `${current.getFullYear()}-${
-		current.getMonth() + 1
-	}-${current.getDate()} ${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`
+	const date = `${current.getFullYear()}-${current.getMonth() + 1
+		}-${current.getDate()} ${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`
 
 	const [serviceList, setServiceList] = useState([])
 
@@ -68,7 +67,7 @@ const Support = () => {
 			</IonHeader>
 			<IonContent fullscreen className="ion-padding">
 				<IonGrid className="ion-no-padding">
-					<p>{t('support.tip')}</p>
+					<p className='text-white'>{t('support.tip')}</p>
 					<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
 						{serviceList.map((item, index) => {
 							return (

@@ -1,11 +1,11 @@
 .accountPage {
-	background: #f6f8f9;
+	background: #2a353e;
 
 	ion-header {
-		background: #f6f8f9;
+		background: #2a353e;
 
 		h4 {
-			color: black;
+			color: white;
 		}
 
 		ion-toolbar {
@@ -14,7 +14,7 @@
 				font-size: 1.5rem;
 				border-radius: 50%;
 				padding: 5px;
-				background: #77a2d8;
+				background: #424a53;
 				font-weight: bold;
 				margin-top: 5px;
 			}
@@ -23,7 +23,7 @@
 
 	ion-content {
 		ion-card {
-			background: url(./2.png);
+			background: url(./1.png);
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center;
@@ -54,7 +54,7 @@
 		}
 
 		.accountItemBox {
-			background-color: white;
+			background-color: #36424f;
 
 			.accountLinkTab {
 				padding: 0.9rem;
@@ -70,7 +70,7 @@
 						}
 
 						span {
-							color: black;
+							color: white;
 							font-size: 16px !important;
 						}
 					}

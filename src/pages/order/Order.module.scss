@@ -1,11 +1,11 @@
 .orderPage {
-	background: white;
+	background: #2a353e;
 
 	ion-header {
-		background: white;
+		background: #2a353e;
 
 		h4 {
-			color: black;
+			color: white;
 		}
 
 		ion-toolbar {
@@ -14,7 +14,7 @@
 				font-size: 1.5rem;
 				border-radius: 50%;
 				padding: 5px;
-				background: #77a2d8;
+				background: #424a53;
 				font-weight: bold;
 				margin-top: 5px;
 			}
@@ -70,7 +70,7 @@
 			}
 
 			ion-img[alt='tooltip'] {
-				background: white;
+				background: #424a53;
 				padding: 5px;
 				border-radius: 50%;
 				width: 30px;
@@ -110,15 +110,15 @@
 		}
 
 		.orderList {
-			background: #f3f5f6;
+			background: #3c4956;
 			border-bottom-left-radius: 1rem;
 			border-bottom-right-radius: 1rem;
 			margin: 0 20px;
-			color: black;
+			color: white;
 
 			div {
 				padding: 10px;
-				border-bottom: 1px solid #e9e9e9;
+				border-bottom: 1px solid #adadadad;
 
 				&:last-child {
 					border: none;

@@ -68,7 +68,7 @@ const Account = () => {
 							/>
 							<div>
 								<h5 className="text-white">{member.memberName}</h5>
-								<div className="d-flex ion-align-items-center" style={{ display: 'flex' }}>
+								<div className="d-flex ion-align-items-center" style={{ display: 'flex', color: '#a1a8ae' }}>
 									<div>{t('account.invite-code')} &nbsp;</div>
 									<div className="main-number" style={{ transform: 'translateY(2px)' }}>
 										{member.inviteCode}
@@ -81,24 +81,28 @@ const Account = () => {
 						</div>
 						<IonImg src="/assets/images/personal/badge.png" className={styles.usreBadge} alt="badge" />
 					</IonRow>
-					<IonRow className="ion-justify-content-between ion-margin-top">
-						<div
-							className="d-flex ion-align-items-center ion-justify-content-end"
-							style={{ display: 'flex', flexDirection: 'column', paddingLeft: '30px' }}
-						>
-							<span className={`main-number ${styles.enableAmount}`} style={{ color: 'blue' }}>
-								$ {assets.availableBalance}
-							</span>
-							<span className="text-white">{t('account.enable-amount')}</span>
+					<IonRow className='ion-justify-content-between ion-margin-top ion-padding-top'>
+						<div>
+							<span>{t('record.account-amount')}:</span>
+							<h3 className="main-number ion-no-margin">$ 1234.123</h3>
 						</div>
-						<div
-							className="d-flex ion-align-items-center ion-justify-content-end"
-							style={{ display: 'flex', flexDirection: 'column', paddingRight: '30px' }}
-						>
-							<span className={`main-number ${styles.frozenAmount}`} style={{ color: 'red' }}>
-								$ {assets.lockBalance}
-							</span>
-							<span className="text-white">{t('account.frozen-amount')}</span>
+						<div>
+							<div
+								className="d-flex ion-align-items-center ion-justify-content-end"
+							>
+								<span className="text-white ion-margin-end">{t('account.enable-amount')}:</span>
+								<span className={`main-number ${styles.enableAmount}`} style={{ color: '#49c1fb' }}>
+									$ {assets.availableBalance}
+								</span>
+							</div>
+							<div
+								className="d-flex ion-align-items-center ion-justify-content-end"
+							>
+								<span className="text-white ion-margin-end">{t('account.frozen-amount')}:</span>
+								<span className={`main-number ${styles.frozenAmount}`} style={{ color: '#ff6565' }}>
+									$ {assets.lockBalance}
+								</span>
+							</div>
 						</div>
 					</IonRow>
 				</IonCard>
@@ -107,7 +111,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/提现金额@2x.png" />
+									<IonImg src="/assets/images/personal/3@2x.png" />
 									<span>{t('account.withdraw-amount')}</span>
 								</IonRow>
 							</IonCol>
@@ -120,7 +124,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/团队报表@2x.png" />
+									<IonImg src="/assets/images/personal/4@2x.png" />
 									<span>{t('account.t-report')}</span>
 								</IonRow>
 							</IonCol>
@@ -133,7 +137,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/交易账户@2x.png" />
+									<IonImg src="/assets/images/personal/13@2x.png" />
 									<span>{t('account.my-account')}</span>
 								</IonRow>
 							</IonCol>
@@ -146,7 +150,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/充值记录@2x.png" />
+									<IonImg src="/assets/images/personal/12@2x.png" />
 									<span>{t('account.recharge-record')}</span>
 								</IonRow>
 							</IonCol>
@@ -159,7 +163,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/提现记录@2x.png" />
+									<IonImg src="/assets/images/personal/5@2x.png" />
 									<span>{t('account.withdraw-record')}</span>
 								</IonRow>
 							</IonCol>
@@ -172,7 +176,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/账户明细@2x.png" />
+									<IonImg src="/assets/images/personal/11@2x.png" />
 									<span>{t('account.acc-details')}</span>
 								</IonRow>
 							</IonCol>
@@ -211,7 +215,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/绑定银行卡@2x.png" />
+									<IonImg src="/assets/images/personal/6@2x.png" />
 									<span>{t('account.bind-bank')}</span>
 								</IonRow>
 							</IonCol>
@@ -224,7 +228,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/修改资料@2x.png" />
+									<IonImg src="/assets/images/personal/7@2x.png" />
 									<span>{t('account.change-info')}</span>
 								</IonRow>
 							</IonCol>
@@ -250,7 +254,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/修改密码@2x.png" />
+									<IonImg src="/assets/images/personal/8@2x.png" />
 									<span>{t('account.password')}</span>
 								</IonRow>
 							</IonCol>
@@ -263,7 +267,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/选择语言@2x.png" />
+									<IonImg src="/assets/images/personal/9@2x.png" />
 									<span>{t('account.language')}</span>
 								</IonRow>
 							</IonCol>
@@ -296,7 +300,7 @@ const Account = () => {
 					>
 						<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 							<IonRow>
-								<IonImg src="/assets/images/personal/退出@2x.png" />
+								<IonImg src="/assets/images/personal/10@2x.png" />
 								<span>{t('account.logout')}</span>
 							</IonRow>
 						</IonCol>
