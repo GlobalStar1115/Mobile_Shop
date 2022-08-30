@@ -200,7 +200,7 @@ const TeamReport = () => {
 						<IonDatetime value={end} displayFormat="YYYY-MM-DD"></IonDatetime>
 					</IonRow>
 					<IonCard className="ion-padding main-radius ion-no-margin">
-						<div className="d-flex ion-justify-content-between ion-margin-bottom">
+						<div className="d-flex ion-justify-content-between ion-margin-bottom text-white">
 							<span>{t('team-report.all-data')}</span>
 							<span className="main-number">$ 12345.123</span>
 						</div>
@@ -242,7 +242,7 @@ const TeamReport = () => {
 									</div>
 								)
 							})}
-						{list.memberList?.length == 0 ? <h4 style={{ textAlign: 'center' }}>暂无数据</h4> : null}
+						{list.memberList?.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>暂无数据</h4> : null}
 					</IonGrid>
 				</IonGrid>
 			</IonContent>

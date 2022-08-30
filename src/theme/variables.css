@@ -126,7 +126,7 @@ ion-tab-bar::after {
 	border-radius: 1rem;
 }
 
-q .d-flex {
+.d-flex {
 	display: flex;
 }
 

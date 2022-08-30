@@ -1,5 +1,5 @@
 .teamReportPage {
-	background: white;
+	background: #2b363f;
 
 	ion-header {
 		ion-toolbar {
@@ -7,7 +7,7 @@
 			--padding-end: 1rem;
 
 			h4 {
-				color: black;
+				color: white;
 			}
 
 			ion-button {
@@ -19,12 +19,16 @@
 	ion-content {
 		.tabBox1::before {
 			content: 'time';
+			color: white;
+			margin-right: 5px;
 			line-height: 30px;
 		}
 
 		.tabBox2::before {
 			content: 'level';
 			line-height: 30px;
+			color: white;
+			margin-right: 5px;
 		}
 
 		.tabBox2 {
@@ -37,8 +41,8 @@
 
 			span {
 				border-radius: 12px;
-				background: #f1f2f2;
-				color: black;
+				background: #53616d;
+				color: #cacaca;
 				padding: 5px 12px;
 				margin: 0 2px;
 				margin-right: 10px;
@@ -66,13 +70,13 @@
 		}
 
 		.diplayRange {
-			background: #f1f2f2;
+			background: #414d59;
 			padding: 0px 1rem;
-			color: black;
+			color: white;
 
 			p {
 				width: 10px;
-				border: 1px solid black;
+				border: 1px solid white;
 			}
 
 			ion-datetime {
@@ -81,11 +85,11 @@
 		}
 
 		ion-card {
-			background: #f1f2f2;
-			color: black;
+			background: #414d59;
 
 			p {
 				margin: 5px 0 0 0;
+				color: #b1b5b8;
 			}
 		}
 
@@ -93,7 +97,7 @@
 			margin-top: 1rem;
 			border-radius: 1rem;
 			overflow: hidden;
-			background: #f1f2f2;
+			background: #414d59;
 
 			.dataItem {
 				padding: 5px 0;
@@ -116,12 +120,12 @@
 
 					p {
 						margin: 0;
-						color: black;
+						color: #b1b5b8;
 						font-size: 12px;
 					}
 
 					.userName {
-						color: black !important;
+						color: white !important;
 					}
 				}
 			}

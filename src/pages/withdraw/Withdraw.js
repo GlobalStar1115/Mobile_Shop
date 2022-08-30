@@ -38,6 +38,7 @@ import { useTranslation } from 'react-i18next'
 import { AccountListApi, WithdrawtApi, InfoApi } from '../../request/api'
 
 import { hex_md5 } from '../../data/md5'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const Withdraw = () => {
 	const { t, i18n } = useTranslation('lang')
@@ -177,6 +178,7 @@ const Withdraw = () => {
 					</IonRow>
 				</IonGrid>
 			</IonContent>
+			<BottomLine />
 		</IonPage>
 	)
 }

@@ -1,5 +1,5 @@
 .withdrawPage {
-	background: white;
+	background: #2a353e;
 
 	ion-header {
 		.custom-back {
@@ -11,7 +11,7 @@
 			--padding-end: 1rem;
 
 			h4 {
-				color: black;
+				color: white;
 			}
 
 			ion-button {
@@ -22,39 +22,49 @@
 
 	ion-content {
 		ion-card {
-			// background: url(./2.png);
+			background: url(./1.png);
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center;
-			color: black;
+			color: #909ca5;
 		}
 
 		h2 {
-			margin-top: 1rem;
+			margin-top: 10px;
+			color: white !important;
 		}
 
 		ion-input {
 			margin-bottom: -1rem !important;
+			background-color: #424f5c;
+			color: white;
 		}
 
 		ion-label {
-			color: black;
+			color: white;
 			display: block;
 			// margin-bottom: 20px;
 		}
 
 		p {
 			margin: 5px 0;
+			color: whit;
+		}
+
+		span {
+			color: white !important;
 		}
 
 		.selectItem {
 			margin-top: 30px;
 			height: 50px;
-			background-color: #f1f2f2;
+			background-color: #424f5c;
 			border-radius: 30vw;
 			border: none;
+			color: rgb(158, 158, 158);
+
 			&::part(native) {
-				background: #f1f2f2 !important;
+				background: #424f5c !important;
 			}
 		}
 	}
