@@ -11,7 +11,6 @@ import {
 	IonPage,
 	IonRow,
 	IonToolbar,
-	IonFooter,
 	IonTitle,
 	IonToast
 } from '@ionic/react'
@@ -28,6 +27,7 @@ import { useTranslation } from 'react-i18next'
 import { ModifySafePasswordApi, InfoApi } from '../../request/api'
 
 import { hex_md5 } from '../../data/md5'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const Password = () => {
 	const { t, i18n } = useTranslation('lang')
@@ -128,11 +128,7 @@ const Password = () => {
 					</IonRow>
 				</IonGrid>
 			</IonContent>
-			<IonFooter>
-				<IonRow className="ion-justify-content-center ion-padding-bottom">
-					<div className={styles.footerLine}></div>
-				</IonRow>
-			</IonFooter>
+			<BottomLine />
 			<IonToast
 				isOpen={showToast}
 				onDidDismiss={() => setShowToast(false)}

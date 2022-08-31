@@ -1,11 +1,11 @@
 .invitePage {
-    background: url(./invite-bg1.png);
+    background: url(./invite-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
     ion-header {
-        background: #0f4cb2;
+        background: #2a353e;
 
 
         ion-toolbar {
@@ -46,17 +46,6 @@
         ion-icon {
             transform: rotate(-45deg);
             margin-right: 10px;
-        }
-    }
-
-    ion-footer {
-        --background: #0f4cb2;
-        background: #0f4cb2;
-
-        .footerLine {
-            width: 40%;
-            border: 3px solid white;
-            border-radius: 10px;
         }
     }
 }

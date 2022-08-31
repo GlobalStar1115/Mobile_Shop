@@ -26,6 +26,7 @@ import { useIonRouter } from '@ionic/react'
 import { useTranslation } from 'react-i18next'
 
 import { InfoApi, InfoModifyApi, ModifyAvatarApi } from '../../request/api'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const Info = () => {
 	const { t, i18n } = useTranslation('lang')
@@ -155,6 +156,7 @@ const Info = () => {
 					{t('change-info.title')}
 				</IonButton>
 			</IonGrid>
+			<BottomLine />
 			<IonToast
 				isOpen={showToast}
 				onDidDismiss={() => setShowToast(false)}

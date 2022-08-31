@@ -13,7 +13,6 @@ import {
 	IonRouterLink,
 	IonRow,
 	IonToolbar,
-	IonFooter
 } from '@ionic/react'
 import styles from './Shipping.module.scss'
 
@@ -26,6 +25,7 @@ import { useParams } from 'react-router'
 import { useIonRouter } from '@ionic/react'
 
 import { useTranslation } from 'react-i18next'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const Shipping = () => {
 	const { t, i18n } = useTranslation('lang')
@@ -95,11 +95,7 @@ const Shipping = () => {
 					</IonRow>
 				</IonGrid>
 			</IonContent>
-			<IonFooter>
-				<IonRow className="ion-justify-content-center ion-padding-bottom">
-					<div className={styles.footerLine}></div>
-				</IonRow>
-			</IonFooter>
+			<BottomLine />
 		</IonPage>
 	)
 }

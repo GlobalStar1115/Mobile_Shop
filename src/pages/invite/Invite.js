@@ -1,10 +1,11 @@
 import styles from './Invite.module.scss';
 
-import { IonButtons, IonIcon, IonBackButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonToolbar, IonFooter, IonTitle, IonButton } from '@ionic/react';
+import { IonButtons, IonIcon, IonBackButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonToolbar, IonTitle, IonButton } from '@ionic/react';
 import { chevronBackOutline, linkOutline } from "ionicons/icons";
 
 
 import { useTranslation } from "react-i18next";
+import BottomLine from '../../components/bottom-line/BottomLine';
 
 
 const Invite = () => {
@@ -36,11 +37,7 @@ const Invite = () => {
                     <IonButton expand="block"><IonIcon icon={linkOutline} />{t('invite.button-text')}</IonButton>
                 </IonGrid>
             </IonContent>
-            <IonFooter>
-                <IonRow className='ion-justify-content-center ion-padding-bottom'>
-                    <div className={styles.footerLine}></div>
-                </IonRow>
-            </IonFooter>
+            <BottomLine />
         </IonPage>
     );
 };

@@ -10,7 +10,6 @@ import {
 	IonPage,
 	IonRow,
 	IonToolbar,
-	IonFooter,
 	IonTitle,
 	IonCard
 } from '@ionic/react'
@@ -20,13 +19,13 @@ import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 
 import { CashRecordApi } from '../../request/api'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const WithdrawRecord = () => {
 	const { t, i18n } = useTranslation('lang')
 	const current = new Date()
-	const date = `${current.getFullYear()}-${
-		current.getMonth() + 1
-	}-${current.getDate()} ${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`
+	const date = `${current.getFullYear()}-${current.getMonth() + 1
+		}-${current.getDate()} ${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`
 
 	const [dataArr, setDataArr] = useState([])
 
@@ -59,8 +58,8 @@ const WithdrawRecord = () => {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent fullscreen className="ion-padding">
-				<IonGrid className="ion-no-padding">
-					<p>{t('withdraw-record.title')}</p>
+				<IonGrid className="ion-padding-start ion-padding-end">
+					<p className='text-white'>{t('withdraw-record.title')}</p>
 					{dataArr.map((item, index) => {
 						return (
 							<IonCard className="ion-no-margin ion-padding main-radius" key={index}>
@@ -79,14 +78,10 @@ const WithdrawRecord = () => {
 							</IonCard>
 						)
 					})}
-					{dataArr.length == 0 ? <h4 style={{ textAlign: 'center' }}>暂无数据</h4> : null}
+					{dataArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>暂无数据</h4> : null}
 				</IonGrid>
 			</IonContent>
-			<IonFooter>
-				<IonRow className="ion-justify-content-center ion-padding-bottom">
-					<div className={styles.footerLine}></div>
-				</IonRow>
-			</IonFooter>
+			<BottomLine />
 		</IonPage>
 	)
 }

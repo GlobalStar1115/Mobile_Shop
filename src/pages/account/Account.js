@@ -163,7 +163,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/5@2x.png" />
+									<IonImg src="/assets/images/personal/12@2x.png" />
 									<span>{t('account.withdraw-record')}</span>
 								</IonRow>
 							</IonCol>
@@ -176,7 +176,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/11@2x.png" />
+									<IonImg src="/assets/images/personal/5@2x.png" />
 									<span>{t('account.acc-details')}</span>
 								</IonRow>
 							</IonCol>
@@ -241,7 +241,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/修改安全密码@2x.png" />
+									<IonImg src="/assets/images/personal/14@2x.png" />
 									<span>{t('account.password-safe')}</span>
 								</IonRow>
 							</IonCol>

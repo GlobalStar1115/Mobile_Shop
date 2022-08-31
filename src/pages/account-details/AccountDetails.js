@@ -10,7 +10,6 @@ import {
 	IonPage,
 	IonRow,
 	IonToolbar,
-	IonFooter,
 	IonTitle,
 	IonCard
 } from '@ionic/react'
@@ -20,13 +19,13 @@ import { useTranslation } from 'react-i18next'
 import { useState, useEffect } from 'react'
 
 import { MemberBillsApi } from '../../request/api'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const AccountDetails = () => {
 	const { t, i18n } = useTranslation('lang')
 	const current = new Date()
-	const date = `${current.getFullYear()}-${
-		current.getMonth() + 1
-	}-${current.getDate()} ${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`
+	const date = `${current.getFullYear()}-${current.getMonth() + 1
+		}-${current.getDate()} ${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`
 
 	const [dataArr, setDataArr] = useState([])
 
@@ -57,7 +56,7 @@ const AccountDetails = () => {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent fullscreen className="ion-padding">
-				<IonGrid className="ion-no-padding">
+				<IonGrid className="ion-padding-start ion-padding-right">
 					<p>{t('account-details.title')}</p>
 					{dataArr.map((item, index) => {
 						return (
@@ -74,11 +73,7 @@ const AccountDetails = () => {
 					})}
 				</IonGrid>
 			</IonContent>
-			<IonFooter>
-				<IonRow className="ion-justify-content-center ion-padding-bottom">
-					<div className={styles.footerLine}></div>
-				</IonRow>
-			</IonFooter>
+			<BottomLine />
 		</IonPage>
 	)
 }

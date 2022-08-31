@@ -146,7 +146,7 @@ const Order = () => {
 			<IonContent fullscreen className="ion-padding">
 				<IonCard className={`${styles.orderCard}`}>
 					<IonRow className="ion-justify-content-end">
-						<IonImg src="/assets/images/3.png" alt="tooltip" />
+						<IonImg src="/assets/images/what.png" alt="tooltip" />
 					</IonRow>
 					<IonRow className={`ion-justify-content-between ion-margin-bottom ${styles.cardDetail}`}>
 						<IonImg src="/assets/images/home/01@2x.png" alt="badge" />

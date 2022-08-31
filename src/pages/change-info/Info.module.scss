@@ -1,5 +1,5 @@
 .withdrawPage {
-	background: white;
+	background: #2a353e;
 
 	ion-header {
 		.custom-back {
@@ -11,9 +11,10 @@
 			--padding-end: 1rem;
 
 			h4 {
-				color: black;
+				color: white;
 			}
 		}
+
 		margin-bottom: 20px;
 	}
 
@@ -26,6 +27,7 @@
 			margin-bottom: -1rem !important;
 		}
 	}
+
 	.out-avatar {
 		margin-top: 20px;
 		margin: auto;
@@ -36,12 +38,14 @@
 		width: 120px;
 		height: 120px;
 		border-radius: 50%;
+
 		.avatar {
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
 			// z-index: 10;
 		}
+
 		ion-img {
 			border-radius: 50%;
 			overflow: hidden;
@@ -49,6 +53,7 @@
 			height: 80px;
 			object-fit: cover !important;
 		}
+
 		input {
 			// display: none;
 			width: 80px;
@@ -63,12 +68,14 @@
 		margin: 30px 20px 20px 20px;
 		padding: 20px;
 		border-radius: 10px;
-		background-color: #f6f8f9;
+		background-color: #414d59;
 		font-size: 14px;
+
 		div {
 			width: 110px;
-			color: #000000;
+			color: white;
 		}
+
 		input {
 			color: #989898;
 		}
@@ -78,12 +85,14 @@
 		margin: 0px 20px 20px 20px;
 		padding: 20px;
 		border-radius: 10px;
-		background-color: #f6f8f9;
+		background-color: #414d59;
 		font-size: 14px;
+
 		div {
 			width: 110px;
-			color: #000000;
+			color: white;
 		}
+
 		input {
 			color: #0078ff;
 		}

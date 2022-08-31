@@ -12,10 +12,8 @@ import {
 	IonHeader,
 	IonIcon,
 	IonPage,
-	IonRouterLink,
 	IonRow,
 	IonToolbar,
-	IonFooter
 } from '@ionic/react'
 import styles from './TeamReport.module.scss'
 
@@ -23,6 +21,7 @@ import { chevronBackOutline, calendarOutline } from 'ionicons/icons'
 import { useTranslation } from 'react-i18next'
 import { TeamInfoApi } from '../../request/api'
 import { useEffect, useState, useCallback } from 'react'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 function getNowFormatDate(day) {
 	const date = new Date()
@@ -246,11 +245,7 @@ const TeamReport = () => {
 					</IonGrid>
 				</IonGrid>
 			</IonContent>
-			<IonFooter>
-				<IonRow className="ion-justify-content-center ion-padding-bottom">
-					<div className={styles.footerLine}></div>
-				</IonRow>
-			</IonFooter>
+			<BottomLine />
 		</IonPage>
 	)
 }

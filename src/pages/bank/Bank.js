@@ -9,7 +9,6 @@ import {
 	IonPage,
 	IonRow,
 	IonToolbar,
-	IonFooter,
 	IonList,
 	IonRadioGroup,
 	IonListHeader,
@@ -33,6 +32,7 @@ import { useIonRouter } from '@ionic/react'
 import { useTranslation } from 'react-i18next'
 
 import { AddAccountApi, BusinessBankApi, AccountInfoApi, ModifyAccountApi } from '../../request/api'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const Bank = () => {
 	const url = window.location.search
@@ -199,7 +199,7 @@ const Bank = () => {
 							<SignupField field={fields[1]} errors={errors} />
 							<IonList>
 								<IonRadioGroup value={accountType} onIonChange={changeAccountType}>
-									<IonListHeader>
+									<IonListHeader className='ion-no-padding'>
 										<div className={styles.type}>{t('bank.type')}</div>
 									</IonListHeader>
 									<IonItem
@@ -207,7 +207,7 @@ const Bank = () => {
 										style={{
 											marginBottom: '10px',
 											height: '50px',
-											backgroundColor: '#f1f2f2',
+											backgroundColor: '#424f5c',
 											borderRadius: '30vw',
 											border: 'none'
 										}}
@@ -218,7 +218,7 @@ const Bank = () => {
 
 									<IonItem
 										color="light"
-										style={{ height: '50px', backgroundColor: '#f1f2f2', borderRadius: '30vw', border: 'none' }}
+										style={{ height: '50px', backgroundColor: '#424f5c', borderRadius: '30vw', border: 'none' }}
 									>
 										<IonLabel>{t('bank.BankCard')}</IonLabel>
 										<IonRadio slot="start" value="1" />
@@ -228,28 +228,30 @@ const Bank = () => {
 							{accountType === '2' ? (
 								<IonList>
 									<IonRadioGroup value={chainType} onIonChange={changeChainType}>
-										<IonListHeader>
+										<IonListHeader className='ion-no-padding'>
 											<div className={styles.type}>{t('bank.chain-type')}</div>
 										</IonListHeader>
 										<IonItem
 											className={styles.selectItem}
 											color="light"
 											style={{
-												marginBottom: '10px'
+												marginBottom: '10px', backgroundColor: '#424f5c'
 											}}
 										>
 											<IonLabel>{t('bank.chain-trc')}</IonLabel>
 											<IonRadio slot="start" value="TRC20" />
 										</IonItem>
 
-										<IonItem className={styles.selectItem} color="light">
+										<IonItem className={styles.selectItem} color="light" style={{
+											marginBottom: '10px', backgroundColor: '#424f5c'
+										}}>
 											<IonLabel>{t('bank.chain-erc')}</IonLabel>
 											<IonRadio slot="start" value="ERC20" />
 										</IonItem>
 									</IonRadioGroup>
 								</IonList>
 							) : (
-								<IonItem className={styles.radioItem}>
+								<IonItem className={styles.radioItem} >
 									<IonLabel>{t('bank.choose-bank')}</IonLabel>
 									<IonSelect
 										value={bankSelected}
@@ -281,16 +283,12 @@ const Bank = () => {
 						</IonCol>
 					</IonRow>
 					<div className=" ion-padding-top">
-						<p>{t('bank.tip')}:</p>
+						<p className='text-white'>{t('bank.tip')}:</p>
 						<p className={styles.tipComment}>{t('bank.comment')}</p>
 					</div>
 				</IonGrid>
 			</IonContent>
-			<IonFooter>
-				<IonRow className="ion-justify-content-center ion-padding-bottom">
-					<div className={styles.footerLine}></div>
-				</IonRow>
-			</IonFooter>
+			<BottomLine />
 			<IonToast
 				isOpen={showToast}
 				onDidDismiss={() => setShowToast(false)}

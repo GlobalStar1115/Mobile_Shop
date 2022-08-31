@@ -24,11 +24,14 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 
 :root {
-	--ion-background-color: white;
+	--ion-background-color: #2b363f;
 	--ion-text-color: black;
 	--ion-tab-bar-background: black;
 	--ion-toolbar-background: black;
 	--ion-toolbar-color: white;
+
+
+	--ion-color-light: #424f5c;
 }
 
 .custom-button {
@@ -39,7 +42,8 @@ http://ionicframework.com/docs/theming/ */
 	--padding-bottom: 1.5rem;
 	--padding-top: 1.5rem;
 	--color: white;
-	font-size: 1.2rem;
+	font-size: 1rem;
+	font-family: 'main_font', 'Arial', 'Helvetica', 'sans-serif';
 }
 
 .ion-page {

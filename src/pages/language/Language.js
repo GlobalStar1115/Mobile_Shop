@@ -8,7 +8,6 @@ import {
 	IonPage,
 	IonRow,
 	IonToolbar,
-	IonFooter
 } from '@ionic/react'
 import styles from './Language.module.scss'
 
@@ -21,6 +20,7 @@ import { useParams } from 'react-router'
 import { useTranslation } from 'react-i18next'
 
 import { LangApi } from '../../request/api'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const Language = () => {
 	const { t, i18n } = useTranslation('lang')
@@ -66,11 +66,7 @@ const Language = () => {
 					</IonRow>
 				</IonGrid>
 			</IonContent>
-			<IonFooter>
-				<IonRow className="ion-justify-content-center ion-padding-bottom">
-					<div className={styles.footerLine}></div>
-				</IonRow>
-			</IonFooter>
+			<BottomLine />
 		</IonPage>
 	)
 }

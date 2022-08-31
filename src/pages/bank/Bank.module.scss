@@ -2,11 +2,11 @@
 // 	padding-inline-start: unset;
 // }
 .bankPage {
-	background: white;
+	background: #2a353e;
 
 	ion-header {
 		h4 {
-			color: black;
+			color: white;
 		}
 
 		ion-toolbar {
@@ -21,13 +21,13 @@
 
 	ion-content {
 		ion-label {
-			color: black;
+			color: white;
 			display: block;
 			// margin-bottom: 20px;
 		}
 
 		p {
-			color: black;
+			color: white;
 		}
 
 		.tipComment {
@@ -35,51 +35,64 @@
 			color: rgb(117, 117, 117);
 		}
 
+		ion-input {
+			background: #424f5c;
+			color: white;
+		}
+
+		// ion-radio-group {
+		// 	ion-item {
+		// 		background: #424f5c;
+		// 		color: white;
+		// 	}
+		// }
+
 		ion-col {
 			ion-item {
-				--ion-color-base: var(--ion-color-light, #f1f2f2) !important;
+				--ion-color-base: var(--ion-color-light) !important;
+
 				.item-inner {
 					border: none !important;
 				}
 
 				.item-native {
-					background-color: #f1f2f2 !important;
+					background-color: #424f5c !important;
+				}
+
+				ion-label {
+					color: #b9b9b9 !important;
 				}
 			}
+
 			.selectItem {
 				height: 50px;
-				background-color: #f1f2f2;
+				background-color: #424f5c;
 				border-radius: 30vw;
 				border: none;
 			}
+
 			.radioItem {
-				margin-top: 10px;
+				margin-top: 5px;
+				margin-bottom: 30px;
 				height: 50px;
-				background-color: #f1f2f2;
+				background-color: #424f5c;
 				border-radius: 30vw;
 				border: none;
+
 				.item-native {
-					background: #f1f2f2 !important;
+					background: #424f5c !important;
 				}
 			}
+
 			.radioItem::part(native) {
-				background: #f1f2f2 !important;
+				background: #424f5c !important;
 			}
-		}
-	}
-
-	ion-footer {
-		--background: transparent;
-
-		.footerLine {
-			width: 40%;
-			border: 3px solid white;
-			border-radius: 10px;
 		}
 	}
 
 	.type {
 		font-size: 16px;
 		font-weight: 500;
+		color: white;
 	}
 }

@@ -73,7 +73,6 @@ const RechargeRecord = () => {
 					{accountArr.map((item, index) => {
 						return (
 							<IonCard
-								style={{ backgroundColor: '#6cbff6' }}
 								key={index}
 								className="ion-no-margin ion-padding main-radius"
 							>

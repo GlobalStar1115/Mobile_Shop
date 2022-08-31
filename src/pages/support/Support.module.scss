@@ -1,12 +1,9 @@
 .recordPage {
-    background: #212932;
+    background: #222c35;
 
     ion-header {
-        background: #212932;
+        background: #2a353e;
 
-        h4 {
-            color: white;
-        }
 
         ion-toolbar {
 
@@ -23,5 +20,35 @@
 
     }
 
-    ion-content {}
+    ion-content {
+        h4 {
+            color: #0099fe;
+        }
+
+        ion-grid {
+            background: #2a353e;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            padding-bottom: 30px;
+
+            ion-img {
+                width: 100%;
+                padding: 2rem;
+            }
+
+            ion-card {
+                background: #3c4854;
+                color: white;
+
+                p {
+                    margin: 0;
+                }
+
+                ion-img {
+                    width: 50px;
+                    padding: 10px 0 0;
+                }
+            }
+        }
+    }
 }

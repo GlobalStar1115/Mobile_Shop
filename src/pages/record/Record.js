@@ -138,7 +138,7 @@ const Record = () => {
 										</IonCard>
 									)
 								})}
-								{orderArr.length == 0 ? <h4 style={{ textAlign: 'center' }}>暂无数据</h4> : null}
+								{orderArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>暂无数据</h4> : null}
 							</div>
 						</div>
 						<div className={styles.tabPart}>

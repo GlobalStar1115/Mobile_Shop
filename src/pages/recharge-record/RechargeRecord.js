@@ -10,7 +10,6 @@ import {
 	IonPage,
 	IonRow,
 	IonToolbar,
-	IonFooter,
 	IonTitle,
 	IonCard
 } from '@ionic/react'
@@ -20,6 +19,7 @@ import { useTranslation } from 'react-i18next'
 
 import { CashRecordApi } from '../../request/api'
 import { useEffect, useState } from 'react'
+import BottomLine from '../../components/bottom-line/BottomLine'
 
 const RechargeRecord = () => {
 	const { t, i18n } = useTranslation('lang')
@@ -55,7 +55,7 @@ const RechargeRecord = () => {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent fullscreen className="ion-padding">
-				<IonGrid className="ion-no-padding">
+				<IonGrid className="ion-padding-start ion-pdding-end">
 					<p>{t('recharge-record.title')}</p>
 					{dataArr.map((item, index) => {
 						return (
@@ -75,14 +75,10 @@ const RechargeRecord = () => {
 							</IonCard>
 						)
 					})}
-					{dataArr.length == 0 ? <h4 style={{ textAlign: 'center' }}>暂无数据</h4> : null}
+					{dataArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>暂无数据</h4> : null}
 				</IonGrid>
 			</IonContent>
-			<IonFooter>
-				<IonRow className="ion-justify-content-center ion-padding-bottom">
-					<div className={styles.footerLine}></div>
-				</IonRow>
-			</IonFooter>
+			<BottomLine />
 		</IonPage>
 	)
 }
