@@ -38,7 +38,12 @@ import Withdraw from './pages/withdraw/Withdraw'
 import TeamReport from './pages/team-report/TeamReport'
 import Bank from './pages/bank/Bank'
 import Info from './pages/change-info/Info'
+import CompanyProfile from './pages/company-profile/CompanyProfile'
 import MyAccount from './pages/my-account/MyAccount'
+import CompanyRules from './pages/company-rules/CompanyRules'
+import CompanyPersonal from './pages/company-personal/CompanyPersonal'
+import CompanyAgency from './pages/company-agency/CompanyAgency'
+import CompanyQualification from './pages/company-qualification/CompanyQualification'
 const App = () => (
 	<IonApp>
 		<IonReactRouter>
@@ -51,6 +56,21 @@ const App = () => (
 				</Route>
 				<Route exact path="/info">
 					<Info />
+				</Route>
+				<Route exact path="/company-profile">
+					<CompanyProfile />
+				</Route>
+				<Route exact path="/company-rules">
+					<CompanyRules />
+				</Route>
+				<Route exact path="/company-personal">
+					<CompanyPersonal />
+				</Route>
+				<Route exact path="/company-agency">
+					<CompanyAgency />
+				</Route>
+				<Route exact path="/company-qualification">
+					<CompanyQualification />
 				</Route>
 				<Route exact path="/password">
 					<Password />

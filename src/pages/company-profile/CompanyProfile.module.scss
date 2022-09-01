@@ -1,0 +1,26 @@
+.companyPage {
+	background: #2a353e;
+
+	ion-header {
+		.custom-back {
+			color: black !important;
+		}
+
+		ion-toolbar {
+			--padding-start: 1rem;
+			--padding-end: 1rem;
+
+			h4 {
+				color: white;
+			}
+		}
+
+		margin-bottom: 20px;
+	}
+
+	ion-card {
+		background: #414d59;
+		color: white;
+	}
+
+}

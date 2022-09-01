@@ -18,8 +18,9 @@ const LanguageButton = ({ field, languageList, setLanguageList }) => {
 		>
 			<IonRow
 				className="ion-align-items-center"
-				style={{ paddingLeft: '20px', paddingRight: '10px', display: 'flex', justifyContent: 'space-between' }}
+				style={{ paddingLeft: '20px', paddingRight: '10px', display: 'flex' }}
 			>
+				<img src={'./assets/flags/' + field.dictLabel + '.png'} style={{ width: '40px', margin: '0 10px 0 -20px' }} />
 				<IonLabel>{field.dictLabel}</IonLabel>
 			</IonRow>
 		</div>

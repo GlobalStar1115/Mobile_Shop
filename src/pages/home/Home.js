@@ -1,5 +1,5 @@
 import styles from './Home.module.scss'
-import { IonCol, IonContent, IonCard, IonImg, IonGrid, IonPage, IonRow, useIonRouter } from '@ionic/react'
+import { IonCol, IonContent, IonCard, IonImg, IonGrid, IonPage, IonRow, useIonRouter, IonRouterLink } from '@ionic/react'
 import { useTranslation } from 'react-i18next'
 import HomeSlider1 from '../../components/home-slider/HomeSlider1'
 import Slogan from '../../components/slogan/Slogan'
@@ -356,33 +356,43 @@ const Home = () => {
 							) : null} */}
 							<IonRow className={`ion-no-padding ${styles.companyInfoContainer}`}>
 								<div className={`${styles.containerCol}`}>
-									<div className={`${styles.contentItems}`}>
-										<IonImg src={'/assets/images/home/company/rule2.png'} />
-										<IonImg src={'/assets/images/home/company/rule1.png'} className={`${styles.lageImg}`} />
-										<span>{t('home.introduction.rules-description')}</span>
-									</div>
-									<div className={`${styles.contentItems}`}>
-										<IonImg src={'/assets/images/home/company/agency2.png'} />
-										<IonImg src={'/assets/images/home/company/agency1.png'} className={`${styles.lageImg}`} />
-										<span>{t('home.introduction.agency-cooperation')}</span>
-									</div>
+									<IonRouterLink routerLink='/company-rules'>
+										<div className={`${styles.contentItems}`}>
+											<IonImg src={'/assets/images/home/company/rule2.png'} />
+											<IonImg src={'/assets/images/home/company/rule1.png'} className={`${styles.lageImg}`} />
+											<span>{t('home.introduction.rules-description')}</span>
+										</div>
+									</IonRouterLink>
+									<IonRouterLink routerLink='/company-agency'>
+										<div className={`${styles.contentItems}`}>
+											<IonImg src={'/assets/images/home/company/agency2.png'} />
+											<IonImg src={'/assets/images/home/company/agency1.png'} className={`${styles.lageImg}`} />
+											<span>{t('home.introduction.agency-cooperation')}</span>
+										</div>
+									</IonRouterLink>
 								</div>
 								<div className={`${styles.containerCol}`}>
-									<div className={`${styles.contentItems}`}>
-										<IonImg src={'/assets/images/home/company/profile2.png'} />
-										<IonImg src={'/assets/images/home/company/profile1.png'} className={`${styles.smallImg}`} />
-										<span>{t('home.introduction.company-profile')}</span>
-									</div>
-									<div className={`${styles.contentItems}`}>
-										<IonImg src={'/assets/images/home/company/qualification2.png'} />
-										<IonImg src={'/assets/images/home/company/qualification1.png'} className={`${styles.smallImg}`} />
-										<span>{t('home.introduction.company-qualification')}</span>
-									</div>
-									<div className={`${styles.contentItems}`}>
-										<IonImg src={'/assets/images/home/company/personal2.png'} />
-										<IonImg src={'/assets/images/home/company/personal1.png'} className={`${styles.smallImg}`} />
-										<span>{t('home.introduction.privacy-policy')}</span>
-									</div>
+									<IonRouterLink routerLink='/company-profile'>
+										<div className={`${styles.contentItems}`}>
+											<IonImg src={'/assets/images/home/company/profile2.png'} />
+											<IonImg src={'/assets/images/home/company/profile1.png'} className={`${styles.smallImg}`} />
+											<span>{t('home.introduction.company-profile')}</span>
+										</div>
+									</IonRouterLink>
+									<IonRouterLink routerLink='/company-qualification'>
+										<div className={`${styles.contentItems}`}>
+											<IonImg src={'/assets/images/home/company/qualification2.png'} />
+											<IonImg src={'/assets/images/home/company/qualification1.png'} className={`${styles.smallImg}`} />
+											<span>{t('home.introduction.company-qualification')}</span>
+										</div>
+									</IonRouterLink>
+									<IonRouterLink routerLink='/company-personal'>
+										<div className={`${styles.contentItems}`}>
+											<IonImg src={'/assets/images/home/company/personal2.png'} />
+											<IonImg src={'/assets/images/home/company/personal1.png'} className={`${styles.smallImg}`} />
+											<span>{t('home.introduction.privacy-policy')}</span>
+										</div>
+									</IonRouterLink>
 								</div>
 							</IonRow>
 						</IonGrid>

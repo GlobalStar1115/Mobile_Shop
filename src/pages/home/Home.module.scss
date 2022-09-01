@@ -111,6 +111,7 @@
 				border-radius: 1rem;
 				margin: 10px 0;
 				box-shadow: none;
+				padding: 10px;
 
 				ion-img {
 					width: 55px;
@@ -543,9 +544,11 @@
 
 			span {
 				position: absolute;
-				bottom: 5px;
+				bottom: 0px;
+				color: black;
 				left: 50%;
 				transform: translate(-50%, -50%);
+				line-height: 16px;
 			}
 		}
 	}
