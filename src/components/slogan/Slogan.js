@@ -6,7 +6,7 @@ export default class Slogan extends Component {
 		super(props)
 		this.state = {
 			sloganList: [
-				'横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1横向滚动文字1'
+				'滚动公告：手机电话费开始剪短发的时候'
 			],
 			sloganIndex: 0
 		}

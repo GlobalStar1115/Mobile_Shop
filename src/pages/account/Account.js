@@ -137,7 +137,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/13@2x.png" />
+									<IonImg src="/assets/images/personal/2@2x.png" />
 									<span>{t('account.my-account')}</span>
 								</IonRow>
 							</IonCol>
@@ -150,7 +150,7 @@ const Account = () => {
 						<IonRow className={`ion-justify-content-between ion-align-items-center ${styles.accountLinkTab}`}>
 							<IonCol size="9" className={`ion-text-left ${styles.accountLinkTabTitle}`}>
 								<IonRow>
-									<IonImg src="/assets/images/personal/12@2x.png" />
+									<IonImg src="/assets/images/personal/13@2x.png" />
 									<span>{t('account.recharge-record')}</span>
 								</IonRow>
 							</IonCol>

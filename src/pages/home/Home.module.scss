@@ -240,8 +240,8 @@
 		}
 
 		.homeBottomBackground {
-			background-color: #fff !important;
-			margin-top: 0px;
+			border-top-left-radius: 30px;
+			border-top-right-radius: 30px;
 		}
 
 		.homeBottomBackground,
@@ -340,7 +340,7 @@
 
 			.accordionBox {
 				width: 100%;
-				padding: 0 1rem;
+				padding: 0;
 				text-align: center;
 
 				ul {
@@ -508,4 +508,45 @@
 #scroll_begin,
 #scroll_end {
 	display: inline;
+}
+
+.companyInfoContainer {
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+
+	.containerCol {
+		width: 50%;
+
+		.contentItems {
+			position: relative;
+			padding: 5px;
+
+			ion-img:first-child {
+				width: 100%;
+			}
+
+			ion-img:nth-child(2) {
+				position: absolute;
+				top: 40%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.lageImg {
+				width: 65%;
+			}
+
+			.smallImg {
+				width: 45%;
+			}
+
+			span {
+				position: absolute;
+				bottom: 5px;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
 }

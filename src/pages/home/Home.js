@@ -192,17 +192,19 @@ const Home = () => {
 					<IonGrid>
 						<IonCard
 							className={`ion-padding ion-no-margin ${styles.membershipCard}`}
-							style={{ backgroundImage: `url(${levelArr[0]?.bgUrl})` }}
+						// style={{ backgroundImage: `url(${levelArr[0]?.bgUrl})` }}
 						>
 							<IonRow className="ion-justify-content-between ion-align-items-start">
 								<IonCol size="9">
 									<IonRow className="ion-align-items-center">
-										<IonImg src={levelArr[0]?.iconUrl ? levelArr[0].iconUrl : '/assets/images/home/01@2x.png'} />
+										{/* <IonImg src={levelArr[0]?.iconUrl ? levelArr[0].iconUrl : '/assets/images/home/01@2x.png'} /> */}
+										<IonImg src={'/assets/images/home/01@2x.png'} />
 										<div>
 											<h4>{t('home.membership-level.ordinary-member')}</h4>
 											<p>{t('home.membership-level.min-balance')} $ 200.00</p>
 											<p>
-												{t('home.membership-level.commission')} 0.4 | {levelArr[0]?.maxOrderNumber}
+												{/* {t('home.membership-level.commission')} 0.4 | {levelArr[0]?.maxOrderNumber} */}
+												{t('home.membership-level.commission')} 0.4 | 60
 												{t('home.membership-level.orders')}
 											</p>
 										</div>
@@ -216,12 +218,30 @@ const Home = () => {
 							<IonRow className="ion-justify-content-between ion-align-items-start">
 								<IonCol size="9">
 									<IonRow className="ion-align-items-center">
+										<IonImg src="/assets/images/home/02@2x.png" />
+										<div>
+											<h4>{t('home.membership-level.gold-member')}</h4>
+											<p>{t('home.membership-level.min-balance')} $ 1000.00</p>
+											<p>
+												{t('home.membership-level.commission')} 0.5 | 80 {t('home.membership-level.orders')}
+											</p>
+										</div>
+									</IonRow>
+								</IonCol>
+								<span>{t('home.membership-level.join')}</span>
+							</IonRow>
+						</IonCard>
+
+						<IonCard className={`ion-padding ion-no-margin ${styles.membershipCard}`}>
+							<IonRow className="ion-justify-content-between ion-align-items-start">
+								<IonCol size="9">
+									<IonRow className="ion-align-items-center">
 										<IonImg src="/assets/images/home/03@2x.png" />
 										<div>
 											<h4>{t('home.membership-level.gold-member')}</h4>
-											<p>{t('home.membership-level.min-balance')} $ 200.00</p>
+											<p>{t('home.membership-level.min-balance')} $ 3000.00</p>
 											<p>
-												{t('home.membership-level.commission')} 0.4 | 60 {t('home.membership-level.orders')}
+												{t('home.membership-level.commission')} 0.6 | 100 {t('home.membership-level.orders')}
 											</p>
 										</div>
 									</IonRow>
@@ -236,9 +256,9 @@ const Home = () => {
 										<IonImg src="/assets/images/home/04@2x.png" />
 										<div>
 											<h4>{t('home.membership-level.crown-member')}</h4>
-											<p>{t('home.membership-level.min-balance')} $ 200.00</p>
+											<p>{t('home.membership-level.min-balance')} $ 3000.00</p>
 											<p>
-												{t('home.membership-level.commission')} 0.4 | 60 {t('home.membership-level.orders')}
+												{t('home.membership-level.commission')} 0.6 | 120 {t('home.membership-level.orders')}
 											</p>
 										</div>
 									</IonRow>
@@ -258,13 +278,13 @@ const Home = () => {
 					</IonGrid>
 				</IonGrid>
 				<IonGrid className={`ion-no-padding ion-margin-top ${styles.homeBottomBackground}`}>
-					<IonGrid className={`ion-padding-top ion-padding-bottom ${styles.homeIntroduction}`}>
+					<IonGrid className={`ion-padding-top ${styles.homeIntroduction}`}>
 						<IonGrid className={styles.accordionBox}>
-							<IonRow class={`ion-align-items-center ${styles.sectionTitle}`}>
+							<IonRow class={`ion-align-items-center ion-padding-start ${styles.sectionTitle}`}>
 								<div></div>
 								<span className="main-padding">{t('home.introduction.title')}</span>
 							</IonRow>
-							{introduceArr.length === 4 ? (
+							{/* {introduceArr.length === 4 ? (
 								<div className={`${styles.imgSection_1}`}>
 									<div className={`${styles.outImg_1}`}>
 										<Introduce
@@ -333,46 +353,77 @@ const Home = () => {
 										</div>
 									</div>
 								</div>
-							) : null}
+							) : null} */}
+							<IonRow className={`ion-no-padding ${styles.companyInfoContainer}`}>
+								<div className={`${styles.containerCol}`}>
+									<div className={`${styles.contentItems}`}>
+										<IonImg src={'/assets/images/home/company/rule2.png'} />
+										<IonImg src={'/assets/images/home/company/rule1.png'} className={`${styles.lageImg}`} />
+										<span>{t('home.introduction.rules-description')}</span>
+									</div>
+									<div className={`${styles.contentItems}`}>
+										<IonImg src={'/assets/images/home/company/agency2.png'} />
+										<IonImg src={'/assets/images/home/company/agency1.png'} className={`${styles.lageImg}`} />
+										<span>{t('home.introduction.agency-cooperation')}</span>
+									</div>
+								</div>
+								<div className={`${styles.containerCol}`}>
+									<div className={`${styles.contentItems}`}>
+										<IonImg src={'/assets/images/home/company/profile2.png'} />
+										<IonImg src={'/assets/images/home/company/profile1.png'} className={`${styles.smallImg}`} />
+										<span>{t('home.introduction.company-profile')}</span>
+									</div>
+									<div className={`${styles.contentItems}`}>
+										<IonImg src={'/assets/images/home/company/qualification2.png'} />
+										<IonImg src={'/assets/images/home/company/qualification1.png'} className={`${styles.smallImg}`} />
+										<span>{t('home.introduction.company-qualification')}</span>
+									</div>
+									<div className={`${styles.contentItems}`}>
+										<IonImg src={'/assets/images/home/company/personal2.png'} />
+										<IonImg src={'/assets/images/home/company/personal1.png'} className={`${styles.smallImg}`} />
+										<span>{t('home.introduction.privacy-policy')}</span>
+									</div>
+								</div>
+							</IonRow>
 						</IonGrid>
 					</IonGrid>
-				</IonGrid>
-				<IonGrid className={`ion-no-padding ion-margin-top ${styles.homeBottomBackground2}`}>
-					<IonGrid className={`ion-padding-top ion-padding-bottom ${styles.homeIntroduction}`}>
-						<IonGrid className={styles.homePatners}>
-							<IonRow class={`ion-align-items-center ${styles.sectionTitle}`}>
-								<div></div>
-								<span className="main-padding">{t('home.partner')}</span>
-							</IonRow>
-							<IonRow className="ion-align-items-center">
-								<IonCol size="4">
-									<IonImg src={linksImage[0]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
-								</IonCol>
-								<IonCol size="4">
-									<IonImg src={linksImage[1]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
-								</IonCol>
-								<IonCol size="4">
-									<IonImg src={linksImage[2]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
-								</IonCol>
-								<IonCol size="4">
-									<IonImg src={linksImage[3]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
-								</IonCol>
-								<IonCol size="4">
-									<IonImg src={linksImage[4]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
-								</IonCol>
-								<IonCol size="4">
-									<IonImg src={linksImage[5]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
-								</IonCol>
-								<IonCol size="4">
-									<IonImg src={linksImage[6]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
-								</IonCol>
-								<IonCol size="4">
-									<IonImg src={linksImage[7]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
-								</IonCol>
-								<IonCol size="4">
-									<IonImg src={linksImage[8]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
-								</IonCol>
-							</IonRow>
+					<IonGrid className={`ion-no-padding ion-no-margin ${styles.homeBottomBackground2}`}>
+						<IonGrid className={`ion-padding-top ion-padding-bottom ${styles.homeIntroduction}`}>
+							<IonGrid className={styles.homePatners}>
+								<IonRow class={`ion-align-items-center ${styles.sectionTitle}`}>
+									<div></div>
+									<span className="main-padding">{t('home.partner')}</span>
+								</IonRow>
+								<IonRow className="ion-align-items-center">
+									<IonCol size="4">
+										<IonImg src={linksImage[0]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+									</IonCol>
+									<IonCol size="4">
+										<IonImg src={linksImage[1]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+									</IonCol>
+									<IonCol size="4">
+										<IonImg src={linksImage[2]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+									</IonCol>
+									<IonCol size="4">
+										<IonImg src={linksImage[3]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+									</IonCol>
+									<IonCol size="4">
+										<IonImg src={linksImage[4]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+									</IonCol>
+									<IonCol size="4">
+										<IonImg src={linksImage[5]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+									</IonCol>
+									<IonCol size="4">
+										<IonImg src={linksImage[6]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+									</IonCol>
+									<IonCol size="4">
+										<IonImg src={linksImage[7]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+									</IonCol>
+									<IonCol size="4">
+										<IonImg src={linksImage[8]} loading="lazy" alt="partner-img" style={{ transform: 'scale(.9)' }} />
+									</IonCol>
+								</IonRow>
+							</IonGrid>
 						</IonGrid>
 					</IonGrid>
 				</IonGrid>

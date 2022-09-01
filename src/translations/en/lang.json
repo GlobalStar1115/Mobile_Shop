@@ -209,11 +209,12 @@
 		},
 		"introduction": {
 			"title": "Platform Introduction",
-			"company-profile": "Company Profile...",
-			"rules-description": "Rules Description...",
-			"agency-cooperation": "Agency cooperation...",
-			"company-qualification": "Company qualification...",
-			"limit-money-laundering": "Limit money laundering..."
+			"company-profile": "Company Profile",
+			"rules-description": "Rules Description",
+			"agency-cooperation": "Agency cooperation",
+			"company-qualification": "Company qualification",
+			"limit-money-laundering": "Limit money laundering",
+			"privacy-policy": "Privacy Policy"
 		},
 		"partner": "Partners"
 	}

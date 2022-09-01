@@ -209,11 +209,12 @@
 		},
 		"introduction": {
 			"title": "平台介绍",
-			"company-profile": "公司简介...",
-			"rules-description": "规则说明...",
-			"agency-cooperation": "代理合作...",
-			"company-qualification": "公司资质....",
-			"limit-money-laundering": "限制洗钱..."
+			"company-profile": "公司简介",
+			"rules-description": "规则说明",
+			"agency-cooperation": "代理合作",
+			"company-qualification": "公司资质",
+			"limit-money-laundering": "限制洗钱",
+			"privacy-policy": "隐私政策"
 		},
 		"partner": "合作伙伴"
 	}

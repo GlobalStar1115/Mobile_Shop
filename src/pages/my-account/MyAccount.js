@@ -80,14 +80,8 @@ const RechargeRecord = () => {
 									<span style={{ fontSize: '20px', color: '#fff' }}>
 										{item.accountType == 1 ? 'Bank Account' : 'Bkash Account'}
 									</span>
-									<span>
-										<h4
-											onClick={() => {
-												router.push(`/bank?${item.id}`)
-											}}
-										>
-											{t('my-account.edit')}
-										</h4>
+									<span className={styles.statusBadge}>
+										{t('my-account.edit')}
 									</span>
 								</IonRow>
 								<IonRow className="ion-justify-content-between ion-align-items-center" style={{ marginTop: '8px' }}>

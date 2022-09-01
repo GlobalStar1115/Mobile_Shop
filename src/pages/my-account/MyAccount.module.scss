@@ -23,7 +23,11 @@
 
 		ion-card {
 			margin-bottom: 1rem;
-			background: #414d59;
+			background-image: url('./my_account.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+
 			color: white;
 
 			.totalAmount {
@@ -31,18 +35,11 @@
 			}
 
 			.statusBadge {
-				background: #77a2d8;
+				background: #49c1fb;
 				border-radius: 20px;
 				padding: 2px 10px;
-				color: white;
-			}
-
-			ion-row {
-				h4 {
-					color: #80bdf1;
-					text-shadow: 1px 0 #fff, 1px 1px #fff, 1px -1px #fff, 0px 1px #fff, 0px -1px #fff, -1px 0 #fff, -1px 1px #fff,
-						-1px -1px #fff;
-				}
+				font-size: 12px;
+				color: black;
 			}
 		}
 	}
