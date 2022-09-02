@@ -73,18 +73,18 @@ export const useLoginFields = () => {
 		// 		state: useFormInput('')
 		// 	}
 		// },
-		{
-			id: 'password',
-			label: '',
-			required: true,
-			input: {
-				props: {
-					type: 'password',
-					placeholder: t('signup.password')
-				},
-				state: useFormInput('')
-			}
-		}
+		// {
+		// 	id: 'password',
+		// 	label: '',
+		// 	required: true,
+		// 	input: {
+		// 		props: {
+		// 			type: 'password',
+		// 			placeholder: t('signup.password')
+		// 		},
+		// 		state: useFormInput('')
+		// 	}
+		// }
 	]
 }
 

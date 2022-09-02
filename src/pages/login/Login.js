@@ -1,5 +1,4 @@
 import {
-	IonBackButton,
 	IonButton,
 	IonButtons,
 	IonCol,
@@ -12,18 +11,17 @@ import {
 	IonRouterLink,
 	IonRow,
 	IonToolbar,
-	useIonToast,
 	IonToast,
 	useIonRouter,
 	IonInput
 } from '@ionic/react'
 import styles from './Login.module.scss'
 import { globeOutline } from 'ionicons/icons'
-import LoginField from '../../components/login/LoginField'
+// import LoginField from '../../components/login/LoginField'
 import DialogSide from '../../components/dialog-side/DialogSide'
-import { useLoginFields } from '../../data/fields'
+// import { useLoginFields } from '../../data/fields'
 import { useEffect, useState } from 'react'
-import { validateForm } from '../../data/utils'
+// import { validateForm } from '../../data/utils'
 import { useParams } from 'react-router'
 
 import { useTranslation } from 'react-i18next'
@@ -40,7 +38,7 @@ const Login = () => {
 	const router = useIonRouter()
 	const params = useParams()
 
-	const fields = useLoginFields()
+	// const fields = useLoginFields()
 	const [errors, setErrors] = useState(false)
 
 	const [showToast, setShowToast] = useState(false)
@@ -55,11 +53,12 @@ const Login = () => {
 	})
 
 	const [loginName, setLoginName] = useState('')
+	const [loginPassword, setLoginPassword] = useState('')
 
 	const [showDialog, setShowDialog] = useState(false)
 
 	const login = () => {
-		const errors = validateForm(fields)
+		// const errors = validateForm(fields)
 		setErrors(errors)
 
 		if (!errors.length) {
@@ -67,7 +66,7 @@ const Login = () => {
 				loginType: '1',
 				areaCode: codeData.areaCode,
 				loginName: loginName,
-				password: hex_md5(fields[0].input.state.value),
+				password: hex_md5(loginPassword),
 				channelId: 0
 			}
 			LoginApi(data).then(res => {
@@ -109,8 +108,9 @@ const Login = () => {
 
 	useEffect(() => {
 		return () => {
-			fields.forEach(field => field.input.state.reset(''))
+			// fields.forEach(field => field.input.state.reset(''))
 			setLoginName('')
+			setLoginPassword('')
 			setErrors(false)
 		}
 	}, [params])
@@ -153,7 +153,23 @@ const Login = () => {
 									style={{ width: '36px', background: 'transparent', border: 'none' }}
 								></input>
 							</IonInput>
-							<LoginField className={styles.loginCustomInput} field={fields[0]} errors={errors} />
+							<IonInput
+								className={`${styles_.customInput} ${styles.PasswordInput}`}
+								value={loginPassword}
+								placeholder={t('signup.password')}
+								onIonChange={e => setLoginPassword(e.detail.value)}
+								clearInput
+								type='password'
+							>
+								{/* <img onClick={() => setShowDialog(true)} src={codeData.iconUrl || '/assets/country.png'} alt="" /> */}
+								{/* <input
+									value={codeData.areaCode}
+									disabled
+									className={styles.PhoneInput_}
+									style={{ width: '36px', background: 'transparent', border: 'none' }}
+								></input> */}
+							</IonInput>
+							{/* <LoginField className={styles.loginCustomInput} field={fields[0]} errors={errors} /> */}
 
 							<IonRow
 								className={`ion-padding-bottom ion-padding-start ion-padding-end ion-justify-content-between ${styles.loginCustomRow}`}
@@ -172,12 +188,13 @@ const Login = () => {
 					</IonRow>
 				</IonGrid>
 			</IonContent>
-			<IonCol className={styles.service1} onClick={() => router.push('/app/support')}>
+			<IonRouterLink routerLink='/app/support' className={styles.service1}>
 				<img src="assets/images/service1.png" alt="" />
-			</IonCol>
-			<IonCol className={styles.service2} onClick={() => router.push('/app/support')}>
+			</IonRouterLink>
+			<IonRouterLink routerLink='/app/support' className={styles.service2}>
 				<img src="assets/images/service2.png" alt="" />
-			</IonCol>
+			</IonRouterLink>
+
 			<BottomLine />
 			<IonToast
 				isOpen={showToast}

@@ -191,7 +191,7 @@ const TeamReport = () => {
 					</IonRow>
 
 					<IonRow
-						className={`ion-align-items-center ion-justify-content-around main-radius ion-margin ${styles.diplayRange}`}
+						className={`ion-align-items-center ion-justify-content-around main-radius ion-margin-top ion-margin-bottom ${styles.diplayRange}`}
 					>
 						<IonIcon icon={calendarOutline} />
 						<IonDatetime value={start} displayFormat="YYYY-MM-DD"></IonDatetime>

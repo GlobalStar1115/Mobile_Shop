@@ -25,11 +25,11 @@ export default class CenterMode extends Component {
 	render() {
 		let { imageArr } = this.state
 		const settings = {
-			className: 'center',
-			centerMode: true,
+			// className: 'center',
+			// centerMode: true,
 			infinite: true,
 			slidesToShow: 1,
-			centerPadding: '60px',
+			// centerPadding: '60px',
 			// dots: true,
 			autoplay: true,
 			speed: 1000,

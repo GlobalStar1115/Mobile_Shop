@@ -20,36 +20,39 @@
 		.tabBox1::before {
 			content: 'time';
 			color: white;
-			margin-right: 5px;
-			line-height: 30px;
+			// margin-right: 5px;
+			margin-top: 10px;
+			font-size: 0.8rem;
 		}
 
 		.tabBox2::before {
 			content: 'level';
-			line-height: 30px;
 			color: white;
-			margin-right: 5px;
+			// margin-right: 5px;
+			margin-top: 10px;
+			font-size: 0.8rem;
 		}
 
 		.tabBox2 {
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 		}
 
 		.tabBox1,
 		.tabBox2 {
-			height: 30px;
+			// height: 30px;
 
 			span {
 				border-radius: 12px;
 				background: #53616d;
 				color: #cacaca;
-				padding: 5px 12px;
-				margin: 0 2px;
-				margin-right: 10px;
-				width: 60px;
-				height: 30px;
-				white-space: nowrap;
+				padding: 4px 10px;
+				// margin: 0 2px;
+				margin: 5px 5px;
+				width: fit-content;
+				// height: 30px;
+				// white-space: nowrap;
 				text-align: center;
+				font-size: 0.9rem;
 				// &:active {
 				// 	color: white;
 				// 	background: #77a2d8;

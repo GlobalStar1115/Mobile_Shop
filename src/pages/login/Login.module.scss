@@ -98,8 +98,9 @@ body {
 
 	.service1 {
 		position: absolute;
-		bottom: 220px;
-		left: 300px;
+		bottom: 160px;
+		right: 0;
+		margin-right: 20px;
 
 		img {
 			width: 50px;
@@ -109,8 +110,9 @@ body {
 
 	.service2 {
 		position: absolute;
-		bottom: 160px;
-		left: 300px;
+		bottom: 100px;
+		right: 0;
+		margin-right: 20px;
 
 		img {
 			width: 50px;
@@ -150,6 +152,59 @@ body {
 
 	input {
 		margin-left: 10px;
+	}
+
+	.PhoneInput_ {
+		position: relative;
+		transform: translateX(40px);
+		width: 40px;
+		background: #f1f2f2;
+		border: none;
+		margin-left: 20px;
+	}
+
+	.native-input {
+		transform: translateX(-40px) !important;
+	}
+
+	img {
+		width: 30px;
+		height: 20px;
+		transform: translateX(50px);
+	}
+}
+
+.PasswordInput {
+	display: flex;
+	position: relative;
+	margin-bottom: 16px;
+
+	button {
+		transform: translateX(-14px);
+		background-image: url('./clear.png') !important;
+		background-size: 20px 20px !important;
+	}
+
+	&:before {
+		content: '';
+		background-image: url('../../components/assets/3@2x.png');
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: 20px 25px;
+		display: inline-block;
+		width: 20px;
+		height: 25px;
+		left: 30px;
+		top: 25px;
+		transform: translate(-50%, -50%);
+	}
+
+	input::placeholder {
+		font-size: 14px;
+	}
+
+	input {
+		margin-left: 16px;
 	}
 
 	.PhoneInput_ {

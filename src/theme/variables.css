@@ -151,7 +151,13 @@ ion-tab-button::part(native) {
 	overflow: visible;
 }
 
-.slick-slide {
+.slick-slider {
+	padding-bottom: 30px;
+}
+
+
+
+/* .slick-slide {
 	transform: scale(0.75);
 	transition: all 0.25s ease-out;
 }
@@ -165,9 +171,6 @@ ion-tab-button::part(native) {
 	bottom: 0px !important;
 }
 
-.slick-slider {
-	padding-bottom: 30px;
-}
 
 .slick-dots li button:before {
 	font-size: 10px !important;
@@ -185,14 +188,14 @@ ion-tab-button::part(native) {
 
 .slick-list {
 	overflow: visible !important;
-}
+} */
 
 .alert-title {
 	color: #000 !important;
 }
 
 .alert-message {
-	color: #000 !important;
+	color: white !important;
 }
 
 .d-flex.ion-justify-content-between.ion-align-items-center {
@@ -242,4 +245,15 @@ ion-tab-button::part(native) {
 
 .item-inner {
 	/* border: none !important; */
+}
+
+@media screen and (min-width: 559px) {
+	.slick-slide {
+		width: 560px !important;
+	}
+
+	.slick-track {
+		/* transform: translate3d(-560px, 0px, 0px) !important; */
+		/* transform: none !important; */
+	}
 }

@@ -4,10 +4,12 @@
 }
 
 .slick-slide {
+	padding: 0 1rem;
+
 	.slider-item {
 		ion-img {
-			width: 66vw;
-			height: 33vw;
+			width: 98%;
+			// height: 33vw;
 			border-radius: 1rem;
 			overflow: hidden;
 			object-fit: unset;
