@@ -24,7 +24,7 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 
 :root {
-	--ion-background-color: #2b363f;
+	--ion-background-color: #394249;
 	--ion-text-color: black;
 	--ion-tab-bar-background: black;
 	--ion-toolbar-background: black;
@@ -252,8 +252,7 @@ ion-tab-button::part(native) {
 		width: 560px !important;
 	}
 
-	.slick-track {
-		/* transform: translate3d(-560px, 0px, 0px) !important; */
-		/* transform: none !important; */
+	.slick-slide {
+		margin-left: -9px;
 	}
 }

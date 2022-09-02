@@ -120,7 +120,7 @@ const TeamReport = () => {
 			</IonHeader>
 			<IonContent fullscreen className="ion-padding">
 				<IonGrid>
-					<IonRow className={`ion-justify-content-center ${styles.tabBox2}`}>
+					<IonRow className={`${styles.tabBox2} ${styles.tabBoxTitle2}`}>
 						<span
 							onClick={() => {
 								changeLevel(0)
@@ -129,7 +129,9 @@ const TeamReport = () => {
 						>
 							全部
 						</span>
+					</IonRow>
 
+					<IonRow className={`${styles.tabBox2} ion-margin-start ion-padding-start`}>
 						<span
 							onClick={() => {
 								changeLevel(1)
@@ -155,7 +157,7 @@ const TeamReport = () => {
 							三级
 						</span>
 					</IonRow>
-					<IonRow className={`ion-justify-content-center ${styles.tabBox1}`}>
+					<IonRow className={`${styles.tabBox1} ${styles.tabBoxTitle1}`}>
 						<span
 							onClick={() => {
 								changeTime(0)
@@ -164,6 +166,8 @@ const TeamReport = () => {
 						>
 							{t('team-report.all')}
 						</span>
+					</IonRow>
+					<IonRow className={`${styles.tabBox1} ion-margin-start ion-padding-start`}>
 						<span
 							onClick={() => {
 								changeTime(1)
@@ -246,7 +250,7 @@ const TeamReport = () => {
 				</IonGrid>
 			</IonContent>
 			<BottomLine />
-		</IonPage>
+		</IonPage >
 	)
 }
 
