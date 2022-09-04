@@ -15,14 +15,11 @@ export default props => {
 	return (
 		<Swiper
 			effect={'cards'}
-			grabCursor={true}
+			// grabCursor={true}
 			modules={[Autoplay, EffectCards]}
 			loop={true}
 			autoplay={{
-				delay: 200,
-				stopOnLastSlide: false,
-				disableOnInteraction: true,
-				stopOnLastSlide: true
+				delay: 1300,
 			}}
 			className="orderSwiper"
 		>

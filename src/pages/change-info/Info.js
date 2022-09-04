@@ -11,7 +11,8 @@ import {
 	IonImg,
 	IonInput,
 	IonList,
-	IonToast
+	IonToast,
+	IonContent
 } from '@ionic/react'
 import styles from './Info.module.scss'
 
@@ -114,48 +115,51 @@ const Info = () => {
 					</IonRow>
 				</IonToolbar>
 			</IonHeader>
-			<div className={styles['out-avatar']}>
-				<IonImg src={imgUrl} alt="avatar" className={styles.avatar} />
-				<input type="file" id="uploadFile" onChange={uploadImg} styles={{ display: 'none' }}></input>
-				{/* <img id="showUploadFile" src="" className="picture" styles={{ display: 'none' }}></img> */}
-			</div>
-			<IonList className={styles.list1}>
-				<IonInput readonly value={id}>
-					<div>ID</div>
-				</IonInput>
+			<IonContent>
 
-				<IonInput readonly value={username}>
-					<div>Username</div>
-				</IonInput>
+				<div className={styles['out-avatar']}>
+					<IonImg src={imgUrl} alt="avatar" className={styles.avatar} />
+					<input type="file" id="uploadFile" onChange={uploadImg} styles={{ display: 'none' }}></input>
+					{/* <img id="showUploadFile" src="" className="picture" styles={{ display: 'none' }}></img> */}
+				</div>
+				<IonList className={styles.list1}>
+					<IonInput readonly value={id}>
+						<div>ID</div>
+					</IonInput>
 
-				<IonInput readonly value={phoneNumber}>
-					<div>Phone Number</div>
-				</IonInput>
+					<IonInput readonly value={username}>
+						<div>Username</div>
+					</IonInput>
 
-				<IonInput readonly value={invitationCode}>
-					<div>Invitation Code</div>
-				</IonInput>
-			</IonList>
+					<IonInput readonly value={phoneNumber}>
+						<div>Phone Number</div>
+					</IonInput>
 
-			<IonList className={styles.list2}>
-				<IonInput value={nickName} onIonChange={e => setNickName(e.detail.value)}>
-					<div>Nickname</div>
-				</IonInput>
+					<IonInput readonly value={invitationCode}>
+						<div>Invitation Code</div>
+					</IonInput>
+				</IonList>
 
-				<IonInput value={email} onIonChange={e => setEmail(e.detail.value)}>
-					<div>Email</div>
-				</IonInput>
-			</IonList>
+				<IonList className={styles.list2}>
+					<IonInput value={nickName} onIonChange={e => setNickName(e.detail.value)}>
+						<div>Nickname</div>
+					</IonInput>
 
-			<IonGrid className="ion-padding">
-				<IonButton
-					className="custom-button ion-padding-top ion-margin-bottom"
-					expand="block"
-					onClick={changeInfoAction}
-				>
-					{t('change-info.title')}
-				</IonButton>
-			</IonGrid>
+					<IonInput value={email} onIonChange={e => setEmail(e.detail.value)}>
+						<div>Email</div>
+					</IonInput>
+				</IonList>
+
+				<div className="ion-padding d-flex ion-justify-content-center">
+					<IonButton
+						className="custom-button ion-padding-top ion-margin-bottom"
+						expand="block"
+						onClick={changeInfoAction}
+					>
+						{t('change-info.title')}
+					</IonButton>
+				</div>
+			</IonContent>
 			<BottomLine />
 			<IonToast
 				isOpen={showToast}

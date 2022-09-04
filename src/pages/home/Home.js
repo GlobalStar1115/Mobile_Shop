@@ -98,11 +98,14 @@ const Home = () => {
 					<button
 						style={{
 							position: 'absolute',
-							width: '100px',
+							width: '200px',
 							height: '40px',
 							left: '50%',
 							bottom: '10%',
-							transform: ' translate(-50%,0%)'
+							borderRadius: '20px',
+							transform: ' translate(-50%,0%)',
+							backgroundColor: '#77a2d8',
+							color: 'white'
 						}}
 						onClick={() => setShowDialog(!showDialog)}
 					>

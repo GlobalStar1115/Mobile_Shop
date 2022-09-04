@@ -529,7 +529,7 @@
 
 			ion-img:nth-child(2) {
 				position: absolute;
-				top: 40%;
+				top: 35%;
 				left: 50%;
 				transform: translate(-50%, -50%);
 			}
@@ -539,16 +539,18 @@
 			}
 
 			.smallImg {
-				width: 45%;
+				width: 40%;
 			}
 
 			span {
 				position: absolute;
-				bottom: 0px;
+				bottom: 14px;
 				color: black;
 				left: 50%;
 				transform: translate(-50%, -50%);
 				line-height: 16px;
+				display: inline-block;
+				width: 100%;
 			}
 		}
 	}
