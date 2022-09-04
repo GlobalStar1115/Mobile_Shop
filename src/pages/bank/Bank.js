@@ -197,7 +197,7 @@ const Bank = () => {
 						<IonCol size="12">
 							<SignupField field={fields[0]} errors={errors} />
 							<SignupField field={fields[1]} errors={errors} />
-							<IonList>
+							{/* <IonList>
 								<IonRadioGroup value={accountType} onIonChange={changeAccountType}>
 									<IonListHeader className='ion-no-padding'>
 										<div className={styles.type}>{t('bank.type')}</div>
@@ -224,7 +224,26 @@ const Bank = () => {
 										<IonRadio slot="start" value="1" />
 									</IonItem>
 								</IonRadioGroup>
-							</IonList>
+							</IonList> */}
+							<p className={styles.selectTitle}>Choose</p>
+							<IonItem className={styles.selectOptions}>
+								<IonLabel>Options</IonLabel>
+								<IonSelect
+									mode="ios"
+									okText="Okay"
+									cancelText="Dismiss"
+									value={accountType}
+									onIonChange={changeAccountType}
+								>
+									<IonSelectOption value="2">
+										{t('bank.WalletAddress')}
+									</IonSelectOption>
+									<IonSelectOption value="1">
+										{t('bank.BankCard')}
+									</IonSelectOption>
+								</IonSelect>
+							</IonItem>
+
 							{accountType === '2' ? (
 								<IonList>
 									<IonRadioGroup value={chainType} onIonChange={changeChainType}>

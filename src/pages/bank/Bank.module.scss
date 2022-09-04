@@ -101,3 +101,36 @@
 		color: white;
 	}
 }
+
+.selectOptions {
+	height: 50px;
+	background-color: #424f5c;
+	border-radius: 30vw;
+	border: none;
+	color: rgb(158, 158, 158);
+	position: relative;
+
+	&::part(native) {
+		background: #424f5c !important;
+	}
+}
+
+.selectTitle {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.alert-head {
+	display: none !important;
+}
+
+ion-select {
+	max-width: 100% !important;
+}
+
+// .selectOptions::before {
+// 	content: 'choose';
+// 	color: white;
+// 	position: absolute;
+// 	top: -16px;
+// }

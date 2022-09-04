@@ -1,0 +1,37 @@
+.systemNoticePage {
+    background: #2a353e;
+
+    ion-header {
+        background: #212932 !important;
+
+        h4 {
+            color: white;
+        }
+
+        ion-toolbar {
+            --padding-start: 1rem;
+            --padding-end: 1rem;
+
+            ion-button {
+                font-size: 20px;
+            }
+        }
+    }
+
+    ion-content {
+        p {
+            color: white;
+        }
+
+        ion-card {
+            margin-bottom: 1rem;
+            background: #212932;
+            color: white;
+
+            ion-img {
+                width: 20px !important;
+                margin-right: 10px;
+            }
+        }
+    }
+}

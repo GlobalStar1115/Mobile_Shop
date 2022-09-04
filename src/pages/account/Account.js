@@ -50,8 +50,8 @@ const Account = () => {
 							<h4 className="main-title ion-text-center ion-no-margin">{t('account.title')}</h4>
 						</IonCol>
 						<IonCol size="2">
-							<IonRouterLink routerLink="/app/home">
-								<IonIcon icon={chatboxEllipsesOutline} />
+							<IonRouterLink routerLink="/system-notice">
+								<IonImg src="/assets/images/laba@2x.png" />
 							</IonRouterLink>
 						</IonCol>
 					</IonRow>

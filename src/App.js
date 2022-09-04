@@ -44,6 +44,7 @@ import CompanyRules from './pages/company-rules/CompanyRules'
 import CompanyPersonal from './pages/company-personal/CompanyPersonal'
 import CompanyAgency from './pages/company-agency/CompanyAgency'
 import CompanyQualification from './pages/company-qualification/CompanyQualification'
+import SystemNotice from './pages/system-notice/SystemNotice'
 const App = () => (
 	<IonApp>
 		<IonReactRouter>
@@ -80,6 +81,9 @@ const App = () => (
 				</Route>
 				<Route exact path="/language">
 					<Language />
+				</Route>
+				<Route exact path="/system-notice">
+					<SystemNotice />
 				</Route>
 				<Route exact path="/recharge-record">
 					<RechargeRecord />
