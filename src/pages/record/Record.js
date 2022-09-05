@@ -19,14 +19,20 @@ import { chatboxEllipsesOutline } from 'ionicons/icons'
 
 import { useTranslation } from 'react-i18next'
 
-import { GetGrabOrderApi, SubmitOrderApi } from '../../request/api'
+import { GetGrabOrderApi, SubmitOrderApi, InfoApi } from '../../request/api'
 import { useEffect, useState } from 'react'
 
 const Record = () => {
 	const { t, i18n } = useTranslation('lang')
 	const [orderArr, setOrderArr] = useState([])
+	const [assets, setAssets] = useState({})
 
 	useEffect(() => {
+		InfoApi().then(res => {
+			if (res.code === 200) {
+				setAssets(res.data.assets)
+			}
+		})
 		const paramsData = `status=0`
 		getGrabOrderApi(paramsData)
 	}, [])
@@ -61,7 +67,8 @@ const Record = () => {
 			}
 		})
 	}
-
+	const totalBalance = assets.availableBalance;
+	typeof totalBalance === 'number' ? totalBalance.toFixed(2) : totalBalance
 	return (
 		<IonPage className={styles.recordPage}>
 			<IonHeader>
@@ -99,7 +106,7 @@ const Record = () => {
 							<div className={styles.tabContent}>
 								<IonGrid>
 									<span>{t('record.account-amount')}:</span>
-									<h2 className="main-number">$ 1234.123</h2>
+									<h2 className="main-number">$ {totalBalance}</h2>
 								</IonGrid>
 								{orderArr.map((item, index) => {
 									return (

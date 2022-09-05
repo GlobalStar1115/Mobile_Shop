@@ -40,6 +40,8 @@ const Account = () => {
 			}
 		})
 	}, [])
+	const totalBalance = assets.availableBalance;
+	typeof totalBalance === 'number' ? totalBalance.toFixed(2) : totalBalance
 	return (
 		<IonPage className={styles.accountPage}>
 			<IonHeader>
@@ -84,7 +86,7 @@ const Account = () => {
 					<IonRow className='ion-justify-content-between ion-margin-top ion-padding-top'>
 						<div>
 							<span>{t('record.account-amount')}:</span>
-							<h3 className="main-number ion-no-margin">$ 1234.123</h3>
+							<h3 className="main-number ion-no-margin">$ {totalBalance}</h3>
 						</div>
 						<div>
 							<div
@@ -92,7 +94,7 @@ const Account = () => {
 							>
 								<span className="text-white ion-margin-end">{t('account.enable-amount')}:</span>
 								<span className={`main-number ${styles.enableAmount}`} style={{ color: '#49c1fb' }}>
-									$ {assets.availableBalance}
+									$ {totalBalance}
 								</span>
 							</div>
 							<div

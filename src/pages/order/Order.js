@@ -22,7 +22,7 @@ import OrderSlider from '../../components/slider/OrderSlider'
 import Dialog from '../../components/dialog/Dialog'
 import { useState, useEffect } from 'react'
 
-import { GrabOrderApi, SubmitOrderApi } from '../../request/api'
+import { GrabOrderApi, SubmitOrderApi, InfoApi } from '../../request/api'
 
 import { setShowName } from '../../data/utils'
 
@@ -33,6 +33,7 @@ const Order = () => {
 	const [showDialog, setShowDialog] = useState(false)
 	const [animationList, setAnimationList] = useState([])
 	const [orderData, setOrderData] = useState({})
+	const [assets, setAssets] = useState({})
 
 	const [showToast, setShowToast] = useState(false)
 	const [message, setMessage] = useState('')
@@ -78,11 +79,17 @@ const Order = () => {
 	}
 
 	useEffect(() => {
+		InfoApi().then(res => {
+			if (res.code === 200) {
+				setAssets(res.data.assets)
+			}
+		})
 		setTimeout(() => {
 			setSlider(true)
 		}, 100)
 	}, [])
-
+	const totalBalance = assets.availableBalance;
+	typeof totalBalance === 'number' ? totalBalance.toFixed(2) : totalBalance
 	return (
 		<IonPage className={styles.orderPage}>
 			{showDialog && (
@@ -152,7 +159,7 @@ const Order = () => {
 						<IonImg src="/assets/images/home/01@2x.png" alt="badge" />
 						<div>
 							<span>{t('order.account-amount')}:</span>
-							<h4 className="main-number ion-no-margin">$ 1223.123</h4>
+							<h4 className="main-number ion-no-margin">$ {totalBalance}</h4>
 							<IonRow className="ion-align-items-center">
 								<span className="ion-margin-end">{t('order.ordinary-member')}:</span>
 								<span>
