@@ -131,10 +131,11 @@ const Home = () => {
 							<IonRow className="ion-justify-content-between ion-align-items-center ion-padding-start ion-padding-end">
 								<IonCol size="6">
 									<span>{t('home.mybalance')}:</span>
-									<h2 className={`main-number ${styles.balanceAmount}`}>$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance
-									}</h2>
+									<h2 className={`main-number ${styles.balanceAmount}`}>$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</h2>
 								</IonCol>
-								<IonImg src="/assets/images/home/14@2x.png" />
+								<IonRouterLink routerLink='/app/support'>
+									<IonImg src="/assets/images/home/14@2x.png" />
+								</IonRouterLink>
 							</IonRow>
 						</IonCard>
 						<IonRow
@@ -235,7 +236,9 @@ const Home = () => {
 										</div>
 									</IonRow>
 								</IonCol>
-								<span>{t('home.membership-level.join')}</span>
+								<IonRouterLink routerLink='/app/support'>
+									<span>{t('home.membership-level.join')}</span>
+								</IonRouterLink>
 							</IonRow>
 						</IonCard>
 
@@ -253,7 +256,9 @@ const Home = () => {
 										</div>
 									</IonRow>
 								</IonCol>
-								<span>{t('home.membership-level.join')}</span>
+								<IonRouterLink routerLink='/app/support'>
+									<span>{t('home.membership-level.join')}</span>
+								</IonRouterLink>
 							</IonRow>
 						</IonCard>
 						<IonCard className={`ion-padding ion-no-margin ${styles.membershipCard}`}>
@@ -270,7 +275,9 @@ const Home = () => {
 										</div>
 									</IonRow>
 								</IonCol>
-								<span>{t('home.membership-level.join')}</span>
+								<IonRouterLink routerLink='/app/support'>
+									<span>{t('home.membership-level.join')}</span>
+								</IonRouterLink>
 							</IonRow>
 						</IonCard>
 					</IonGrid>

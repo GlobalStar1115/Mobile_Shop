@@ -46,12 +46,17 @@
 		"WalletAddress": "钱包地址",
 		"chain-trc": "TRC20",
 		"chain-erc": "ERC20",
-		"chain-type": "chainType",
-		"choose-bank": "选择银行"
+		"chain-type": "Chain Type",
+		"choose-bank": "选择银行",
+		"choose": "选择",
+		"options": "选项"
 	},
 	"team-report": {
 		"title": "团队报表",
 		"all": "全部",
+		"level-1": "一级",
+		"level-2": "二级",
+		"level-3": "三级",
 		"today": "今天",
 		"yesterday": "昨天",
 		"this-week": "本周",
@@ -181,6 +186,14 @@
 		"address": "详细地址",
 		"common-add": "设置为常用地址",
 		"confirm": "确认修改"
+	},
+	"common-text": {
+		"no-data": "暂无数据",
+		"user-name": "用户名",
+		"phone-number": "电话号码",
+		"nick-name": "外号",
+		"email": "电邮",
+		"invitation-code": "邀请码"
 	},
 	"home": {
 		"title": "首页",

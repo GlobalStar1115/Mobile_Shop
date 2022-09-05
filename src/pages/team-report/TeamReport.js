@@ -19,9 +19,10 @@ import styles from './TeamReport.module.scss'
 
 import { chevronBackOutline, calendarOutline } from 'ionicons/icons'
 import { useTranslation } from 'react-i18next'
-import { TeamInfoApi } from '../../request/api'
+import { TeamInfoApi, InfoApi } from '../../request/api'
 import { useEffect, useState, useCallback } from 'react'
 import BottomLine from '../../components/bottom-line/BottomLine'
+// import { text } from 'stream/consumers'
 
 function getNowFormatDate(day) {
 	const date = new Date()
@@ -49,10 +50,19 @@ const TeamReport = () => {
 	const [start, setStart] = useState(getNowFormatDate())
 	const [end, setEnd] = useState(getNowFormatDate())
 	const [list, setList] = useState([])
+	const [assets, setAssets] = useState({})
 
 	useEffect(() => {
 		getTeamInfo()
 	}, [levelActive, start, end])
+
+	useEffect(() => {
+		InfoApi().then(res => {
+			if (res.code === 200) {
+				setAssets(res.data.assets)
+			}
+		})
+	}, [])
 
 	const getTeamInfo = useCallback(() => {
 		let data = `level=${levelActive}&beginTime=${start}&endTime=${end}`
@@ -127,7 +137,7 @@ const TeamReport = () => {
 							}}
 							className={`${levelActive == 0 ? `${styles.active}` : 'null'}`}
 						>
-							全部
+							{t('team-report.all')}
 						</span>
 					</IonRow>
 
@@ -138,7 +148,7 @@ const TeamReport = () => {
 							}}
 							className={`${levelActive == 1 ? `${styles.active}` : 'null'}`}
 						>
-							一级
+							{t('team-report.level-1')}
 						</span>
 						<span
 							onClick={() => {
@@ -146,7 +156,7 @@ const TeamReport = () => {
 							}}
 							className={`${levelActive == 2 ? `${styles.active}` : 'null'}`}
 						>
-							二级
+							{t('team-report.level-2')}
 						</span>
 						<span
 							onClick={() => {
@@ -154,7 +164,7 @@ const TeamReport = () => {
 							}}
 							className={`${levelActive == 3 ? `${styles.active}` : 'null'}`}
 						>
-							三级
+							{t('team-report.level-3')}
 						</span>
 					</IonRow>
 					<IonRow className={`${styles.tabBox1} ${styles.tabBoxTitle1}`}>
@@ -205,7 +215,7 @@ const TeamReport = () => {
 					<IonCard className="ion-padding main-radius ion-no-margin">
 						<div className="d-flex ion-justify-content-between ion-margin-bottom text-white">
 							<span>{t('team-report.all-data')}</span>
-							<span className="main-number">$ 12345.123</span>
+							<span className="main-number">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</span>
 						</div>
 						<p>
 							{t('team-report.team-size')}: {list.numberOfMembers}
@@ -245,7 +255,7 @@ const TeamReport = () => {
 									</div>
 								)
 							})}
-						{list.memberList?.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>暂无数据</h4> : null}
+						{list.memberList?.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>{t('common-text.no-data')}</h4> : null}
 					</IonGrid>
 				</IonGrid>
 			</IonContent>

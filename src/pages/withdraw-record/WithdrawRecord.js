@@ -78,7 +78,7 @@ const WithdrawRecord = () => {
 							</IonCard>
 						)
 					})}
-					{dataArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>暂无数据</h4> : null}
+					{dataArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>{t('common-text.no-data')}</h4> : null}
 				</IonGrid>
 			</IonContent>
 			<BottomLine />

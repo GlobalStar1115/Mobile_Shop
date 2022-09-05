@@ -1,11 +1,12 @@
 import { Component } from 'react'
 import './CssRoll.scss'
-import { displayIncomeApi } from '../../request/api'
+import { displayIncomeApi, BaseImageApi } from '../../request/api'
 
 export default class Roll extends Component {
 	state = {
 		list: [],
-		count: 0
+		count: 0,
+		imgUrl: ''
 	}
 
 	// 页面挂载时开启定时器
@@ -15,6 +16,14 @@ export default class Roll extends Component {
 				this.setState({
 					list: res.data
 				})
+			}
+		})
+		BaseImageApi().then(res => {
+			if (res.code === 200) {
+				this.setState({
+					imgUrl: res.data[0] && res.data[0].imgUrls
+				})
+
 			}
 		})
 	}
@@ -27,7 +36,7 @@ export default class Roll extends Component {
 						return (
 							<div className="item" key={index}>
 								<div className="itemLeft">
-									<img src={item.avatar ? item.avatar : '/assets/images/home/avatar.png'} alt="avatar" />
+									<img src={item.avatar ? item.avatar : this.state.imgUrl} alt="avatar" />
 									<span>{item.nickName}</span>
 								</div>
 								<div className="itemRight">

@@ -43,7 +43,6 @@
 		ion-label {
 			color: white;
 			display: block;
-			// margin-bottom: 20px;
 		}
 
 		p {
@@ -78,4 +77,8 @@
 			border-radius: 10px;
 		}
 	}
+}
+
+.fieldGroup div:first-child {
+	margin-bottom: 30px !important;
 }

@@ -98,12 +98,17 @@
 		"WalletAddress": "Wallet address",
 		"chain-trc": "TRC20",
 		"chain-erc": "ERC20",
-		"chain-type": "chainType",
-		"choose-bank": "Choose a bank"
+		"chain-type": "Chain Type",
+		"choose-bank": "Choose a bank",
+		"choose": "Choose",
+		"options": "Options"
 	},
 	"team-report": {
 		"title": "Team Report",
 		"all": "All",
+		"level-1": "Level 1",
+		"level-2": "Level 2",
+		"level-3": "Level 2",
 		"today": "Today",
 		"yesterday": "Yesterday",
 		"this-week": "This Week",
@@ -181,6 +186,14 @@
 		"address": "Address",
 		"common-add": "Set to common address",
 		"confirm": "Change"
+	},
+	"common-text": {
+		"no-data": "No Data",
+		"user-name": "User Name",
+		"phone-number": "Phone Number",
+		"nick-name": "Nick Name",
+		"email": "Email",
+		"invitation-code": "Invitation Code"
 	},
 	"home": {
 		"title": "HOME",

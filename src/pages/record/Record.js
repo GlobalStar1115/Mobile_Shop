@@ -105,8 +105,7 @@ const Record = () => {
 							<div className={styles.tabContent}>
 								<IonGrid>
 									<span>{t('record.account-amount')}:</span>
-									<h2 className="main-number">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance
-									}</h2>
+									<h2 className="main-number">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</h2>
 								</IonGrid>
 								{orderArr.map((item, index) => {
 									return (
@@ -145,7 +144,7 @@ const Record = () => {
 										</IonCard>
 									)
 								})}
-								{orderArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>暂无数据</h4> : null}
+								{orderArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>{t('common-text.no-data')}</h4> : null}
 							</div>
 						</div>
 						<div className={styles.tabPart}>
@@ -164,7 +163,7 @@ const Record = () => {
 							<div className={styles.tabContent}>
 								<IonGrid>
 									<span>{t('record.account-amount')}:</span>
-									<h2 className="main-number">$ 1234.123</h2>
+									<h2 className="main-number">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</h2>
 								</IonGrid>
 								{orderArr.map((item, index) => {
 									return (
@@ -196,7 +195,7 @@ const Record = () => {
 										</IonCard>
 									)
 								})}
-								{orderArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>暂无数据</h4> : null}
+								{orderArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>{t('common-text.no-data')}</h4> : null}
 							</div>
 						</div>
 						<div className={styles.tabPart}>
@@ -215,7 +214,7 @@ const Record = () => {
 							<div className={styles.tabContent}>
 								<IonGrid>
 									<span>{t('record.account-amount')}:</span>
-									<h2 className="main-number">$ 1234.123</h2>
+									<h2 className="main-number">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</h2>
 								</IonGrid>
 								{orderArr.map((item, index) => {
 									return (
@@ -247,7 +246,7 @@ const Record = () => {
 										</IonCard>
 									)
 								})}
-								{orderArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>暂无数据</h4> : null}
+								{orderArr.length == 0 ? <h4 style={{ textAlign: 'center', color: 'white' }}>{t('common-text.no-data')}</h4> : null}
 							</div>
 						</div>
 					</div>

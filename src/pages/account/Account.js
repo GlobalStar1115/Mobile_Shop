@@ -21,7 +21,7 @@ import { chatboxEllipsesOutline, chevronForwardOutline } from 'ionicons/icons'
 
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
-import { LogoutApi, InfoApi } from '../../request/api'
+import { LogoutApi, InfoApi, BaseImageApi } from '../../request/api'
 
 const Account = () => {
 	const router = useIonRouter()
@@ -29,6 +29,7 @@ const Account = () => {
 	const [present] = useIonAlert()
 	const [assets, setAssets] = useState({})
 	const [member, setMember] = useState({})
+	const [imgUrl, setImgUrl] = useState('')
 
 	useEffect(() => {
 		InfoApi().then(res => {
@@ -37,6 +38,12 @@ const Account = () => {
 				const { member, assets } = res.data
 				setMember(member)
 				setAssets(assets)
+			}
+		})
+		BaseImageApi().then(res => {
+			if (res.code === 200) {
+				const imgUrl = res.data[0] && res.data[0].imgUrls
+				setImgUrl(imgUrl)
 			}
 		})
 	}, [])
@@ -63,7 +70,7 @@ const Account = () => {
 					<IonRow className="ion-justify-content-between">
 						<div className={`d-flex ion-align-items-center ${styles.userInfo}`} style={{ display: 'flex' }}>
 							<IonImg
-								src={member.avatar ? member.avatar : '/assets/images/personal/avatar.png'}
+								src={member.avatar ? member.avatar : imgUrl}
 								className={styles.userAvatar}
 								alt="avatar"
 							/>
@@ -75,7 +82,7 @@ const Account = () => {
 										{member.inviteCode}
 									</div>
 									<IonRouterLink routerLink="/invite">
-										<IonImg src="/assets/images/personal/3.png" className={styles.inviteImg} alt="invite" />
+										<IonImg src="/assets/images/邀请@2x.png" className={styles.inviteImg} alt="invite" />
 									</IonRouterLink>
 								</div>
 							</div>
@@ -85,7 +92,7 @@ const Account = () => {
 					<IonRow className='ion-justify-content-between ion-margin-top ion-padding-top'>
 						<div>
 							<span>{t('record.account-amount')}:</span>
-							<h3 className="main-number ion-no-margin">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</h3>
+							<h3 style={{ paddingTop: '8px' }} className="main-number ion-no-margin">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</h3>
 						</div>
 						<div>
 							<div
@@ -97,7 +104,7 @@ const Account = () => {
 								</span>
 							</div>
 							<div
-								className="d-flex ion-align-items-center ion-justify-content-end"
+								className="d-flex ion-align-items-center ion-justify-content-end" style={{ paddingTop: '8px' }}
 							>
 								<span className="text-white ion-margin-end">{t('account.frozen-amount')}:</span>
 								<span className={`main-number ${styles.frozenAmount}`} style={{ color: '#ff6565' }}>

@@ -47,7 +47,8 @@ const Withdraw = () => {
 	const fields = WithdrawField()
 	const [errors, setErrors] = useState(false)
 
-	const [availableBalance, setAvailableBalance] = useState(0)
+	const [assets, setAssets] = useState({})
+	const [member, setMember] = useState({})
 	const [accountArr, setAccountArr] = useState([])
 	const [AccountSelected, setAccountSelected] = useState('brown')
 	const withdrawAction = () => {
@@ -72,8 +73,11 @@ const Withdraw = () => {
 
 	useEffect(() => {
 		InfoApi().then(res => {
+			console.log(res)
 			if (res.code === 200) {
-				setAvailableBalance(res.data.assets.availableBalance)
+				const { member, assets } = res.data
+				setMember(member)
+				setAssets(assets)
 			}
 		})
 		AccountListApi().then(res => {
@@ -128,22 +132,22 @@ const Withdraw = () => {
 						{t('withdraw.avaliable-amount')}:
 					</span>
 					<h2 className="ion-text-center main-number text-white" style={{ color: '#000' }}>
-						$ {typeof availableBalance === 'number' ? availableBalance.toFixed(2) : availableBalance
+						$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance
 						}
 					</h2>
 					<p className="text-white" style={{ color: '#000' }}>
 						<span>{t('withdraw.acc-name')}: </span>
-						<span>123456778</span>
+						<span>{member.memberName}</span>
 					</p>
 					<p className="text-white" style={{ color: '#000' }}>
 						<span>{t('withdraw.phone')}: </span>
-						<span>123456778</span>
+						<span>{member.phoneNumber}</span>
 					</p>
 					<p>* {t('withdraw.comment')}</p>
 				</IonCard>
 				<IonGrid className="ion-padding">
 					<IonRow>
-						<IonCol size="12">
+						<IonCol size="12" className={styles.fieldGroup}>
 							{fields.map((field, index) => {
 								return <SignupField field={field} errors={errors} key={index} />
 							})}

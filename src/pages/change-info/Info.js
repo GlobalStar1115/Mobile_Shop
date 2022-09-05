@@ -124,29 +124,29 @@ const Info = () => {
 				</div>
 				<IonList className={styles.list1}>
 					<IonInput readonly value={id}>
-						<div>ID</div>
+						<div>ID:</div>
 					</IonInput>
 
 					<IonInput readonly value={username}>
-						<div>Username</div>
+						<div>{t('common-text.user-name')}:</div>
 					</IonInput>
 
 					<IonInput readonly value={phoneNumber}>
-						<div>Phone Number</div>
+						<div>{t('common-text.phone-number')}:</div>
 					</IonInput>
 
 					<IonInput readonly value={invitationCode}>
-						<div>Invitation Code</div>
+						<div>{t('common-text.invitation-code')}:</div>
 					</IonInput>
 				</IonList>
 
 				<IonList className={styles.list2}>
 					<IonInput value={nickName} onIonChange={e => setNickName(e.detail.value)}>
-						<div>Nickname</div>
+						<div>{t('common-text.nick-name')}:</div>
 					</IonInput>
 
 					<IonInput value={email} onIonChange={e => setEmail(e.detail.value)}>
-						<div>Email</div>
+						<div>{t('common-text.email')}:</div>
 					</IonInput>
 				</IonList>
 

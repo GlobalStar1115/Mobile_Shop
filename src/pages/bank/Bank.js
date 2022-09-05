@@ -225,9 +225,9 @@ const Bank = () => {
 									</IonItem>
 								</IonRadioGroup>
 							</IonList> */}
-							<p className={styles.selectTitle}>Choose</p>
+							<p className={styles.selectTitle}>{t('bank.choose')}</p>
 							<IonItem className={styles.selectOptions}>
-								<IonLabel>Options</IonLabel>
+								<IonLabel>{t('bank.options')}</IonLabel>
 								<IonSelect
 									mode="ios"
 									okText="Okay"
@@ -247,9 +247,7 @@ const Bank = () => {
 							{accountType === '2' ? (
 								<IonList>
 									<IonRadioGroup value={chainType} onIonChange={changeChainType}>
-										<IonListHeader className='ion-no-padding'>
-											<div className={styles.type}>{t('bank.chain-type')}</div>
-										</IonListHeader>
+										<div className={styles.type}>{t('bank.chain-type')}</div>
 										<IonItem
 											className={styles.selectItem}
 											color="light"

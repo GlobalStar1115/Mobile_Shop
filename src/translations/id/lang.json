@@ -84,12 +84,17 @@
 		"other-info": "Other info",
 		"email": "Email",
 		"change": "Change",
+		"choose": "Choose",
 		"tip": "Kind tips",
+		"options": "Options",
 		"comment": "Dear users, in order to protect your funds, please do not enter your bank card password, our staff will not ask you to enter your bank card password."
 	},
 	"team-report": {
 		"title": "Team Report",
 		"all": "All",
+		"level-1": "Level 1",
+		"level-2": "Level 2",
+		"level-3": "Level 2",
 		"today": "Today",
 		"yesterday": "Yesterday",
 		"this-week": "This Week",
@@ -158,6 +163,14 @@
 		"address": "Address",
 		"common-add": "Set to common address",
 		"confirm": "Change"
+	},
+	"common-text": {
+		"no-data": "No Data",
+		"user-name": "User Name",
+		"phone-number": "Phone Number",
+		"nick-name": "Nick Name",
+		"email": "Email",
+		"invitation-code": "Invitation Code"
 	},
 	"home": {
 		"title": "HOME",

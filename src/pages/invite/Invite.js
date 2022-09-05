@@ -6,11 +6,22 @@ import { chevronBackOutline, linkOutline } from "ionicons/icons";
 
 import { useTranslation } from "react-i18next";
 import BottomLine from '../../components/bottom-line/BottomLine';
-
+import { useEffect, useState } from 'react'
+import { InfoApi } from '../../request/api'
 
 const Invite = () => {
     const { t, i18n } = useTranslation('lang');
+    const [member, setMember] = useState({})
 
+    useEffect(() => {
+        InfoApi().then(res => {
+            console.log(res)
+            if (res.code === 200) {
+                const { member } = res.data
+                setMember(member)
+            }
+        })
+    }, [])
     return (
         <IonPage className={styles.invitePage}>
             <IonHeader>
@@ -33,7 +44,7 @@ const Invite = () => {
             <IonContent fullscreen className='ion-padding'>
                 <IonGrid className="ion-padding">
                     <span className='text-white ion-text-justify'>{t('invite.content')}</span>
-                    <p className='ion-text-center text-white main-number ion-padding-top'>{t('invite.invite-code')}: AC12345</p>
+                    <p className='ion-text-center text-white main-number ion-padding-top'>{t('invite.invite-code')}: {member.inviteCode}</p>
                     <IonButton expand="block"><IonIcon icon={linkOutline} />{t('invite.button-text')}</IonButton>
                 </IonGrid>
             </IonContent>
