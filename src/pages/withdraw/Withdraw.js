@@ -105,9 +105,6 @@ const Withdraw = () => {
 		}
 	}, [params])
 
-	const totalBalance = availableBalance;
-	typeof totalBalance === 'number' ? totalBalance.toFixed(2) : totalBalance
-
 	return (
 		<IonPage className={styles.withdrawPage}>
 			<IonHeader>
@@ -131,7 +128,8 @@ const Withdraw = () => {
 						{t('withdraw.avaliable-amount')}:
 					</span>
 					<h2 className="ion-text-center main-number text-white" style={{ color: '#000' }}>
-						$ {totalBalance}
+						$ {typeof availableBalance === 'number' ? availableBalance.toFixed(2) : availableBalance
+						}
 					</h2>
 					<p className="text-white" style={{ color: '#000' }}>
 						<span>{t('withdraw.acc-name')}: </span>
