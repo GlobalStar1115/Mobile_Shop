@@ -40,8 +40,7 @@ const Account = () => {
 			}
 		})
 	}, [])
-	const totalBalance = assets.availableBalance;
-	typeof totalBalance === 'number' ? totalBalance.toFixed(2) : totalBalance
+
 	return (
 		<IonPage className={styles.accountPage}>
 			<IonHeader>
@@ -86,7 +85,7 @@ const Account = () => {
 					<IonRow className='ion-justify-content-between ion-margin-top ion-padding-top'>
 						<div>
 							<span>{t('record.account-amount')}:</span>
-							<h3 className="main-number ion-no-margin">$ {totalBalance}</h3>
+							<h3 className="main-number ion-no-margin">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</h3>
 						</div>
 						<div>
 							<div
@@ -94,7 +93,7 @@ const Account = () => {
 							>
 								<span className="text-white ion-margin-end">{t('account.enable-amount')}:</span>
 								<span className={`main-number ${styles.enableAmount}`} style={{ color: '#49c1fb' }}>
-									$ {totalBalance}
+									$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}
 								</span>
 							</div>
 							<div
@@ -102,7 +101,7 @@ const Account = () => {
 							>
 								<span className="text-white ion-margin-end">{t('account.frozen-amount')}:</span>
 								<span className={`main-number ${styles.frozenAmount}`} style={{ color: '#ff6565' }}>
-									$ {assets.lockBalance}
+									$ {typeof assets.lockBalance === 'number' ? assets.lockBalance.toFixed(2) : assets.lockBalance}
 								</span>
 							</div>
 						</div>

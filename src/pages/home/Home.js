@@ -89,15 +89,6 @@ const Home = () => {
 		// setShowDialog(!showDialog)
 	}, [])
 
-	const totalBalance = assets.availableBalance;
-	typeof totalBalance === 'number' ? totalBalance.toFixed(2) : totalBalance
-
-	const commisionBalance = assets.investmentBalance;
-	typeof commisionBalance === 'number' ? commisionBalance.toFixed(2) : commisionBalance
-
-	const revenueBalance = assets.totalIncomeAmount;
-	typeof revenueBalance === 'number' ? revenueBalance.toFixed(2) : revenueBalance
-
 	// console.log(totalBalance)
 	return (
 		<IonPage className={styles.homePage}>
@@ -140,7 +131,8 @@ const Home = () => {
 							<IonRow className="ion-justify-content-between ion-align-items-center ion-padding-start ion-padding-end">
 								<IonCol size="6">
 									<span>{t('home.mybalance')}:</span>
-									<h2 className={`main-number ${styles.balanceAmount}`}>$ {totalBalance}</h2>
+									<h2 className={`main-number ${styles.balanceAmount}`}>$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance
+									}</h2>
 								</IonCol>
 								<IonImg src="/assets/images/home/14@2x.png" />
 							</IonRow>
@@ -187,13 +179,15 @@ const Home = () => {
 					<div style={{ width: '45%' }}>
 						<IonCard className="ion-text-center ion-padding ion-no-margin">
 							<span>{t('home.commisiontoday')}</span>
-							<h5 className="main-number">$ {commisionBalance}</h5>
+							<h5 className="main-number">$ {typeof assets.investmentBalance === 'number' ? assets.investmentBalance.toFixed(2) : assets.investmentBalance
+							}</h5>
 						</IonCard>
 					</div>
 					<div style={{ width: '45%' }}>
 						<IonCard class="ion-text-center ion-padding ion-no-margin">
 							<span>{t('home.totalrevenue')}</span>
-							<h5 className="main-number">$ {revenueBalance}</h5>
+							<h5 className="main-number">$ {typeof assets.totalIncomeAmount === 'number' ? assets.totalIncomeAmount.toFixed(2) : assets.totalIncomeAmount
+							}</h5>
 						</IonCard>
 					</div>
 				</IonRow>

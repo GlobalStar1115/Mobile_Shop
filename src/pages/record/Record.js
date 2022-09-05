@@ -67,8 +67,7 @@ const Record = () => {
 			}
 		})
 	}
-	const totalBalance = assets.availableBalance;
-	typeof totalBalance === 'number' ? totalBalance.toFixed(2) : totalBalance
+
 	return (
 		<IonPage className={styles.recordPage}>
 			<IonHeader>
@@ -106,7 +105,8 @@ const Record = () => {
 							<div className={styles.tabContent}>
 								<IonGrid>
 									<span>{t('record.account-amount')}:</span>
-									<h2 className="main-number">$ {totalBalance}</h2>
+									<h2 className="main-number">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance
+									}</h2>
 								</IonGrid>
 								{orderArr.map((item, index) => {
 									return (

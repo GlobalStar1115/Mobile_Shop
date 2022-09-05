@@ -80,16 +80,18 @@ const Order = () => {
 
 	useEffect(() => {
 		InfoApi().then(res => {
+			console.log(res)
 			if (res.code === 200) {
-				setAssets(res.data.assets)
+				const { member, assets } = res.data
+				// setMember(member)
+				setAssets(assets)
 			}
 		})
 		setTimeout(() => {
 			setSlider(true)
 		}, 100)
 	}, [])
-	const totalBalance = assets.availableBalance;
-	typeof totalBalance === 'number' ? totalBalance.toFixed(2) : totalBalance
+
 	return (
 		<IonPage className={styles.orderPage}>
 			{showDialog && (
@@ -159,7 +161,8 @@ const Order = () => {
 						<IonImg src="/assets/images/home/01@2x.png" alt="badge" />
 						<div>
 							<span>{t('order.account-amount')}:</span>
-							<h4 className="main-number ion-no-margin">$ {totalBalance}</h4>
+							<h4 className="main-number ion-no-margin">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance
+							}</h4>
 							<IonRow className="ion-align-items-center">
 								<span className="ion-margin-end">{t('order.ordinary-member')}:</span>
 								<span>
@@ -170,7 +173,7 @@ const Order = () => {
 						<IonRow
 							className={`ion-justify-content-center ion-margin-bottom ion-align-items-center ion-margin-top ${styles.orderAmount}`}
 						>
-							<div className={`main-number ${styles.roundedNumber}`}>22</div>
+							<div className={`main-number ${styles.roundedNumber}`}>{assets.grabOrderNumber}</div>
 							<span className="main-number"> / </span>
 							<span className="main-number">60</span>
 						</IonRow>
@@ -180,19 +183,19 @@ const Order = () => {
 				<div className={`text-white ${styles.orderList}`}>
 					<div className="d-flex ion-justify-content-between ion-align-items-center" style={{ display: 'flex' }}>
 						<span>{t('order.get-commission')}</span>
-						<span className="main-number">$ 56.23</span>
+						<span className="main-number">$ {typeof assets.commissionAmountByToday === 'number' ? assets.commissionAmountByToday.toFixed(2) : assets.commissionAmountByToday}</span>
 					</div>
 					<div className="d-flex ion-justify-content-between ion-align-items-center" style={{ display: 'flex' }}>
 						<span>{t('order.freeze-amount')}</span>
-						<span className="main-number">$ 1256.23</span>
+						<span className="main-number">$ {typeof assets.lockBalance === 'number' ? assets.lockBalance.toFixed(2) : assets.lockBalance}</span>
 					</div>
 					<div className="d-flex ion-justify-content-between ion-align-items-center" style={{ display: 'flex' }}>
 						<span>{t('order.quantity-order')}</span>
-						<span className="main-number">12</span>
+						<span className="main-number">{assets.grabOrderNumber}</span>
 					</div>
 					<div className="d-flex ion-justify-content-between ion-align-items-center" style={{ display: 'flex' }}>
 						<span>{t('order.enable-amount')}</span>
-						<span className="main-number">$ 1256.23</span>
+						<span className="main-number">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</span>
 					</div>
 				</div>
 				<IonButton onClick={beginOrder} className="custom-button ion-padding-top ion-margin-bottom" expand="block">
