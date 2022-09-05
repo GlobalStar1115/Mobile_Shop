@@ -45,13 +45,6 @@
 			color: white;
 		}
 
-		// ion-radio-group {
-		// 	ion-item {
-		// 		background: #424f5c;
-		// 		color: white;
-		// 	}
-		// }
-
 		ion-col {
 			ion-item {
 				--ion-color-base: var(--ion-color-light) !important;
@@ -126,11 +119,9 @@
 
 ion-select {
 	max-width: 100% !important;
+	color: rgb(158, 158, 158) !important;
 }
 
-// .selectOptions::before {
-// 	content: 'choose';
-// 	color: white;
-// 	position: absolute;
-// 	top: -16px;
-// }
+.select-text {
+	color: rgb(158, 158, 158) !important;
+}

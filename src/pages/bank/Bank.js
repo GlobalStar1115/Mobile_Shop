@@ -246,7 +246,7 @@ const Bank = () => {
 
 							{accountType === '2' ? (
 								<IonList>
-									<IonRadioGroup value={chainType} onIonChange={changeChainType}>
+									<IonRadioGroup value={chainType} onIonChange={changeChainType} mode="ios" color='success'>
 										<div className={styles.type}>{t('bank.chain-type')}</div>
 										<IonItem
 											className={styles.selectItem}
