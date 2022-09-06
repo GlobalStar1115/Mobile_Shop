@@ -13,6 +13,14 @@ const Invite = () => {
     const { t, i18n } = useTranslation('lang');
     const [member, setMember] = useState({})
 
+    const copyLink = () => {
+        navigator.clipboard.writeText(window.location.protocol + window.location.hostname + '/siginup/' + member.inviteCode).then(() => {
+            console.log("ok")
+        }, () => {
+            console.log("no")
+        });
+    }
+
     useEffect(() => {
         InfoApi().then(res => {
             console.log(res)
@@ -45,11 +53,11 @@ const Invite = () => {
                 <IonGrid className="ion-padding">
                     <span className='text-white ion-text-justify'>{t('invite.content')}</span>
                     <p className='ion-text-center text-white main-number ion-padding-top'>{t('invite.invite-code')}: {member.inviteCode}</p>
-                    <IonButton expand="block" onClick={() => navigator.clipboard.writeText(`${window.location.protocol}//${window.location.hostname}/siginup/` + member.inviteCode)}><IonIcon icon={linkOutline} />{t('invite.button-text')}</IonButton>
+                    <IonButton expand="block" onClick={copyLink}><IonIcon icon={linkOutline} />{t('invite.button-text')}</IonButton>
                 </IonGrid>
             </IonContent>
             <BottomLine />
-        </IonPage>
+        </IonPage >
     );
 };
 
