@@ -1,8 +1,7 @@
 import styles from './Invite.module.scss';
 
-import { IonButtons, IonIcon, IonBackButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonToolbar, IonTitle, IonButton } from '@ionic/react';
+import { IonButtons, IonIcon, IonBackButton, IonToast, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonToolbar, IonTitle, IonButton } from '@ionic/react';
 import { chevronBackOutline, linkOutline } from "ionicons/icons";
-
 
 import { useTranslation } from "react-i18next";
 import BottomLine from '../../components/bottom-line/BottomLine';
@@ -12,12 +11,15 @@ import { InfoApi } from '../../request/api'
 const Invite = () => {
     const { t, i18n } = useTranslation('lang');
     const [member, setMember] = useState({})
+    const [message, setMessage] = useState('')
+    const [showToast, setShowToast] = useState(false)
+    const [showToast2, setShowToast2] = useState(false)
 
     const copyLink = () => {
         navigator.clipboard.writeText(window.location.protocol + window.location.hostname + '/siginup/' + member.inviteCode).then(() => {
-            console.log("ok")
+            setShowToast(true)
         }, () => {
-            console.log("no")
+            setShowToast2(true)
         });
     }
 
@@ -57,6 +59,20 @@ const Invite = () => {
                 </IonGrid>
             </IonContent>
             <BottomLine />
+            <IonToast
+                isOpen={showToast}
+                onDidDismiss={() => setShowToast(false)}
+                message="Copied Invitation Link"
+                duration={1000}
+                color="primary"
+            />
+            <IonToast
+                isOpen={showToast2}
+                onDidDismiss={() => setShowToast2(false)}
+                message="There are some issues"
+                duration={1000}
+                color="danger"
+            />
         </IonPage >
     );
 };
