@@ -34,15 +34,34 @@ const Order = () => {
 	const [animationList, setAnimationList] = useState([])
 	const [orderData, setOrderData] = useState({})
 	const [assets, setAssets] = useState({})
-	const [preset, setPreset] = useState({})
 
 	const [showToast, setShowToast] = useState(false)
 	const [message, setMessage] = useState('')
 	const [color, setColor] = useState('danger')
 
 	const beginOrder = () => {
-		GrabOrderApi().then(res => {
-			// console.log(res)
+		// GrabOrderApi().then(res => {
+		// 	console.log(res)
+		// 	if (res.code === 200) {
+		// 		const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
+		// 		goodsListByAnimation &&
+		// 			goodsListByAnimation.map(item => {
+		// 				return setShowName(item, 'title')
+		// 			})
+		// 		setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
+		// 		setAnimationList(goodsListByAnimation || [])
+		// 		setTimeout(() => {
+		// 			setShowDialog(true)
+		// 		}, animationDuration)
+		// 	} else {
+		// 		setMessage(res.msg)
+		// 		setColor('danger')
+		// 		setShowToast(true)
+		// 	}
+		// })
+
+		PresetOrderApi().then(res => {
+			console.log(res)
 			if (res.code === 200) {
 				const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
 				goodsListByAnimation &&
@@ -64,7 +83,7 @@ const Order = () => {
 
 	const submitOrder = () => {
 		SubmitOrderApi({ id: orderData.id }).then(res => {
-			// console.log(res)
+			console.log(res)
 			if (res.code === 200) {
 				setShowDialog(false)
 				setMessage(res.msg)
@@ -80,13 +99,6 @@ const Order = () => {
 	}
 
 	useEffect(() => {
-		PresetOrderApi().then(res => {
-			console.log(res)
-			if (res.code === 200) {
-				let presets = res.data
-				setPreset(presets)
-			}
-		})
 		InfoApi().then(res => {
 			// console.log(res)
 			if (res.code === 200) {

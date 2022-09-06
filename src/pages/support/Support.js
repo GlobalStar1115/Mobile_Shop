@@ -13,8 +13,8 @@ import {
 import styles from './Support.module.scss'
 
 import { useTranslation } from 'react-i18next'
-// import { useEffect, useState } from 'react'
-// import { ServiceApi } from '../../request/api'
+import { useEffect, useState } from 'react'
+import { ServiceApi } from '../../request/api'
 
 const Support = () => {
 	const { t, i18n } = useTranslation('lang')
@@ -76,7 +76,7 @@ const Support = () => {
 						<IonCol size='6'>
 							<IonRouterLink routerLink='/app/support'>
 								<IonCard className='ion-no-margin ion-padding main-radius'>
-									<p>在线客服中心</p>
+									<p>{t('support.service-name')}</p>
 									<p >Work time</p>
 									<IonImg src='/assets/images/service1.png' alt="" />
 								</IonCard>
@@ -85,7 +85,7 @@ const Support = () => {
 						<IonCol size='6'>
 							<IonRouterLink routerLink='/app/support'>
 								<IonCard className='ion-no-margin ion-padding main-radius'>
-									<p>在线客服中心</p>
+									<p>{t('support.service-name')}</p>
 									<p >Work time</p>
 									<IonImg src='/assets/images/service2.png' alt="" />
 								</IonCard>
