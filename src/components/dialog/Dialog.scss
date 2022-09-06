@@ -10,11 +10,34 @@
 	background: rgba($color: #000000, $alpha: 0.5);
 	display: flex;
 	justify-content: center;
+
 	.dialog {
+		border: 1px solid gray;
 		width: 90%;
 		height: 40%;
 		text-align: left;
-		background-color: #fff;
+		background-color: #2a353e !important;
 		border-radius: 10px;
+		color: white !important;
+
+		h3 {
+			border-bottom: solid 1px gray;
+			padding-bottom: 8px;
+		}
+
+		.btn-body {
+			position: absolute;
+			bottom: 2%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			button {
+				background: #77a2d8;
+				padding: 10px 100px;
+				border-radius: 20px;
+				color: white;
+				font-size: 1rem;
+			}
+		}
 	}
 }

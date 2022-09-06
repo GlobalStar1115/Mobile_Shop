@@ -66,6 +66,9 @@ export const GrabOrderApi = () => request.post('/app/member/order/grab')
 
 export const SubmitOrderApi = params => request.post('/app/member/order/submit', params)
 
+export const PresetOrderApi = () => request.get(`/app/member/order/goods/preset`)
+
+
 /*
  * Record module
  */

@@ -255,4 +255,8 @@ ion-tab-button::part(native) {
 	.slick-slide {
 		margin-left: -9px;
 	}
+
+	.dialog {
+		width: 520px !important;
+	}
 }

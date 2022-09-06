@@ -52,6 +52,7 @@
     "workbox-routing": "^5.1.4",
     "workbox-strategies": "^5.1.4",
     "workbox-streams": "^5.1.4",
+    "x-dialog": "^1.6.4",
     "yarn": "^1.22.19"
   },
   "scripts": {

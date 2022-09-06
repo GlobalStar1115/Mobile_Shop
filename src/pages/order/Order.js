@@ -22,7 +22,7 @@ import OrderSlider from '../../components/slider/OrderSlider'
 import Dialog from '../../components/dialog/Dialog'
 import { useState, useEffect } from 'react'
 
-import { GrabOrderApi, SubmitOrderApi, InfoApi } from '../../request/api'
+import { GrabOrderApi, SubmitOrderApi, InfoApi, PresetOrderApi } from '../../request/api'
 
 import { setShowName } from '../../data/utils'
 
@@ -34,6 +34,7 @@ const Order = () => {
 	const [animationList, setAnimationList] = useState([])
 	const [orderData, setOrderData] = useState({})
 	const [assets, setAssets] = useState({})
+	const [preset, setPreset] = useState({})
 
 	const [showToast, setShowToast] = useState(false)
 	const [message, setMessage] = useState('')
@@ -41,7 +42,7 @@ const Order = () => {
 
 	const beginOrder = () => {
 		GrabOrderApi().then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
 				goodsListByAnimation &&
@@ -63,7 +64,7 @@ const Order = () => {
 
 	const submitOrder = () => {
 		SubmitOrderApi({ id: orderData.id }).then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				setShowDialog(false)
 				setMessage(res.msg)
@@ -79,8 +80,15 @@ const Order = () => {
 	}
 
 	useEffect(() => {
-		InfoApi().then(res => {
+		PresetOrderApi().then(res => {
 			console.log(res)
+			if (res.code === 200) {
+				let presets = res.data
+				setPreset(presets)
+			}
+		})
+		InfoApi().then(res => {
+			// console.log(res)
 			if (res.code === 200) {
 				const { member, assets } = res.data
 				// setMember(member)

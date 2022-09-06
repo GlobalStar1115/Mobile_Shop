@@ -197,6 +197,8 @@
 	},
 	"home": {
 		"title": "首页",
+		"announcement": "公告",
+		"close": "关闭",
 		"mybalance": "我的余额",
 		"coincharge": "充值金币",
 		"cashwithdraw": "提现金币",

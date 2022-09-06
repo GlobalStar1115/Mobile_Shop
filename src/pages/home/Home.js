@@ -47,6 +47,7 @@ const Home = () => {
 	const [levelArr, setLevelArr] = useState([])
 
 	const [showDialog, setShowDialog] = useState(false)
+	const [showModal, setShowModal] = useState(false)
 
 	useEffect(() => {
 		InfoApi().then(res => {
@@ -94,24 +95,28 @@ const Home = () => {
 		<IonPage className={styles.homePage}>
 			{showDialog && (
 				<DialogNotice hideDialog={() => setShowDialog(!showDialog)} hide={false}>
-					<h3>公告</h3>
+					<h3>{t('home.announcement')}</h3>
 					<p>{homeNotice}</p>
-					<button
-						style={{
-							position: 'absolute',
-							width: '200px',
-							height: '40px',
-							left: '50%',
-							bottom: '10%',
-							borderRadius: '20px',
-							transform: ' translate(-50%,0%)',
-							backgroundColor: '#77a2d8',
-							color: 'white'
-						}}
-						onClick={() => setShowDialog(!showDialog)}
-					>
-						关闭
-					</button>
+					<div className='btn-body'>
+						<button
+							onClick={() => setShowDialog(!showDialog)}
+						>
+							{t('home.close')}
+						</button>
+					</div>
+				</DialogNotice>
+			)}
+			{showModal && (
+				<DialogNotice hideDialog={() => setShowModal(!showModal)} hide={false}>
+					<h3>{t('home.promotion')}</h3>
+					<p>Coming soon</p>
+					<div className='btn-body'>
+						<button
+							onClick={() => setShowModal(!showModal)}
+						>
+							{t('home.close')}
+						</button>
+					</div>
 				</DialogNotice>
 			)}
 			<IonContent fullscreen>
@@ -158,7 +163,8 @@ const Home = () => {
 								<IonImg src="/assets/images/home/11@2x.png" />
 								<span>{t('home.cashwithdraw')}</span>
 							</div>
-							<div>
+							<div onClick={() => setShowModal({ showModal: true })}
+							>
 								<IonImg src="/assets/images/home/13@2x.png" />
 								<span>{t('home.promotion')}</span>
 							</div>
