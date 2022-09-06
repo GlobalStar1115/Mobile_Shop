@@ -30,13 +30,15 @@
 			bottom: 2%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			width: 60%;
 
 			button {
 				background: #77a2d8;
-				padding: 10px 100px;
+				padding: 10px 0;
 				border-radius: 20px;
 				color: white;
 				font-size: 1rem;
+				width: 100%;
 			}
 		}
 	}
