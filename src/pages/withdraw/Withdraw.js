@@ -63,7 +63,7 @@ const Withdraw = () => {
 				channelId: 0
 			}
 			WithdrawtApi(data).then(res => {
-				console.log(res)
+				// console.log(res)
 				if (res.code === 200) {
 				}
 			})
@@ -73,7 +73,7 @@ const Withdraw = () => {
 
 	useEffect(() => {
 		InfoApi().then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				const { member, assets } = res.data
 				setMember(member)
@@ -81,7 +81,7 @@ const Withdraw = () => {
 			}
 		})
 		AccountListApi().then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				let lang = localStorage.getItem('language-id')
 				if (!lang) lang = 'en'

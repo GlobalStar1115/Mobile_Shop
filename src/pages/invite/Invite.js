@@ -25,7 +25,7 @@ const Invite = () => {
 
     useEffect(() => {
         InfoApi().then(res => {
-            console.log(res)
+            // console.log(res)
             if (res.code === 200) {
                 const { member } = res.data
                 setMember(member)

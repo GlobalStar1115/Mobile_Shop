@@ -31,7 +31,7 @@ class Pager extends Component {
 					return item
 				})
 				this.setState({ countries: data })
-				console.log('data', data)
+				// console.log('data', data)
 			}
 		})
 	}
@@ -79,7 +79,7 @@ class Pager extends Component {
 					value={this.state.searchText}
 					onIonChange={e => {
 						this.setState({ searchText: e.target.value })
-						console.log('e.target.value', e.target.value)
+						// console.log('e.target.value', e.target.value)
 					}}
 				></IonSearchbar>
 				<div className="country-border" ref="countryList">

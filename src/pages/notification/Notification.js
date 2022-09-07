@@ -26,7 +26,7 @@ const Notification = () => {
 	const [messageList, setMessageList] = useState([])
 	useEffect(() => {
 		MessageApi().then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				setMessageList(res.data)
 			}

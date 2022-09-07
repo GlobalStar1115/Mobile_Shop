@@ -58,7 +58,7 @@ const Bank = () => {
 			id = url.split('?')[1]
 			const data = `id=${id}&channelId=0`
 			AccountInfoApi(data).then(res => {
-				console.log(res)
+				// console.log(res)
 				if (res.code === 200) {
 					const { accountType, address, chainType, bankCode, phoneNumber, pix, realName } = res.data
 					if (accountType == 2) {

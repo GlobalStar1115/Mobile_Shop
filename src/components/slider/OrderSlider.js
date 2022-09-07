@@ -39,7 +39,6 @@ export default props => {
 					)
 				})
 			)}
-			{console.log('arr:', arr)}
 		</Swiper>
 	)
 }

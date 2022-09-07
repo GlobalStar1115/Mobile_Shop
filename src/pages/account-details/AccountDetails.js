@@ -31,7 +31,7 @@ const AccountDetails = () => {
 
 	useEffect(() => {
 		MemberBillsApi().then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				setDataArr(res.data)
 			}

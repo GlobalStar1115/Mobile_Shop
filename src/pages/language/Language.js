@@ -31,7 +31,7 @@ const Language = () => {
 
 	useEffect(() => {
 		LangApi().then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				setLangList(res.data)
 			}

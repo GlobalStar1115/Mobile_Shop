@@ -70,7 +70,7 @@ const Login = () => {
 				channelId: 0
 			}
 			LoginApi(data).then(res => {
-				console.log(res)
+				// console.log(res)
 				if (res.code === 200) {
 					localStorage.setItem('Authorization', res.data['token'])
 					setShowToast(true)
@@ -88,7 +88,7 @@ const Login = () => {
 	const hideDialog = val => {
 		const queryData = `areaCode=${val}`
 		AreaCodeInfoApi(queryData).then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				const { areaCode, iconUrl } = res.data
 				setCodeData({ areaCode, iconUrl })

@@ -15,7 +15,7 @@ export default class Dialog extends Component {
 	render() {
 		const { hideDialog, hide } = this.props
 		let tem = hide ? 'hidden' : ''
-		console.log('hide', tem)
+		// console.log('hide', tem)
 		return createPortal(
 			<div className="dialogSideBox" style={{ visibility: tem }}>
 				<div className="dialog">

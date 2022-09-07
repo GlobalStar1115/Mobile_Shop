@@ -10,7 +10,7 @@ const LanguageButton = ({ field, languageList, setLanguageList }) => {
 		<div
 			className={styles.languageBox}
 			onClick={() => {
-				console.log('field', field)
+				// console.log('field', field)
 				i18n.changeLanguage(field.dictValue)
 				localStorage.setItem('language-id', field.dictValue)
 				window.history.go(-1)

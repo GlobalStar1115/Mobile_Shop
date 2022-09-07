@@ -67,16 +67,16 @@ const TeamReport = () => {
 	const getTeamInfo = useCallback(() => {
 		let data = `level=${levelActive}&beginTime=${start}&endTime=${end}`
 		TeamInfoApi(data).then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
-				console.log(res.data)
+				// console.log(res.data)
 				setList(res.data)
 			}
 		})
 	}, [levelActive, start, end])
 
 	const changeLevel = val => {
-		console.log('val', val)
+		// console.log('val', val)
 		setLevelActive(val)
 	}
 

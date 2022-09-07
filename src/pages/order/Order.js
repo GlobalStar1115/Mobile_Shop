@@ -42,7 +42,7 @@ const Order = () => {
 
 	const beginOrder = () => {
 		GrabOrderApi().then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
 				goodsListByAnimation &&
@@ -56,8 +56,8 @@ const Order = () => {
 				}, animationDuration)
 			} else {
 				setMessage(res.msg)
-				setColor('danger')
-				setShowToast(true)
+				// setColor('danger')
+				// setShowToast(true)
 			}
 		})
 	}
@@ -87,8 +87,8 @@ const Order = () => {
 			} else {
 				setShowDialog(false)
 				setMessage(res.msg)
-				setColor('danger')
-				setShowToast(true)
+				// setColor('danger')
+				// setShowToast(true)
 			}
 		})
 	}

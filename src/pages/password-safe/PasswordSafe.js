@@ -72,7 +72,7 @@ const Password = () => {
 
 	useEffect(() => {
 		InfoApi().then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				const { hasSafePassword } = res.data.member
 				hasSafePassword && setHasSafePassword(hasSafePassword)

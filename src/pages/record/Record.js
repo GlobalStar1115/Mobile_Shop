@@ -43,7 +43,7 @@ const Record = () => {
 
 	const getGrabOrderApi = status => {
 		GetGrabOrderApi(status).then(res => {
-			console.log(status, res.data)
+			// console.log(status, res.data)
 			if (res.code === 200) {
 				const { data } = res
 				data.map(item => {

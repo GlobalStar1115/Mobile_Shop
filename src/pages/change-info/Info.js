@@ -72,7 +72,7 @@ const Info = () => {
 		const fd = new FormData()
 		fd.set('file', document.getElementById('uploadFile').files[0])
 		ModifyAvatarApi(fd).then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				setImgUrl(res.avatar)
 			}
@@ -82,7 +82,7 @@ const Info = () => {
 	useEffect(() => {
 		InfoApi().then(res => {
 			if (res.code === 200) {
-				console.log('res.data.member', res.data.member)
+				// console.log('res.data.member', res.data.member)
 				const { id, memberName, phoneNumber, inviteCode, nickName, email, avatar } = res.data.member
 				setId(id)
 				setUsername(memberName)
@@ -93,7 +93,7 @@ const Info = () => {
 				if (avatar) {
 					setImgUrl(avatar)
 				}
-				console.log(imgUrl)
+				// console.log(imgUrl)
 			}
 		})
 	}, [])

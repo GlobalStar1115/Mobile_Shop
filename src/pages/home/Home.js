@@ -63,7 +63,7 @@ const Home = () => {
 		})
 		HomeIntroduceApi().then(res => {
 			if (res.code === 200) {
-				console.log(res)
+				// console.log(res)
 				setIntroduceArr(res.data)
 			}
 		})

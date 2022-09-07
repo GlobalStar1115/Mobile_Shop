@@ -32,7 +32,7 @@ const WithdrawRecord = () => {
 	useEffect(() => {
 		const paramsData = `transactionType=2`
 		CashRecordApi(paramsData).then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				const { data } = res
 				setDataArr(data)
