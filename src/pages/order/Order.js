@@ -119,26 +119,25 @@ const Order = () => {
 							<img src={orderData.goodsPicUrl} style={{ width: '77px', height: '77px', padding: '10px' }} />
 							<div style={{ padding: '10px', fontSize: '12px' }}>{orderData.showName}</div>
 						</div>
-						<IonRow style={{ display: 'flex', justifyContent: 'space-between' }}>
+						<IonRow style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', marginTop: '10px' }}>
 							<div>{t('order.total-order')}</div>
 							<div>{orderData.goodsPrice}</div>
 						</IonRow>
-						<IonRow style={{ display: 'flex', justifyContent: 'space-between' }}>
+						<IonRow style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px' }}>
 							<div>{t('order.commission')}</div>
 							<div>{orderData.commissionAmount}</div>
 						</IonRow>
-						<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+						<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
 							<button
 								onClick={() => setShowDialog(false)}
-								style={{ width: '60px', height: '40px', fontSize: '18px', marginRight: '10px', borderRadius: '30px' }}
+								style={{ padding: '8px 15px', fontSize: '18px', marginRight: '10px', borderRadius: '30px' }}
 							>
 								{t('order.cancel')}
 							</button>
 							<button
 								onClick={submitOrder}
 								style={{
-									width: '100px',
-									height: '40px',
+									padding: '8px 15px',
 									fontSize: '18px',
 									marginLeft: '10px',
 									borderRadius: '30px',

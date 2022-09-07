@@ -1,5 +1,6 @@
 .recordPage {
 	background: #2b363f;
+	padding-bottom: 30px;
 
 	ion-header {
 		background: #2b363f;
@@ -110,6 +111,15 @@
 							background: white;
 							padding: 5px;
 						}
+					}
+
+					div {
+						width: 70%;
+						padding: 10px 0;
+						background-color: #77a2d8;
+						border-radius: 20px;
+						text-align: center;
+						margin: 30px auto 0px auto;
 					}
 				}
 			}

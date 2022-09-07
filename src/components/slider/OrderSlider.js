@@ -35,6 +35,7 @@ export default props => {
 						<SwiperSlide key={item.id}>
 							<IonImg src={item.coverUrl} alt="product" />
 							<div style={{ fontSize: '12px' }}>{item.title}</div>
+							<div style={{ fontSize: '16px', marginTop: '5px' }}>$ {item.price}</div>
 						</SwiperSlide>
 					)
 				})

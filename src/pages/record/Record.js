@@ -134,13 +134,13 @@ const Record = () => {
 												<span>{t('record.returned-amount')}</span>
 												<span className="main-number">$ {item.tradeAmount}</span>
 											</IonRow>
-											<IonButton
+											<div
 												onClick={() => submitOrder(item.id)}
-												className="custom-button ion-padding-top ion-margin-bottom"
+												className="ion-margin-top ion-margin-bottom"
 												expand="block"
 											>
-												提交订单
-											</IonButton>
+												{t('order.submit-order')}
+											</div>
 										</IonCard>
 									)
 								})}
