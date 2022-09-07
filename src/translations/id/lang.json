@@ -138,6 +138,12 @@
 		"quantity-order": "Quantity of order",
 		"enable-amount": "Avaliable",
 		"start-order": "Start grabbing orders",
+		"order-submission": "Order Submission",
+		"order-time": "Order Time",
+		"order-number": "Order Number",
+		"total-order": "Total Order",
+		"cancel": "Cancel",
+		"submit-order": "Submit",
 		"product-name": "Product name"
 	},
 	"record": {

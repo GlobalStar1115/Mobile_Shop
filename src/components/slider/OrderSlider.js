@@ -32,13 +32,14 @@ export default props => {
 			) : (
 				arr.map((item, index) => {
 					return (
-						<SwiperSlide key={index}>
+						<SwiperSlide key={item.id}>
 							<IonImg src={item.coverUrl} alt="product" />
 							<div style={{ fontSize: '12px' }}>{item.title}</div>
 						</SwiperSlide>
 					)
 				})
 			)}
+			{console.log('arr:', arr)}
 		</Swiper>
 	)
 }

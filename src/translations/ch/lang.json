@@ -159,6 +159,12 @@
 		"freeze-amount": "冻结金额",
 		"quantity-order": "订单数量",
 		"enable-amount": "可用余额",
+		"order-submission": "订单提交",
+		"order-time": "抢单时间",
+		"order-number": "订单号",
+		"total-order": "订单总额",
+		"cancel": "取消",
+		"submit-order": "提交订单",
 		"start-order": "开始抢单",
 		"product-name": "商品名称"
 	},

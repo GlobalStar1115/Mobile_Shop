@@ -63,7 +63,7 @@ const Order = () => {
 	}
 
 	PresetOrderApi().then(res => {
-		console.log(res)
+		// console.log(res)
 		if (res.code === 200) {
 			let lang = localStorage.getItem('language-id')
 			if (lang == "") lang = "en"
@@ -112,19 +112,19 @@ const Order = () => {
 			{showDialog && (
 				<Dialog hideDialog={() => setShowDialog(!showDialog)} hide={false}>
 					<div style={{ padding: '10px' }}>
-						<h3>订单提交</h3>
-						<p>抢单时间:&nbsp;{orderData.createTime}</p>
-						<p>订单号:&nbsp;{orderData.orderSn}</p>
+						<h3>{t('order.order-submission')}</h3>
+						<p>{t('order.order-time')}:&nbsp;{orderData.createTime}</p>
+						<p>{t('order.order-number')}:&nbsp;{orderData.orderSn}</p>
 						<div style={{ display: 'flex', backgroundColor: '#2a353e' }}>
 							<img src={orderData.goodsPicUrl} style={{ width: '77px', height: '77px', padding: '10px' }} />
 							<div style={{ padding: '10px', fontSize: '12px' }}>{orderData.showName}</div>
 						</div>
 						<IonRow style={{ display: 'flex', justifyContent: 'space-between' }}>
-							<div>订单总额</div>
+							<div>{t('order.total-order')}</div>
 							<div>{orderData.goodsPrice}</div>
 						</IonRow>
 						<IonRow style={{ display: 'flex', justifyContent: 'space-between' }}>
-							<div>佣金</div>
+							<div>{t('order.commission')}</div>
 							<div>{orderData.commissionAmount}</div>
 						</IonRow>
 						<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -132,7 +132,7 @@ const Order = () => {
 								onClick={() => setShowDialog(false)}
 								style={{ width: '60px', height: '40px', fontSize: '18px', marginRight: '10px', borderRadius: '30px' }}
 							>
-								取消
+								{t('order.cancel')}
 							</button>
 							<button
 								onClick={submitOrder}
@@ -146,7 +146,7 @@ const Order = () => {
 									color: '#fff'
 								}}
 							>
-								提交订单
+								{t('order.submit-order')}
 							</button>
 						</div>
 					</div>
