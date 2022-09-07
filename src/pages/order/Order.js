@@ -40,27 +40,7 @@ const Order = () => {
 	const [color, setColor] = useState('danger')
 
 	const beginOrder = () => {
-		// GrabOrderApi().then(res => {
-		// 	console.log(res)
-		// 	if (res.code === 200) {
-		// 		const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
-		// 		goodsListByAnimation &&
-		// 			goodsListByAnimation.map(item => {
-		// 				return setShowName(item, 'title')
-		// 			})
-		// 		setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
-		// 		setAnimationList(goodsListByAnimation || [])
-		// 		setTimeout(() => {
-		// 			setShowDialog(true)
-		// 		}, animationDuration)
-		// 	} else {
-		// 		setMessage(res.msg)
-		// 		setColor('danger')
-		// 		setShowToast(true)
-		// 	}
-		// })
-
-		PresetOrderApi().then(res => {
+		GrabOrderApi().then(res => {
 			console.log(res)
 			if (res.code === 200) {
 				const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
@@ -79,6 +59,26 @@ const Order = () => {
 				setShowToast(true)
 			}
 		})
+
+		// PresetOrderApi().then(res => {
+		// 	console.log(res)
+		// 	if (res.code === 200) {
+		// 		const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
+		// 		goodsListByAnimation &&
+		// 			goodsListByAnimation.map(item => {
+		// 				return setShowName(item, 'title')
+		// 			})
+		// 		setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
+		// 		setAnimationList(goodsListByAnimation || [])
+		// 		setTimeout(() => {
+		// 			setShowDialog(true)
+		// 		}, animationDuration)
+		// 	} else {
+		// 		setMessage(res.msg)
+		// 		setColor('danger')
+		// 		setShowToast(true)
+		// 	}
+		// })
 	}
 
 	const submitOrder = () => {
