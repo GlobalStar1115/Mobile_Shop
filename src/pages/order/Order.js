@@ -70,15 +70,15 @@ const Order = () => {
 			res.goodsList.map((item, index) => {
 				res.goodsList[index].title = JSON.parse(item.title)[lang]
 			})
-			console.log(res.goodsList)
+			// console.log(res.goodsList)
 			setPresetArr(res.goodsList)
-			console.log(lang)
+			// console.log(lang)
 		}
 	})
 
 	const submitOrder = () => {
 		SubmitOrderApi({ id: orderData.id }).then(res => {
-			console.log(res)
+			// console.log(res)
 			if (res.code === 200) {
 				setShowDialog(false)
 				setMessage(res.msg)
