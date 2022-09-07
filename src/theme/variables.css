@@ -155,6 +155,10 @@ ion-tab-button::part(native) {
 	padding-bottom: 30px;
 }
 
+.swiper-slide {
+	padding: 24px !important;
+}
+
 
 
 /* .slick-slide {

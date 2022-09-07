@@ -11,6 +11,7 @@ import { useEffect } from 'react'
 export default props => {
 	const { t, i18n } = useTranslation('lang')
 	const { list } = props
+	const { arr } = props
 	SwiperCore.use([Autoplay])
 	return (
 		<Swiper
@@ -23,17 +24,17 @@ export default props => {
 			}}
 			className="orderSwiper"
 		>
-			{list.length == 0 ? (
+			{arr.length == 0 ? (
 				<SwiperSlide>
 					<IonImg src="/assets/images/product/1.png" alt="product" />
 					<h4>{t('order.product-name')}</h4>
 				</SwiperSlide>
 			) : (
-				list.map((item, index) => {
+				arr.map((item, index) => {
 					return (
 						<SwiperSlide key={index}>
 							<IonImg src={item.coverUrl} alt="product" />
-							<div style={{ fontSize: '12px' }}>{item.showName}</div>
+							<div style={{ fontSize: '12px' }}>{item.title}</div>
 						</SwiperSlide>
 					)
 				})

@@ -34,52 +34,47 @@ const Order = () => {
 	const [animationList, setAnimationList] = useState([])
 	const [orderData, setOrderData] = useState({})
 	const [assets, setAssets] = useState({})
+	const [presetArr, setPresetArr] = useState([])
 
 	const [showToast, setShowToast] = useState(false)
 	const [message, setMessage] = useState('')
 	const [color, setColor] = useState('danger')
 
-	GrabOrderApi().then(res => {
+	const beginOrder = () => {
+		GrabOrderApi().then(res => {
+			console.log(res)
+			if (res.code === 200) {
+				const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
+				goodsListByAnimation &&
+					goodsListByAnimation.map(item => {
+						return setShowName(item, 'title')
+					})
+				setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
+				setAnimationList(goodsListByAnimation || [])
+				setTimeout(() => {
+					setShowDialog(true)
+				}, animationDuration)
+			} else {
+				setMessage(res.msg)
+				setColor('danger')
+				setShowToast(true)
+			}
+		})
+	}
+
+	PresetOrderApi().then(res => {
 		console.log(res)
 		if (res.code === 200) {
-			const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
-			goodsListByAnimation &&
-				goodsListByAnimation.map(item => {
-					return setShowName(item, 'title')
-				})
-			setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
-			setAnimationList(goodsListByAnimation || [])
-			setTimeout(() => {
-				setShowDialog(true)
-			}, animationDuration)
-		} else {
-			setMessage(res.msg)
-			setColor('danger')
-			setShowToast(true)
+			let lang = localStorage.getItem('language-id')
+			if (lang == "") lang = "en"
+			res.goodsList.map((item, index) => {
+				res.goodsList[index].title = JSON.parse(item.title)[lang]
+			})
+			console.log(res.goodsList)
+			setPresetArr(res.goodsList)
+			console.log(lang)
 		}
 	})
-
-	// const beginOrder = () => {
-	// PresetOrderApi().then(res => {
-	// 	console.log(res)
-	// 	if (res.code === 200) {
-	// 		const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
-	// 		goodsListByAnimation &&
-	// 			goodsListByAnimation.map(item => {
-	// 				return setShowName(item, 'title')
-	// 			})
-	// 		setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
-	// 		setAnimationList(goodsListByAnimation || [])
-	// 		setTimeout(() => {
-	// 			setShowDialog(true)
-	// 		}, animationDuration)
-	// 	} else {
-	// 		setMessage(res.msg)
-	// 		setColor('danger')
-	// 		setShowToast(true)
-	// 	}
-	// })
-	// }
 
 	const submitOrder = () => {
 		SubmitOrderApi({ id: orderData.id }).then(res => {
@@ -120,7 +115,7 @@ const Order = () => {
 						<h3>订单提交</h3>
 						<p>抢单时间:&nbsp;{orderData.createTime}</p>
 						<p>订单号:&nbsp;{orderData.orderSn}</p>
-						<div style={{ display: 'flex', backgroundColor: '#f2f2f2' }}>
+						<div style={{ display: 'flex', backgroundColor: '#2a353e' }}>
 							<img src={orderData.goodsPicUrl} style={{ width: '77px', height: '77px', padding: '10px' }} />
 							<div style={{ padding: '10px', fontSize: '12px' }}>{orderData.showName}</div>
 						</div>
@@ -198,7 +193,7 @@ const Order = () => {
 							<span className="main-number">60</span>
 						</IonRow>
 					</IonRow>
-					{slider ? <OrderSlider list={animationList} /> : ''}
+					{slider ? <OrderSlider list={animationList} arr={presetArr} /> : ''}
 				</IonCard>
 				<div className={`text-white ${styles.orderList}`}>
 					<div className="d-flex ion-justify-content-between ion-align-items-center" style={{ display: 'flex' }}>
@@ -218,8 +213,7 @@ const Order = () => {
 						<span className="main-number">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</span>
 					</div>
 				</div>
-				{/* <IonButton onClick={beginOrder} className="custom-button ion-padding-top ion-margin-bottom" expand="block"> */}
-				<IonButton onClick={submitOrder} className="custom-button ion-padding-top ion-margin-bottom" expand="block">
+				<IonButton onClick={beginOrder} className="custom-button ion-padding-top ion-margin-bottom" expand="block">
 					{t('order.start-order')}
 				</IonButton>
 			</IonContent>
