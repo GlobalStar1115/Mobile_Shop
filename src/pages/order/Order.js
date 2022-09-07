@@ -39,47 +39,47 @@ const Order = () => {
 	const [message, setMessage] = useState('')
 	const [color, setColor] = useState('danger')
 
-	const beginOrder = () => {
-		GrabOrderApi().then(res => {
-			console.log(res)
-			if (res.code === 200) {
-				const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
-				goodsListByAnimation &&
-					goodsListByAnimation.map(item => {
-						return setShowName(item, 'title')
-					})
-				setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
-				setAnimationList(goodsListByAnimation || [])
-				setTimeout(() => {
-					setShowDialog(true)
-				}, animationDuration)
-			} else {
-				setMessage(res.msg)
-				setColor('danger')
-				setShowToast(true)
-			}
-		})
+	GrabOrderApi().then(res => {
+		console.log(res)
+		if (res.code === 200) {
+			const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
+			goodsListByAnimation &&
+				goodsListByAnimation.map(item => {
+					return setShowName(item, 'title')
+				})
+			setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
+			setAnimationList(goodsListByAnimation || [])
+			setTimeout(() => {
+				setShowDialog(true)
+			}, animationDuration)
+		} else {
+			setMessage(res.msg)
+			setColor('danger')
+			setShowToast(true)
+		}
+	})
 
-		// PresetOrderApi().then(res => {
-		// 	console.log(res)
-		// 	if (res.code === 200) {
-		// 		const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
-		// 		goodsListByAnimation &&
-		// 			goodsListByAnimation.map(item => {
-		// 				return setShowName(item, 'title')
-		// 			})
-		// 		setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
-		// 		setAnimationList(goodsListByAnimation || [])
-		// 		setTimeout(() => {
-		// 			setShowDialog(true)
-		// 		}, animationDuration)
-		// 	} else {
-		// 		setMessage(res.msg)
-		// 		setColor('danger')
-		// 		setShowToast(true)
-		// 	}
-		// })
-	}
+	// const beginOrder = () => {
+	// PresetOrderApi().then(res => {
+	// 	console.log(res)
+	// 	if (res.code === 200) {
+	// 		const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
+	// 		goodsListByAnimation &&
+	// 			goodsListByAnimation.map(item => {
+	// 				return setShowName(item, 'title')
+	// 			})
+	// 		setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
+	// 		setAnimationList(goodsListByAnimation || [])
+	// 		setTimeout(() => {
+	// 			setShowDialog(true)
+	// 		}, animationDuration)
+	// 	} else {
+	// 		setMessage(res.msg)
+	// 		setColor('danger')
+	// 		setShowToast(true)
+	// 	}
+	// })
+	// }
 
 	const submitOrder = () => {
 		SubmitOrderApi({ id: orderData.id }).then(res => {
@@ -218,7 +218,8 @@ const Order = () => {
 						<span className="main-number">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</span>
 					</div>
 				</div>
-				<IonButton onClick={beginOrder} className="custom-button ion-padding-top ion-margin-bottom" expand="block">
+				{/* <IonButton onClick={beginOrder} className="custom-button ion-padding-top ion-margin-bottom" expand="block"> */}
+				<IonButton onClick={submitOrder} className="custom-button ion-padding-top ion-margin-bottom" expand="block">
 					{t('order.start-order')}
 				</IonButton>
 			</IonContent>
