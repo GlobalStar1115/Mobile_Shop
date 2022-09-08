@@ -15,13 +15,13 @@ const Invite = () => {
     const [showToast, setShowToast] = useState(false)
     const [showToast2, setShowToast2] = useState(false)
 
-    const copyLink = () => {
-        navigator.clipboard.writeText(window.location.protocol + window.location.hostname + '/siginup/' + member.inviteCode).then(() => {
-            setShowToast(true)
-        }, () => {
-            setShowToast2(true)
-        });
-    }
+    // const copyLink = () => {
+    //     navigator.clipboard.writeText(window.location.protocol + window.location.hostname + '/siginup/' + member.inviteCode).then(() => {
+    //         setShowToast(true)
+    //     }, () => {
+    //         setShowToast2(true)
+    //     });
+    // }
 
     const unsecuredCopyToClipboard = (text) => {
         const textArea = document.createElement("textarea");
@@ -44,7 +44,7 @@ const Invite = () => {
     };
     const buttonPress = () => {
         copyToClipboard(window.location.protocol + window.location.hostname + '/siginup/' + member.inviteCode);
-        console.log('Clipboard updated 📥\nNow try pasting!');
+        setShowToast(true)
     };
     useEffect(() => {
         InfoApi().then(res => {
