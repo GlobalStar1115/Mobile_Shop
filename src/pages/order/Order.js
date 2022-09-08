@@ -87,8 +87,8 @@ const Order = () => {
 			} else {
 				setShowDialog(false)
 				setMessage(res.msg)
-				// setColor('danger')
-				// setShowToast(true)
+				setColor('danger')
+				setShowToast(true)
 			}
 		})
 	}
@@ -178,7 +178,7 @@ const Order = () => {
 							<h4 className="main-number ion-no-margin">$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance
 							}</h4>
 							<IonRow className="ion-align-items-center">
-								<span className="ion-margin-end">{t('order.ordinary-member')}:</span>
+								<span className="ion-margin-end">{t('order.ordinary-member')}</span>
 								<span>
 									{t('order.commission')} 0.4% | 60 {t('order.order')}
 								</span>

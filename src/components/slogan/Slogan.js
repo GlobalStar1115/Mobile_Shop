@@ -1,3 +1,4 @@
+import { IonImg } from '@ionic/react'
 import React, { Component } from 'react'
 import './Slogan.css'
 
@@ -40,6 +41,9 @@ export default class Slogan extends Component {
 		const { sloganList, sloganIndex } = this.state
 		return (
 			<div ref={ref => (this.container = ref)} className="container">
+				<div className='img-box'>
+					<IonImg src='/assets/images/laba@2x.png' />
+				</div>
 				<span ref={ref => (this.text = ref)} className="slogan">
 					{sloganList[sloganIndex]}
 				</span>
