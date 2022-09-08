@@ -218,8 +218,7 @@ const Home = () => {
 											<p>{t('home.membership-level.min-balance')} $ 200.00</p>
 											<p>
 												{/* {t('home.membership-level.commission')} 0.4 | {levelArr[0]?.maxOrderNumber} */}
-												{t('home.membership-level.commission')} 0.4 | 60
-												{t('home.membership-level.orders')}
+												{t('home.membership-level.commission')} 0.4 | 60 {t('home.membership-level.orders')}
 											</p>
 										</div>
 									</IonRow>

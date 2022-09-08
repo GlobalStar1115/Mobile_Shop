@@ -86,7 +86,7 @@ const Invite = () => {
             <IonToast
                 isOpen={showToast}
                 onDidDismiss={() => setShowToast(false)}
-                message="Copied the invitation link"
+                message="Copied invitation link"
                 duration={1000}
                 color="primary"
             />

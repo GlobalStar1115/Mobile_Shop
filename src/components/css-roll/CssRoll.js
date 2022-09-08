@@ -41,7 +41,8 @@ export default class Roll extends Component {
 								</div>
 								<div className="itemRight">
 									<span>今日收益: </span>
-									<div className="amount"> $ {item.amount === 'number' ? item.amount.toFixed(2) : item.amount}</div>
+									{/* <div className="amount"> $ {item.amount === 'number' ? item.amount.toFixed(2) : item.amount}</div> */}
+									<div className="amount"> $ {item.amount.toFixed(2)}</div>
 								</div>
 							</div>
 						)
