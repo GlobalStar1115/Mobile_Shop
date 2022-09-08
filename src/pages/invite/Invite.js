@@ -23,6 +23,29 @@ const Invite = () => {
         });
     }
 
+    const unsecuredCopyToClipboard = (text) => {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea); textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy')
+        } catch (err) {
+            console.error('Unable to copy to clipboard', err)
+        } document.body.removeChild(textArea)
+    };
+
+    const copyToClipboard = (content) => {
+        if (window.isSecureContext && navigator.clipboard) {
+            navigator.clipboard.writeText(content);
+        } else {
+            unsecuredCopyToClipboard(content);
+        }
+    };
+    const buttonPress = () => {
+        copyToClipboard(window.location.protocol + window.location.hostname + '/siginup/' + member.inviteCode);
+        console.log('Clipboard updated 📥\nNow try pasting!');
+    };
     useEffect(() => {
         InfoApi().then(res => {
             // console.log(res)
@@ -55,7 +78,8 @@ const Invite = () => {
                 <IonGrid className="ion-padding">
                     <span className='text-white ion-text-justify'>{t('invite.content')}</span>
                     <p className='ion-text-center text-white main-number ion-padding-top'>{t('invite.invite-code')}: {member.inviteCode}</p>
-                    <IonButton expand="block" onClick={copyLink}><IonIcon icon={linkOutline} />{t('invite.button-text')}</IonButton>
+                    {/* <IonButton expand="block" onClick={copyLink}><IonIcon icon={linkOutline} />{t('invite.button-text')}</IonButton> */}
+                    <IonButton expand="block" onClick={buttonPress}><IonIcon icon={linkOutline} />{t('invite.button-text')}</IonButton>
                 </IonGrid>
             </IonContent>
             <BottomLine />
