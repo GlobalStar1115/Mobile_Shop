@@ -3,7 +3,7 @@
 		"title": "Welcome to Our Store"
 	},
 	"signup": {
-		"username": "user name",
+		"username": "username",
 		"phone": "phone number",
 		"password": "password",
 		"cpassword": "confirm password",
@@ -115,7 +115,7 @@
 		"all-data": "All Data",
 		"team-size": "Team size",
 		"team-commission": "Team order commission",
-		"user-name": "User name",
+		"user-name": "username",
 		"user-level": "User level",
 		"phone": "Phone Number",
 		"register-time": "Registeration time"
@@ -196,7 +196,7 @@
 	},
 	"common-text": {
 		"no-data": "No Data",
-		"user-name": "User Name",
+		"user-name": "username",
 		"phone-number": "Phone Number",
 		"nick-name": "Nick Name",
 		"email": "Email",
