@@ -192,7 +192,9 @@ const Order = () => {
 							<span className="main-number">60</span>
 						</IonRow>
 					</IonRow>
-					{slider ? <OrderSlider list={animationList} arr={presetArr} /> : ''}
+					<div className={`${styles.sliderBox}`}>
+						{slider ? <OrderSlider list={animationList} arr={presetArr} /> : ''}
+					</div>
 				</IonCard>
 				<div className={`text-white ${styles.orderList}`}>
 					<div className="d-flex ion-justify-content-between ion-align-items-center" style={{ display: 'flex' }}>

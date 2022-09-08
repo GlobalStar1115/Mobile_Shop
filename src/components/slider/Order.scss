@@ -1,6 +1,6 @@
 .swiper {
-    width: 250px;
-    height: 350px;
+    width: 230px;
+    height: 300px;
 }
 
 .swiper-slide {
@@ -18,7 +18,24 @@
 }
 
 .swiper-slide ion-img {
-    height: 60% !important;
+    height: 170px !important;
     width: auto !important;
-    margin-bottom: 20px;
+}
+
+// .product-title {
+//     position: absolute;
+//     bottom: -50px;
+//     z-index: 1000000000;
+// }
+
+.product-title {
+    white-space: nowrap;
+    width: 100%;
+    padding: 3px 10px;
+    // border: 1px solid #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: rgb(212, 212, 212);
+    border-radius: 20px;
+    // height: fit-content;
 }
