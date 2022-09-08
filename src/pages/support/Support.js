@@ -51,7 +51,7 @@ const Support = () => {
 				<IonGrid className="ion-padding-start ion-padding-end ion-padding-bottom">
 					<h4 className="main-title ion-text-center ion-no-margin ion-margin">{t('support.title')}</h4>
 					<IonImg src="/assets/images/service5.png" />
-					<p className='text-white ion-padding-start'>{t('support.tip')}</p>
+					<p className={`text-white ion-padding-start ${styles.supportTip}`}>{t('support.tip')}</p>
 					{/* <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
 						{serviceList.map((item, index) => {
 							return (

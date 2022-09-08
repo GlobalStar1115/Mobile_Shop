@@ -16,6 +16,7 @@
 * {
 	font-family: 'main_font', 'Arial', 'Helvetica', 'sans-serif';
 	--border-width: 0 !important;
+	text-transform: capitalize !important;
 }
 
 /* Ionic Variables and Theming. For more info, please see:
@@ -200,6 +201,11 @@ ion-tab-button::part(native) {
 
 .alert-message {
 	color: white !important;
+	text-transform: none !important;
+}
+
+ion-toast {
+	text-transform: none !important;
 }
 
 .d-flex.ion-justify-content-between.ion-align-items-center {

@@ -62,7 +62,7 @@ const SystemNotice = () => {
 						<IonImg src="/assets/images/laba@2x.png" /> {t('system-info.notification')}
 					</IonRow>
 					<p className='ion-text-center text-white'>{t('system-info.noti-title')}</p>
-					<p className='text-white'>{t('system-info.noti-content')}</p>
+					<p className={`text-white ${styles.noticeText}`}>{t('system-info.noti-content')}</p>
 				</IonCard>
 			</IonContent>
 			<BottomLine />

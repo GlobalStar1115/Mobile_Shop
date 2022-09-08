@@ -115,7 +115,7 @@ const Order = () => {
 						<h3>{t('order.order-submission')}</h3>
 						<p>{t('order.order-time')}:&nbsp;{orderData.createTime}</p>
 						<p>{t('order.order-number')}:&nbsp;{orderData.orderSn}</p>
-						<div style={{ display: 'flex', backgroundColor: '#2a353e' }}>
+						<div style={{ display: 'flex', backgroundColor: '#2a353e', alignItems: 'center', textTransform: 'none !important' }}>
 							<img src={orderData.goodsPicUrl} style={{ width: '77px', height: '77px', padding: '10px' }} />
 							<div style={{ padding: '10px', fontSize: '12px' }}>{orderData.showName}</div>
 						</div>

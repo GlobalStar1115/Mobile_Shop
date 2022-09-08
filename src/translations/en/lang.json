@@ -3,18 +3,18 @@
 		"title": "Welcome to Our Store"
 	},
 	"signup": {
-		"username": "Please enter user name",
-		"phone": "Please enter the phone number",
-		"password": "Please enter password",
-		"cpassword": "Please confirm your password",
-		"invitation": "Please enter the invitation code",
+		"username": "user name",
+		"phone": "phone number",
+		"password": "password",
+		"cpassword": "confirm password",
+		"invitation": "invitation code",
 		"register": "Register account",
 		"login": "Log in",
 		"app": "Download APP"
 	},
 	"login": {
-		"account": "Please enter account",
-		"password": "Please enter password",
+		"account": "account",
+		"password": "password",
 		"remember": "Remember",
 		"forgot": "Forgot your info?",
 		"register": "Register",
@@ -22,9 +22,9 @@
 	},
 	"forgot": {
 		"title": "Change Password",
-		"oldpwd": "Please enter old password",
-		"newpwd": "Please enter new password",
-		"confirmpwd": "Please confirm new password",
+		"oldpwd": "old password",
+		"newpwd": "new password",
+		"confirmpwd": "confirm password",
 		"button": "Confirm"
 	},
 	"language": {
@@ -66,8 +66,8 @@
 	},
 	"withdraw": {
 		"title": "Withdraw",
-		"input": "Please enter the withdrawal amount",
-		"input-password": "Please enter the withdrawal password",
+		"input": "withdrawal amount",
+		"input-password": "withdrawal password",
 		"avaliable-amount": "Avaliable withdraw amount",
 		"acc-name": "Account Name",
 		"phone": "Phone Number",
@@ -203,7 +203,7 @@
 		"invitation-code": "Invitation Code"
 	},
 	"home": {
-		"title": "HOME",
+		"title": "Home",
 		"announcement": "Announcement",
 		"close": "Close",
 		"mybalance": "My Balance",
