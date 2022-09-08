@@ -47,7 +47,7 @@ http://ionicframework.com/docs/theming/ */
 }
 
 .ion-page {
-	max-width: 560px;
+	max-width: 559px;
 	margin: 0 auto;
 }
 
@@ -251,13 +251,14 @@ ion-tab-button::part(native) {
 	/* border: none !important; */
 }
 
-@media screen and (min-width: 559px) {
+@media screen and (min-width: 560px) {
 	.slick-slide {
-		width: 560px !important;
+		width: 558px !important;
 	}
 
-	.slick-slide {
-		margin-left: -9px;
+	.slick-track {
+		display: flex !important;
+		align-items: center;
 	}
 
 	.dialog {
