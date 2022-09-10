@@ -1,5 +1,5 @@
 import styles from './Tabs.module.scss'
-import { IonRouterOutlet, IonImg, IonTabBar, IonTabButton, IonTabs, IonLabel } from '@ionic/react'
+import { IonRouterOutlet, IonImg, IonTabBar, IonTabButton, IonTabs, IonLabel, IonRouterLink } from '@ionic/react'
 import { Route } from 'react-router-dom'
 
 import { useTranslation } from 'react-i18next'
@@ -32,7 +32,7 @@ const Tabs = () => {
 					<Account />
 				</Route>
 
-				<Route exact path="/app/support">
+				<Route exact path="/support">
 					<Support />
 				</Route>
 			</IonRouterOutlet>
@@ -73,21 +73,25 @@ const Tabs = () => {
 				</IonTabButton>
 				<IonTabButton
 					tab="support"
-					href="/app/support"
+					// href="/support"
 					className="navigation-tab"
 					style={{ transform: 'translateY(8px)' }}
 				>
-					{window.location.href.indexOf('/app/support') != -1 ? (
+					<IonRouterLink routerLink='/support' className={styles.tabItemBox}>
+						<IonImg src="assets/images/home/6@2x.png" alt="service" />
+						<IonLabel>{t('tabs.service')}</IonLabel>
+					</IonRouterLink>
+					{/* {window.location.href.indexOf('/support') != -1 ? (
 						<>
-							<IonImg src="assets/images/home/5@2x.png" alt="home" />
+							<IonImg src="assets/images/home/5@2x.png" alt="service" />
 							<IonLabel>{t('tabs.service')}</IonLabel>
 						</>
 					) : (
 						<>
-							<IonImg src="assets/images/home/6@2x.png" alt="home" />
+							<IonImg src="assets/images/home/6@2x.png" alt="service" />
 							<IonLabel>{t('tabs.service')}</IonLabel>
 						</>
-					)}
+					)} */}
 				</IonTabButton>
 				<IonTabButton
 					tab="account"

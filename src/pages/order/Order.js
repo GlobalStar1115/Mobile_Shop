@@ -80,6 +80,7 @@ const Order = () => {
 		SubmitOrderApi({ id: orderData.id }).then(res => {
 			// console.log(res)
 			if (res.code === 200) {
+				window.location.reload(false);
 				setShowDialog(false)
 				setMessage(res.msg)
 				setColor('primary')

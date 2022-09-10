@@ -45,6 +45,7 @@ import CompanyPersonal from './pages/company-personal/CompanyPersonal'
 import CompanyAgency from './pages/company-agency/CompanyAgency'
 import CompanyQualification from './pages/company-qualification/CompanyQualification'
 import SystemNotice from './pages/system-notice/SystemNotice'
+import Support from './pages/support/Support'
 const App = () => (
 	<IonApp>
 		<IonReactRouter>
@@ -75,6 +76,9 @@ const App = () => (
 				</Route>
 				<Route exact path="/password">
 					<Password />
+				</Route>
+				<Route exact path="/support">
+					<Support />
 				</Route>
 				<Route exact path="/password-safe">
 					<PasswordSafe />

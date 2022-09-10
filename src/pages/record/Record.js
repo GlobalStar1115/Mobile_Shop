@@ -170,7 +170,7 @@ const Record = () => {
 										<IonCard className="main-radius ion-no-margin ion-padding" key={index}>
 											<IonRow className="ion-justify-content-between">
 												<span>{item.createTime}</span>
-												<span className={styles.recordStatus}>{t('record.status-processing')}</span>
+												<span className={styles.recordStatus}>{t('record.status-completed')}</span>
 											</IonRow>
 											<IonRow className={`ion-align-items-center ${styles.productInfo}`}>
 												<IonCol size="3">
@@ -221,7 +221,7 @@ const Record = () => {
 										<IonCard className="main-radius ion-no-margin ion-padding" key={index}>
 											<IonRow className="ion-justify-content-between">
 												<span>{item.createTime}</span>
-												<span className={styles.recordStatus}>{t('record.status-processing')}</span>
+												<span className={styles.recordStatus}>{t('record.status-freezing')}</span>
 											</IonRow>
 											<IonRow className={`ion-align-items-center ${styles.productInfo}`}>
 												<IonCol size="3">

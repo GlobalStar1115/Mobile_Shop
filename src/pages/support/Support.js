@@ -8,9 +8,12 @@ import {
 	IonRouterLink,
 	IonRow,
 	IonToolbar,
-	IonGrid
+	IonGrid,
+	IonButtons,
+	IonBackButton
 } from '@ionic/react'
 import styles from './Support.module.scss'
+import { chevronBackOutline } from 'ionicons/icons'
 
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
@@ -47,9 +50,24 @@ const Support = () => {
 
 	return (
 		<IonPage className={styles.recordPage}>
+			<IonHeader>
+				<IonToolbar>
+					<IonRow className="ion-justify-content-between ion-align-items-center">
+						<IonCol size="2">
+							<IonButtons>
+								<IonBackButton icon={chevronBackOutline} text="" className="custom-back ion-no-padding ion-no-margin" />
+							</IonButtons>
+						</IonCol>
+						<IonCol size="8">
+							<h4 className="main-title ion-text-center ion-no-margin">{t('recharge-record.title')}</h4>
+						</IonCol>
+						<IonCol size="2"></IonCol>
+					</IonRow>
+				</IonToolbar>
+			</IonHeader>
 			<IonContent fullscreen className="ion-no-padding">
 				<IonGrid className="ion-padding-start ion-padding-end ion-padding-bottom">
-					<h4 className="main-title ion-text-center ion-no-margin ion-margin">{t('support.title')}</h4>
+					{/* <h4 className="main-title ion-text-center ion-no-margin ion-margin">{t('support.title')}</h4> */}
 					<IonImg src="/assets/images/service5.png" />
 					<p className={`text-white ion-padding-start ${styles.supportTip}`}>{t('support.tip')}</p>
 					{/* <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
@@ -74,7 +92,7 @@ const Support = () => {
 					</div> */}
 					<IonRow className='ion-justify-content-around'>
 						<IonCol size='6'>
-							<IonRouterLink routerLink='/app/support'>
+							<IonRouterLink routerLink='/support'>
 								<IonCard className='ion-no-margin ion-padding main-radius'>
 									<p>{t('support.service-name')}</p>
 									<p >Work time</p>
@@ -83,7 +101,7 @@ const Support = () => {
 							</IonRouterLink>
 						</IonCol>
 						<IonCol size='6'>
-							<IonRouterLink routerLink='/app/support'>
+							<IonRouterLink routerLink='/support'>
 								<IonCard className='ion-no-margin ion-padding main-radius'>
 									<p>{t('support.service-name')}</p>
 									<p >Work time</p>

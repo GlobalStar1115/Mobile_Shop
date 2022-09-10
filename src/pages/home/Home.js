@@ -138,7 +138,7 @@ const Home = () => {
 									<span>{t('home.mybalance')}:</span>
 									<h2 className={`main-number ${styles.balanceAmount}`}>$ {typeof assets.availableBalance === 'number' ? assets.availableBalance.toFixed(2) : assets.availableBalance}</h2>
 								</IonCol>
-								<IonRouterLink routerLink='/app/support'>
+								<IonRouterLink routerLink='/support'>
 									<IonImg src="/assets/images/home/14@2x.png" />
 								</IonRouterLink>
 							</IonRow>
@@ -149,7 +149,7 @@ const Home = () => {
 							<div
 								className="ion-text-center"
 								onClick={() => {
-									router.push('/app/support')
+									router.push('/support')
 								}}
 							>
 								<IonImg src="/assets/images/home/10@2x.png" />
@@ -241,7 +241,7 @@ const Home = () => {
 										</div>
 									</IonRow>
 								</IonCol>
-								<IonRouterLink routerLink='/app/support'>
+								<IonRouterLink routerLink='/support'>
 									<span>{t('home.membership-level.join')}</span>
 								</IonRouterLink>
 							</IonRow>
@@ -261,7 +261,7 @@ const Home = () => {
 										</div>
 									</IonRow>
 								</IonCol>
-								<IonRouterLink routerLink='/app/support'>
+								<IonRouterLink routerLink='/support'>
 									<span>{t('home.membership-level.join')}</span>
 								</IonRouterLink>
 							</IonRow>
@@ -280,7 +280,7 @@ const Home = () => {
 										</div>
 									</IonRow>
 								</IonCol>
-								<IonRouterLink routerLink='/app/support'>
+								<IonRouterLink routerLink='/support'>
 									<span>{t('home.membership-level.join')}</span>
 								</IonRouterLink>
 							</IonRow>

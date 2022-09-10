@@ -188,10 +188,10 @@ const Login = () => {
 					</IonRow>
 				</IonGrid>
 			</IonContent>
-			<IonRouterLink routerLink='/app/support' className={styles.service1}>
+			<IonRouterLink routerLink='/support' className={styles.service1}>
 				<img src="assets/images/service1.png" alt="" />
 			</IonRouterLink>
-			<IonRouterLink routerLink='/app/support' className={styles.service2}>
+			<IonRouterLink routerLink='/support' className={styles.service2}>
 				<img src="assets/images/service2.png" alt="" />
 			</IonRouterLink>
 

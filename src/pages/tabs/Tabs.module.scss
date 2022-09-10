@@ -10,4 +10,16 @@
         margin-top: 5px;
         margin-bottom: 10px;
     }
+
+    .tabItemBox {
+
+        ion-img {
+            margin: -7px auto 5px;
+        }
+
+        ion-label {
+            color: #666666;
+            margin-top: 5px !important;
+        }
+    }
 }
