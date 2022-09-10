@@ -22,7 +22,7 @@ import { chatboxEllipsesOutline, chevronForwardOutline } from 'ionicons/icons'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 import { LogoutApi, InfoApi, BaseImageApi } from '../../request/api'
-
+import { useHistory } from 'react-router'
 const Account = () => {
 	const router = useIonRouter()
 	const { t, i18n } = useTranslation('lang')
@@ -30,8 +30,9 @@ const Account = () => {
 	const [assets, setAssets] = useState({})
 	const [member, setMember] = useState({})
 	const [imgUrl, setImgUrl] = useState('')
-
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		InfoApi().then(res => {
 			// console.log(res)
 			if (res.code === 200) {

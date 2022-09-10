@@ -21,6 +21,7 @@ import { chevronBackOutline, calendarOutline } from 'ionicons/icons'
 import { useTranslation } from 'react-i18next'
 import { TeamInfoApi, InfoApi } from '../../request/api'
 import { useEffect, useState, useCallback } from 'react'
+import { useHistory } from 'react-router'
 import BottomLine from '../../components/bottom-line/BottomLine'
 // import { text } from 'stream/consumers'
 
@@ -56,7 +57,9 @@ const TeamReport = () => {
 		getTeamInfo()
 	}, [levelActive, start, end])
 
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		InfoApi().then(res => {
 			if (res.code === 200) {
 				setAssets(res.data.assets)

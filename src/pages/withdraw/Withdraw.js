@@ -31,7 +31,7 @@ import { chevronBackOutline } from 'ionicons/icons'
 import { WithdrawField } from '../../data/fields'
 import { useEffect, useState } from 'react'
 import { validateForm } from '../../data/utils'
-import { useParams } from 'react-router'
+import { useParams, useHistory } from 'react-router'
 
 import { useTranslation } from 'react-i18next'
 
@@ -70,8 +70,9 @@ const Withdraw = () => {
 			// router.push('/login')
 		}
 	}
-
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		InfoApi().then(res => {
 			// console.log(res)
 			if (res.code === 200) {

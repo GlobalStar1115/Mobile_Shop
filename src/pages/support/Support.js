@@ -18,9 +18,13 @@ import { chevronBackOutline } from 'ionicons/icons'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 import { ServiceApi } from '../../request/api'
-
+import { useHistory } from 'react-router'
 const Support = () => {
 	const { t, i18n } = useTranslation('lang')
+	const history = useHistory()
+	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
+	}, [])
 	// const current = new Date()
 	// const date = `${current.getFullYear()}-${current.getMonth() + 1
 	// 	}-${current.getDate()} ${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`

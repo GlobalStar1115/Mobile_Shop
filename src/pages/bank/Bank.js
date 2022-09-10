@@ -26,7 +26,7 @@ import { chevronBackOutline } from 'ionicons/icons'
 import { BindBank } from '../../data/fields'
 import { useEffect, useState } from 'react'
 import { validateForm } from '../../data/utils'
-import { useParams } from 'react-router'
+import { useParams, useHistory } from 'react-router'
 import { useIonRouter } from '@ionic/react'
 
 import { useTranslation } from 'react-i18next'
@@ -50,8 +50,9 @@ const Bank = () => {
 	const [message, setMessage] = useState('')
 	const [bankArr, setBankArr] = useState([])
 	const [bankSelected, setBankSelected] = useState('brown')
-
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		getBankArr()
 		let id
 		if (url) {

@@ -19,7 +19,7 @@ import { chevronBackOutline } from 'ionicons/icons'
 import { useConfirmFields } from '../../data/fields'
 import { useEffect, useState } from 'react'
 import { validateForm } from '../../data/utils'
-import { useParams } from 'react-router'
+import { useParams, useHistory } from 'react-router'
 import { useIonRouter } from '@ionic/react'
 
 import { useTranslation } from 'react-i18next'
@@ -40,6 +40,11 @@ const Password = () => {
 	const [showToast2, setShowToast2] = useState(false)
 	const [message, setMessage] = useState('')
 	const [hasSafePassword, setHasSafePassword] = useState(false)
+
+	const history = useHistory()
+	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
+	}, [])
 
 	const confirmPassword = () => {
 		const errors = validateForm(fields)

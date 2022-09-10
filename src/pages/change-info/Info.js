@@ -21,7 +21,7 @@ import { chevronBackOutline } from 'ionicons/icons'
 import { WithdrawField } from '../../data/fields'
 import { useEffect, useState, useRef } from 'react'
 import { validateForm } from '../../data/utils'
-import { useParams } from 'react-router'
+import { useParams, useHistory } from 'react-router'
 import { useIonRouter } from '@ionic/react'
 
 import { useTranslation } from 'react-i18next'
@@ -30,6 +30,7 @@ import { InfoApi, InfoModifyApi, ModifyAvatarApi } from '../../request/api'
 import BottomLine from '../../components/bottom-line/BottomLine'
 
 const Info = () => {
+	const history = useHistory()
 	const { t, i18n } = useTranslation('lang')
 	const router = useIonRouter()
 	const params = useParams()
@@ -80,6 +81,7 @@ const Info = () => {
 	}
 
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') == null) history.push('/login')
 		InfoApi().then(res => {
 			if (res.code === 200) {
 				// console.log('res.data.member', res.data.member)

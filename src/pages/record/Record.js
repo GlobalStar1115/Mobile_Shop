@@ -21,13 +21,14 @@ import { useTranslation } from 'react-i18next'
 
 import { GetGrabOrderApi, SubmitOrderApi, InfoApi } from '../../request/api'
 import { useEffect, useState } from 'react'
-
+import { useHistory } from 'react-router'
 const Record = () => {
 	const { t, i18n } = useTranslation('lang')
 	const [orderArr, setOrderArr] = useState([])
 	const [assets, setAssets] = useState({})
-
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		InfoApi().then(res => {
 			if (res.code === 200) {
 				setAssets(res.data.assets)

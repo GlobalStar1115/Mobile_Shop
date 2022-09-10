@@ -25,7 +25,7 @@ import { useState, useEffect } from 'react'
 import { GrabOrderApi, SubmitOrderApi, InfoApi, PresetOrderApi } from '../../request/api'
 
 import { setShowName } from '../../data/utils'
-
+import { useHistory } from 'react-router'
 const Order = () => {
 	const { t, i18n } = useTranslation('lang')
 	const [slider, setSlider] = useState(false)
@@ -39,7 +39,10 @@ const Order = () => {
 	const [showToast, setShowToast] = useState(false)
 	const [message, setMessage] = useState('')
 	const [color, setColor] = useState('danger')
-
+	const history = useHistory()
+	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
+	}, [])
 	const beginOrder = () => {
 		GrabOrderApi().then(res => {
 			// console.log(res)

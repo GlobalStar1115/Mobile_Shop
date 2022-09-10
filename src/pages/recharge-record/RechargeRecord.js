@@ -20,13 +20,14 @@ import { useTranslation } from 'react-i18next'
 import { CashRecordApi } from '../../request/api'
 import { useEffect, useState } from 'react'
 import BottomLine from '../../components/bottom-line/BottomLine'
-
+import { useHistory } from 'react-router'
 const RechargeRecord = () => {
 	const { t, i18n } = useTranslation('lang')
 
 	const [dataArr, setDataArr] = useState([])
-
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		const paramsData = `transactionType=1`
 		CashRecordApi(paramsData).then(res => {
 			// console.log(res)

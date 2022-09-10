@@ -17,7 +17,7 @@ import { chevronBackOutline } from 'ionicons/icons'
 
 import { useTranslation } from 'react-i18next'
 import { useState, useEffect } from 'react'
-
+import { useHistory } from 'react-router'
 import { MemberBillsApi } from '../../request/api'
 import BottomLine from '../../components/bottom-line/BottomLine'
 
@@ -28,8 +28,9 @@ const AccountDetails = () => {
 		}-${current.getDate()} ${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`
 
 	const [dataArr, setDataArr] = useState([])
-
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		MemberBillsApi().then(res => {
 			// console.log(res)
 			if (res.code === 200) {

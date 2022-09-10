@@ -8,7 +8,7 @@ import Text from '../../components/text/Text'
 import CssRoll from '../../components/css-roll/CssRoll'
 import { useEffect, useState } from 'react'
 import { InfoApi, LinksImageApi, HomeIntroduceApi, NoticeApi, LevelApi } from '../../request/api'
-
+import { useHistory } from 'react-router-dom'
 const Introduce = props => {
 	return (
 		<div
@@ -37,6 +37,7 @@ const Introduce_2 = props => {
 }
 
 const Home = () => {
+	const history = useHistory()
 	const { t, i18n } = useTranslation('lang')
 	const router = useIonRouter()
 	const [linksImage, setLinksImage] = useState([])
@@ -50,6 +51,8 @@ const Home = () => {
 	const [showModal, setShowModal] = useState(false)
 
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
+
 		InfoApi().then(res => {
 			if (res.code === 200) {
 				setAssets(res.data.assets)

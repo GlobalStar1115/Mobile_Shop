@@ -14,9 +14,15 @@ import styles from './CompanyProfile.module.scss'
 import { chevronBackOutline } from 'ionicons/icons'
 import { useTranslation } from 'react-i18next'
 import BottomLine from '../../components/bottom-line/BottomLine'
+import { useHistory } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const CompanyProfile = () => {
 	const { t, i18n } = useTranslation('lang')
+	const history = useHistory()
+	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
+	}, [])
 	return (
 		<IonPage className={styles.companyPage}>
 			<IonHeader>

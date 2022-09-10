@@ -21,7 +21,7 @@ import { chevronBackOutline } from 'ionicons/icons'
 import { ShippingAddress } from '../../data/fields'
 import { useEffect, useState } from 'react'
 import { validateForm } from '../../data/utils'
-import { useParams } from 'react-router'
+import { useParams, useHistory } from 'react-router'
 import { useIonRouter } from '@ionic/react'
 
 import { useTranslation } from 'react-i18next'
@@ -33,6 +33,11 @@ const Shipping = () => {
 	const params = useParams()
 	const fields = ShippingAddress()
 	const [errors, setErrors] = useState(false)
+
+	const history = useHistory()
+	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
+	}, [])
 
 	const changeAddress = () => {
 		const errors = validateForm(fields)

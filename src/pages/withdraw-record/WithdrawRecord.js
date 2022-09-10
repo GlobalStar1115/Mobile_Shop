@@ -17,7 +17,7 @@ import { chevronBackOutline } from 'ionicons/icons'
 
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
-
+import { useHistory } from 'react-router'
 import { CashRecordApi } from '../../request/api'
 import BottomLine from '../../components/bottom-line/BottomLine'
 
@@ -28,8 +28,9 @@ const WithdrawRecord = () => {
 		}-${current.getDate()} ${current.getHours()} : ${current.getMinutes()} : ${current.getSeconds()}`
 
 	const [dataArr, setDataArr] = useState([])
-
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		const paramsData = `transactionType=2`
 		CashRecordApi(paramsData).then(res => {
 			// console.log(res)

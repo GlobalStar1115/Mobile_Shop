@@ -15,7 +15,7 @@ import LanguageButton from '../../components/language/LanguageButton'
 import { chevronBackOutline } from 'ionicons/icons'
 import { useLanguageBox } from '../../data/fields'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { useParams, useHistory } from 'react-router'
 
 import { useTranslation } from 'react-i18next'
 
@@ -28,8 +28,9 @@ const Language = () => {
 	const fields = useLanguageBox()
 
 	const [langList, setLangList] = useState([])
-
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		LangApi().then(res => {
 			// console.log(res)
 			if (res.code === 200) {

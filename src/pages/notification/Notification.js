@@ -19,12 +19,14 @@ import { useTranslation } from 'react-i18next'
 
 import { MessageApi } from '../../request/api'
 import { useEffect, useState } from 'react'
-
+import { useHistory } from 'react-router'
 const Notification = () => {
 	const { t, i18n } = useTranslation('lang')
 
 	const [messageList, setMessageList] = useState([])
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		MessageApi().then(res => {
 			// console.log(res)
 			if (res.code === 200) {

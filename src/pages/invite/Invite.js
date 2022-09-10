@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import BottomLine from '../../components/bottom-line/BottomLine';
 import { useEffect, useState } from 'react'
 import { InfoApi } from '../../request/api'
-
+import { useHistory } from 'react-router';
 const Invite = () => {
     const { t, i18n } = useTranslation('lang');
     const [member, setMember] = useState({})
@@ -15,6 +15,10 @@ const Invite = () => {
     const [showToast, setShowToast] = useState(false)
     const [showToast2, setShowToast2] = useState(false)
 
+    const history = useHistory()
+    useEffect(() => {
+        if (localStorage.getItem('Authorization') === null) history.push('/login')
+    }, [])
     // const copyLink = () => {
     //     navigator.clipboard.writeText(window.location.protocol + window.location.hostname + '/siginup/' + member.inviteCode).then(() => {
     //         setShowToast(true)

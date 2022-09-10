@@ -17,13 +17,14 @@ import { chevronBackOutline } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AccountListApi } from '../../request/api'
-
+import { useHistory } from 'react-router'
 const RechargeRecord = () => {
 	const router = useIonRouter()
 	const { t, i18n } = useTranslation('lang')
 	const [accountArr, setAccountArr] = useState([])
-
+	const history = useHistory()
 	useEffect(() => {
+		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		AccountListApi().then(res => {
 			// console.log(res)
 			if (res.code === 200) {
