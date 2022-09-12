@@ -58,6 +58,9 @@ const Order = () => {
 				setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
 				setAnimationList(goodsListByAnimation || [])
 				setTimeout(() => {
+					audio.play();
+				}, 100)
+				setTimeout(() => {
 					setShowDialog(true)
 				}, animationDuration)
 			} else {
@@ -87,10 +90,6 @@ const Order = () => {
 			// console.log(res)
 			if (res.code === 200) {
 				// audio.play();
-
-				setTimeout(() => {
-					audio.play();
-				}, 100)
 				setShowDialog(false)
 				setMessage(res.msg)
 				setColor('primary')
