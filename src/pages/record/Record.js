@@ -10,7 +10,7 @@ import {
 	IonRouterLink,
 	IonRow,
 	IonToolbar,
-	IonButton,
+	IonToast,
 	IonGrid
 } from '@ionic/react'
 import styles from './Record.module.scss'
@@ -26,6 +26,8 @@ const Record = () => {
 	const { t, i18n } = useTranslation('lang')
 	const [orderArr, setOrderArr] = useState([])
 	const [assets, setAssets] = useState({})
+	const [showToast, setShowToast] = useState(false)
+	const [color, setColor] = useState('primary')
 	const history = useHistory()
 	useEffect(() => {
 		if (localStorage.getItem('Authorization') === null) history.push('/login')
@@ -44,7 +46,7 @@ const Record = () => {
 
 	const getGrabOrderApi = status => {
 		GetGrabOrderApi(status).then(res => {
-			console.log(status, res.data)
+			// console.log(status, res.data)
 			if (res.code === 200) {
 				const { data } = res
 				data.map(item => {
@@ -65,6 +67,11 @@ const Record = () => {
 	const submitOrder = id => {
 		SubmitOrderApi({ id }).then(res => {
 			if (res.code === 200) {
+				setShowToast(true)
+				setColor('primary')
+				setTimeout(() => {
+					window.location.reload(false);
+				}, 1000)
 			}
 		})
 	}
@@ -253,6 +260,13 @@ const Record = () => {
 					</div>
 				</div>
 			</IonContent>
+			<IonToast
+				isOpen={showToast}
+				onDidDismiss={() => setShowToast(false)}
+				message="Successed submit"
+				duration={2000}
+				color={color}
+			/>
 		</IonPage>
 	)
 }
