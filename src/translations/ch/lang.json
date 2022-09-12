@@ -210,6 +210,7 @@
 		"coincharge": "充值金币",
 		"cashwithdraw": "提现金币",
 		"promotion": "理财产品",
+		"promotion-content": "提示敬请期待，团队正在规划中...",
 		"invite": "邀请好友",
 		"commisiontoday": "今日佣金",
 		"totalrevenue": "总收益",
@@ -231,10 +232,10 @@
 		},
 		"introduction": {
 			"title": "平台介绍",
-			"company-profile": "公司简介",
+			"company-profile": "关于我们",
 			"rules-description": "规则说明",
 			"agency-cooperation": "代理合作",
-			"company-qualification": "公司资质",
+			"company-qualification": "公司介绍",
 			"limit-money-laundering": "限制洗钱",
 			"privacy-policy": "隐私政策"
 		},

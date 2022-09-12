@@ -210,6 +210,7 @@
 		"coincharge": "Recharge coin",
 		"cashwithdraw": "Withdraw cash",
 		"promotion": "Financial products",
+		"promotion-content": "Tips stay tuned, the team is planning...",
 		"invite": "Invite friends",
 		"commisiontoday": "Commission today",
 		"totalrevenue": "Total revenue",
@@ -231,10 +232,10 @@
 		},
 		"introduction": {
 			"title": "Platform Introduction",
-			"company-profile": "Company Profile",
+			"company-profile": "About Us",
 			"rules-description": "Rules Description",
 			"agency-cooperation": "Agency cooperation",
-			"company-qualification": "Company qualification",
+			"company-qualification": "Company Profile",
 			"limit-money-laundering": "Limit money laundering",
 			"privacy-policy": "Privacy Policy"
 		},

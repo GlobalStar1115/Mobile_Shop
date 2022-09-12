@@ -66,7 +66,7 @@ const Home = () => {
 		})
 		HomeIntroduceApi().then(res => {
 			if (res.code === 200) {
-				// console.log(res)
+				console.log(res)
 				setIntroduceArr(res.data)
 			}
 		})
@@ -112,7 +112,7 @@ const Home = () => {
 			{showModal && (
 				<DialogNotice hideDialog={() => setShowModal(!showModal)} hide={false}>
 					<h3>{t('home.promotion')}</h3>
-					<p>Coming soon</p>
+					<p>{t('home.promotion-content')}</p>
 					<div className='btn-body'>
 						<button
 							onClick={() => setShowModal(!showModal)}

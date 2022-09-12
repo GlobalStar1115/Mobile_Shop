@@ -15,14 +15,27 @@ import { chevronBackOutline } from 'ionicons/icons'
 import { useTranslation } from 'react-i18next'
 import BottomLine from '../../components/bottom-line/BottomLine'
 import { useHistory } from 'react-router'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { HomeIntroduceApi } from '../../request/api'
 
 const CompanyQualification = () => {
 	const { t, i18n } = useTranslation('lang')
 	const history = useHistory()
+	const [introduceContent, setIntroduceContent] = useState([])
+
 	useEffect(() => {
 		if (localStorage.getItem('Authorization') === null) history.push('/login')
 	}, [])
+
+	useEffect(() => {
+		HomeIntroduceApi().then(res => {
+			if (res.code === 200) {
+				// console.log(res.data[2].graphicTitle)
+				setIntroduceContent(res.data[1].graphicContent)
+			}
+		})
+	}, [])
+
 	return (
 		<IonPage className={styles.companyPage}>
 			<IonHeader>
@@ -43,7 +56,7 @@ const CompanyQualification = () => {
 			<IonContent>
 				<IonCard className='ion-padding main-radius ion-margin-start ion-margin-end'>
 					<span>
-						testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+						{introduceContent}
 					</span>
 				</IonCard>
 			</IonContent>
