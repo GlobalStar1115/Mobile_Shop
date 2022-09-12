@@ -55,9 +55,7 @@ const CompanyQualification = () => {
 			</IonHeader>
 			<IonContent>
 				<IonCard className='ion-padding main-radius ion-margin-start ion-margin-end'>
-					<span>
-						{introduceContent}
-					</span>
+					<span dangerouslySetInnerHTML={{ __html: introduceContent }}></span>
 				</IonCard>
 			</IonContent>
 			<BottomLine />
