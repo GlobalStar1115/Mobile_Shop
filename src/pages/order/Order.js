@@ -57,11 +57,11 @@ const Order = () => {
 					})
 				setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
 				setAnimationList(goodsListByAnimation || [])
-				setTimeout(() => {
-					audio.play();
-				}, 100)
+				// setTimeout(() => {
+				// }, 100)
 				setTimeout(() => {
 					setShowDialog(true)
+					audio.play();
 				}, animationDuration)
 			} else {
 				setMessage(res.msg)
