@@ -26,6 +26,7 @@ import { GrabOrderApi, SubmitOrderApi, InfoApi, PresetOrderApi } from '../../req
 
 import { setShowName } from '../../data/utils'
 import { useHistory } from 'react-router'
+import alram from './hongbao.mp3'
 const Order = () => {
 	const { t, i18n } = useTranslation('lang')
 	const [slider, setSlider] = useState(false)
@@ -40,12 +41,14 @@ const Order = () => {
 	const [message, setMessage] = useState('')
 	const [color, setColor] = useState('danger')
 	const history = useHistory()
+	const audio = new Audio(alram);
+
 	useEffect(() => {
 		if (localStorage.getItem('Authorization') === null) history.push('/login')
 	}, [])
 	const beginOrder = () => {
 		GrabOrderApi().then(res => {
-			// console.log(res)
+			console.log(res)
 			if (res.code === 200) {
 				const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
 				goodsListByAnimation &&
@@ -66,7 +69,7 @@ const Order = () => {
 	}
 
 	PresetOrderApi().then(res => {
-		console.log(res)
+		// console.log(res)
 		if (res.code === 200) {
 			let lang = localStorage.getItem('language-id')
 			if (lang == "") lang = "en"
@@ -83,11 +86,18 @@ const Order = () => {
 		SubmitOrderApi({ id: orderData.id }).then(res => {
 			// console.log(res)
 			if (res.code === 200) {
-				window.location.reload(false);
+				// audio.play();
+
+				setTimeout(() => {
+					audio.play();
+				}, 100)
 				setShowDialog(false)
 				setMessage(res.msg)
 				setColor('primary')
 				setShowToast(true)
+				setTimeout(() => {
+					window.location.reload(false);
+				}, 1000)
 			} else {
 				setShowDialog(false)
 				setMessage(res.msg)

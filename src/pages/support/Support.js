@@ -63,7 +63,7 @@ const Support = () => {
 							</IonButtons>
 						</IonCol>
 						<IonCol size="8">
-							<h4 className="main-title ion-text-center ion-no-margin">{t('recharge-record.title')}</h4>
+							<h4 className="main-title ion-text-center ion-no-margin">{t('support.title')}</h4>
 						</IonCol>
 						<IonCol size="2"></IonCol>
 					</IonRow>

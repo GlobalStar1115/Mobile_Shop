@@ -32,7 +32,7 @@ const AccountDetails = () => {
 	useEffect(() => {
 		if (localStorage.getItem('Authorization') === null) history.push('/login')
 		MemberBillsApi().then(res => {
-			// console.log(res)
+			console.log(res)
 			if (res.code === 200) {
 				setDataArr(res.data)
 			}

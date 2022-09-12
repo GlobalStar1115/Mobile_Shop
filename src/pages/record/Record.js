@@ -44,7 +44,7 @@ const Record = () => {
 
 	const getGrabOrderApi = status => {
 		GetGrabOrderApi(status).then(res => {
-			// console.log(status, res.data)
+			console.log(status, res.data)
 			if (res.code === 200) {
 				const { data } = res
 				data.map(item => {
@@ -155,7 +155,7 @@ const Record = () => {
 								id="tab-2"
 								className={styles.tabSwitch}
 								onChange={() => {
-									radioChange('1')
+									radioChange('2')
 								}}
 							/>
 							<label htmlFor="tab-2" className={styles.tabLabel}>
@@ -206,7 +206,7 @@ const Record = () => {
 								id="tab-3"
 								className={styles.tabSwitch}
 								onChange={() => {
-									radioChange('2')
+									radioChange('1')
 								}}
 							/>
 							<label htmlFor="tab-3" className={styles.tabLabel}>
