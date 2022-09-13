@@ -49,6 +49,12 @@ const Order = () => {
 
 	useEffect(() => {
 		if (localStorage.getItem('Authorization') === null) history.push('/login')
+
+		present({
+			message: 'Loading...',
+			duration: 2500,
+			spinner: 'bubbles'
+		})
 	}, [])
 	const beginOrder = () => {
 		GrabOrderApi().then(res => {
