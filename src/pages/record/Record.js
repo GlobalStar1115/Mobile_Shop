@@ -7,6 +7,7 @@ import {
 	IonIcon,
 	IonImg,
 	IonPage,
+	useIonLoading,
 	IonRouterLink,
 	IonRow,
 	IonToolbar,
@@ -14,8 +15,6 @@ import {
 	IonGrid
 } from '@ionic/react'
 import styles from './Record.module.scss'
-
-import { chatboxEllipsesOutline } from 'ionicons/icons'
 
 import { useTranslation } from 'react-i18next'
 
@@ -27,6 +26,7 @@ const Record = () => {
 	const [orderArr, setOrderArr] = useState([])
 	const [assets, setAssets] = useState({})
 	const [showToast, setShowToast] = useState(false)
+	const [present, dismiss] = useIonLoading();
 	const [color, setColor] = useState('primary')
 	const history = useHistory()
 	useEffect(() => {
@@ -64,9 +64,20 @@ const Record = () => {
 		})
 	}
 
+	const loadingData = () => {
+		present({
+			message: 'Loading...',
+			duration: 1000,
+			spinner: 'bubbles'
+		})
+	}
+
 	const submitOrder = id => {
 		SubmitOrderApi({ id }).then(res => {
 			if (res.code === 200) {
+				setTimeout(() => {
+					loadingData()
+				}, 0)
 				setShowToast(true)
 				setColor('primary')
 				setTimeout(() => {
@@ -107,7 +118,13 @@ const Record = () => {
 								defaultChecked
 								className={styles.tabSwitch}
 							/>
-							<label htmlFor="tab-1" className={styles.tabLabel}>
+							<label htmlFor="tab-1" className={styles.tabLabel} onClick={() => {
+								present({
+									message: 'Loading...',
+									duration: 2000,
+									cssClass: 'bubbles'
+								})
+							}}>
 								{t('record.status-processing')}
 							</label>
 							<div className={styles.tabContent}>
@@ -130,17 +147,17 @@ const Record = () => {
 													<h6 className="">{item.showName}</h6>
 												</IonCol>
 											</IonRow>
-											<IonRow className="ion-justify-content-between">
-												<span>{t('record.order-amount')}</span>
-												<span className="main-number">$ {item.goodsPrice}</span>
+											<IonRow >
+												<span className={styles.cardInfoItem}>{t('record.order-amount')}</span>
+												<span className="main-number">$ {item.goodsPrice.toFixed(2)}</span>
 											</IonRow>
-											<IonRow className="ion-justify-content-between">
-												<span>{t('record.commission')}</span>
-												<span className="main-number">$ {item.commissionAmount}</span>
+											<IonRow >
+												<span className={styles.cardInfoItem}>{t('record.commission')}</span>
+												<span className="main-number">$ {item.commissionAmount.toFixed(2)}</span>
 											</IonRow>
-											<IonRow className="ion-justify-content-between">
-												<span>{t('record.returned-amount')}</span>
-												<span className="main-number">$ {item.tradeAmount}</span>
+											<IonRow>
+												<span className={styles.cardInfoItem}>{t('record.returned-amount')}</span>
+												<span className="main-number">$ {item.tradeAmount.toFixed(2)}</span>
 											</IonRow>
 											<div
 												onClick={() => submitOrder(item.id)}
@@ -165,7 +182,13 @@ const Record = () => {
 									radioChange('2')
 								}}
 							/>
-							<label htmlFor="tab-2" className={styles.tabLabel}>
+							<label htmlFor="tab-2" className={styles.tabLabel} onClick={() => {
+								present({
+									message: 'Loading...',
+									duration: 3000,
+									cssClass: 'bubbles'
+								})
+							}}>
 								{t('record.status-completed')}
 							</label>
 							<div className={styles.tabContent}>
@@ -188,17 +211,17 @@ const Record = () => {
 													<h6 className="">{item.showName}</h6>
 												</IonCol>
 											</IonRow>
-											<IonRow className="ion-justify-content-between">
-												<span>{t('record.order-amount')}</span>
-												<span className="main-number">$ {item.goodsPrice}</span>
+											<IonRow >
+												<span className={styles.cardInfoItem}>{t('record.order-amount')}</span>
+												<span className="main-number">$ {item.goodsPrice.toFixed(2)}</span>
 											</IonRow>
-											<IonRow className="ion-justify-content-between">
-												<span>{t('record.commission')}</span>
-												<span className="main-number">$ {item.commissionAmount}</span>
+											<IonRow >
+												<span className={styles.cardInfoItem}>{t('record.commission')}</span>
+												<span className="main-number">$ {item.commissionAmount.toFixed(2)}</span>
 											</IonRow>
-											<IonRow className="ion-justify-content-between">
-												<span>{t('record.returned-amount')}</span>
-												<span className="main-number">$ {item.tradeAmount}</span>
+											<IonRow>
+												<span className={styles.cardInfoItem}>{t('record.returned-amount')}</span>
+												<span className="main-number">$ {item.tradeAmount.toFixed(2)}</span>
 											</IonRow>
 										</IonCard>
 									)
@@ -216,7 +239,13 @@ const Record = () => {
 									radioChange('1')
 								}}
 							/>
-							<label htmlFor="tab-3" className={styles.tabLabel}>
+							<label htmlFor="tab-3" className={styles.tabLabel} onClick={() => {
+								present({
+									message: 'Loading...',
+									duration: 2000,
+									cssClass: 'bubbles'
+								})
+							}}>
 								{t('record.status-freezing')}
 							</label>
 							<div className={styles.tabContent}>
@@ -239,17 +268,17 @@ const Record = () => {
 													<h6 className="">{item.showName}</h6>
 												</IonCol>
 											</IonRow>
-											<IonRow className="ion-justify-content-between">
-												<span>{t('record.order-amount')}</span>
-												<span className="main-number">$ {item.goodsPrice}</span>
+											<IonRow >
+												<span className={styles.cardInfoItem}>{t('record.order-amount')}</span>
+												<span className="main-number">$ {item.goodsPrice.toFixed(2)}</span>
 											</IonRow>
-											<IonRow className="ion-justify-content-between">
-												<span>{t('record.commission')}</span>
-												<span className="main-number">$ {item.commissionAmount}</span>
+											<IonRow >
+												<span className={styles.cardInfoItem}>{t('record.commission')}</span>
+												<span className="main-number">$ {item.commissionAmount.toFixed(2)}</span>
 											</IonRow>
-											<IonRow className="ion-justify-content-between">
-												<span>{t('record.returned-amount')}</span>
-												<span className="main-number">$ {item.tradeAmount}</span>
+											<IonRow>
+												<span className={styles.cardInfoItem}>{t('record.returned-amount')}</span>
+												<span className="main-number">$ {item.tradeAmount.toFixed(2)}</span>
 											</IonRow>
 										</IonCard>
 									)

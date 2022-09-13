@@ -8,8 +8,10 @@ import {
 	IonImg,
 	IonPage,
 	IonRouterLink,
+	useIonLoading,
 	IonRow,
 	IonToolbar,
+	IonSpinner,
 	IonButton,
 	IonToast
 } from '@ionic/react'
@@ -31,6 +33,8 @@ const Order = () => {
 	const { t, i18n } = useTranslation('lang')
 	const [slider, setSlider] = useState(false)
 
+	const [present, dismiss] = useIonLoading();
+
 	const [showDialog, setShowDialog] = useState(false)
 	const [animationList, setAnimationList] = useState([])
 	const [orderData, setOrderData] = useState({})
@@ -50,6 +54,9 @@ const Order = () => {
 		GrabOrderApi().then(res => {
 			console.log(res)
 			if (res.code === 200) {
+				setTimeout(() => {
+					loadingData()
+				}, 0)
 				const { animationDuration, goodsListByAnimation, toBeProcessedRecord, animationResult } = res.result
 				goodsListByAnimation &&
 					goodsListByAnimation.map(item => {
@@ -57,17 +64,21 @@ const Order = () => {
 					})
 				setOrderData(setShowName(animationResult || toBeProcessedRecord, 'goodsName'))
 				setAnimationList(goodsListByAnimation || [])
-				// setTimeout(() => {
-				// }, 100)
 				setTimeout(() => {
 					setShowDialog(true)
 					audio.play();
-				}, animationDuration)
+				}, 1000)
 			} else {
 				setMessage(res.msg)
-				// setColor('danger')
-				// setShowToast(true)
 			}
+		})
+	}
+
+	const loadingData = () => {
+		present({
+			message: 'Loading...',
+			duration: 1000,
+			spinner: 'bubbles'
 		})
 	}
 
@@ -89,6 +100,9 @@ const Order = () => {
 		SubmitOrderApi({ id: orderData.id }).then(res => {
 			// console.log(res)
 			if (res.code === 200) {
+				setTimeout(() => {
+					loadingData()
+				}, 0)
 				// audio.play();
 				setShowDialog(false)
 				setMessage(res.msg)
@@ -229,7 +243,17 @@ const Order = () => {
 				</div>
 				<IonButton onClick={beginOrder} className="custom-button ion-padding-top ion-margin-bottom" expand="block">
 					{t('order.start-order')}
+					{/* <IonSpinner name="bubbles" /> */}
 				</IonButton>
+				{/* <IonButton onClick={() => {
+					present({
+						message: 'Loading...',
+						duration: 3000,
+						spinner: 'bubbles'
+					})
+				}}>
+					Show Loading
+				</IonButton> */}
 			</IonContent>
 			<IonToast
 				isOpen={showToast}

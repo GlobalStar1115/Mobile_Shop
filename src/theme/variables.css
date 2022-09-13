@@ -310,6 +310,12 @@ ion-toast {
 	/* border: none !important; */
 }
 
+.loading-wrapper.sc-ion-loading-md {
+	background: #2a353e;
+	color: white;
+	border-radius: 10px;
+}
+
 @media screen and (min-width: 560px) {
 	.slick-slide {
 		width: 558px !important;
