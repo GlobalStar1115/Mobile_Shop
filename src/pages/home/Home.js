@@ -1,5 +1,5 @@
 import styles from './Home.module.scss'
-import { IonCol, IonContent, IonCard, IonImg, IonGrid, IonPage, IonRow, useIonRouter, IonRouterLink } from '@ionic/react'
+import { IonCol, IonContent, IonCard, IonImg, IonGrid, IonPage, useIonLoading, IonRow, useIonRouter, IonRouterLink } from '@ionic/react'
 import { useTranslation } from 'react-i18next'
 import HomeSlider1 from '../../components/home-slider/HomeSlider1'
 import Slogan from '../../components/slogan/Slogan'
@@ -46,12 +46,19 @@ const Home = () => {
 	const [homeNotice, setHomeNotice] = useState('')
 	const [assets, setAssets] = useState({})
 	const [levelArr, setLevelArr] = useState([])
+	const [present, dismiss] = useIonLoading();
 
 	const [showDialog, setShowDialog] = useState(false)
 	const [showModal, setShowModal] = useState(false)
 
 	useEffect(() => {
 		if (localStorage.getItem('Authorization') === null) history.push('/login')
+
+		present({
+			message: 'Loading...',
+			duration: 1000,
+			spinner: 'bubbles'
+		})
 
 		InfoApi().then(res => {
 			if (res.code === 200) {
@@ -79,7 +86,9 @@ const Home = () => {
 						setHomeTopText(item.noticeContent.replace(/<[^>]+>/g, ''))
 					} else if (item.noticeType == 2) {
 						setHomeNotice(item.noticeContent.replace(/<[^>]+>/g, ''))
-						setShowDialog(true)
+						setTimeout(() => {
+							setShowDialog(true)
+						}, 500)
 					}
 				})
 			}

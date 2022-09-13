@@ -31,6 +31,13 @@ const Record = () => {
 	const history = useHistory()
 	useEffect(() => {
 		if (localStorage.getItem('Authorization') === null) history.push('/login')
+
+		present({
+			message: 'Loading...',
+			duration: 1000,
+			spinner: 'bubbles'
+		})
+
 		InfoApi().then(res => {
 			if (res.code === 200) {
 				setAssets(res.data.assets)
